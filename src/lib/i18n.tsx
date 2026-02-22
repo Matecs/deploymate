@@ -10,16 +10,16 @@ const t = {
   "nav.bookCall": { en: "Book a Call", hu: "Foglalj hívást" },
 
   // Hero
-  "hero.tag": { en: "Fractional Engineering Operations", hu: "Fractional Engineering Operations" },
+  "hero.tag": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
   "hero.title1": { en: "Release & Compliance", hu: "Release & Compliance" },
   "hero.title2": { en: "Operations Architect", hu: "Operations Architect" },
   "hero.stats": {
-    en: "109 releases/year · 1 rollback · 12+ cloud migrations with 0 downtime",
-    hu: "109 release/év · 1 rollback · 12+ cloud migráció 0 downtime-mal",
+    en: "18 years enterprise experience | 109 releases/year | 75% rollback reduction",
+    hu: "18 év enterprise tapasztalat | 109 release/év | 75% rollback csökkentés",
   },
   "hero.desc": {
-    en: "With 18 years of enterprise experience, I fix your release pipeline and make your team audit‑ready — SOC2, ISO27001, SOX, NIS2.",
-    hu: "18 év enterprise tapasztalattal rendbe teszem a release pipeline‑odat és audit‑ready állapotba hozom a csapatodat – SOC2, ISO27001, SOX, NIS2.",
+    en: "I've stabilized release pipelines for 40+ person engineering orgs. Yours is next — before or during your SOC2/ISO audit.",
+    hu: "Stabilizáltam már 40 fős fejlesztői szervezetek release pipeline-ját. Most a tiéd következik – SOC2/ISO audit előtt vagy közben.",
   },
   "hero.cta1": { en: "Book a 15-Minute Call", hu: "Foglalj 15 perces hívást" },
   "hero.cta2": { en: "See What I Do", hu: "Nézd meg, mit csinálok" },
