@@ -62,7 +62,7 @@ const HeroSection = () => {
         </p>
         <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <a
-            href="https://calendly.com"
+            href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
