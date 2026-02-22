@@ -7,6 +7,7 @@ import CredibilitySection from "@/components/CredibilitySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
+// Force rebuild
 const Index = () => {
   return (
     <LangProvider>
