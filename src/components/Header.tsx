@@ -19,7 +19,8 @@ const Header = () => {
           <Shield className="w-5 h-5 text-accent" />
           <span className="font-semibold text-foreground text-sm">RCOA</span>
         </div>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+          <button onClick={() => scrollTo("audience")} className="hover:text-foreground transition-colors">{t("nav.audience")}</button>
           <button onClick={() => scrollTo("packages")} className="hover:text-foreground transition-colors">{t("nav.services")}</button>
           <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
           
@@ -51,6 +52,7 @@ const Header = () => {
           <SheetContent side="right" className="w-64 bg-card">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="flex flex-col gap-6 mt-8 text-sm">
+              <button onClick={() => scrollTo("audience")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.audience")}</button>
               <button onClick={() => scrollTo("packages")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.services")}</button>
               <button onClick={() => scrollTo("credibility")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
               
