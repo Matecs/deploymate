@@ -9,17 +9,18 @@ const Footer = () => {
       <div className="container max-w-5xl mx-auto px-6 flex flex-col items-center gap-4 text-sm text-muted-foreground text-center">
         <div className="flex items-center gap-2">
           <span>Powered by</span>
-          <img src={datamateLogo} alt="Datamate logo" className="h-10 w-auto" />
+          <img src={datamateLogo} alt="DataMate logo" className="h-10 w-auto" />
         </div>
         <p className="font-medium text-foreground">Release & Compliance Operations Architect</p>
         <p>
-          <a href="https://datamate.hu" className="hover:text-foreground transition-colors">datamate.hu</a>
+          <a href="https://datamate.hu" className="hover:text-foreground transition-colors">DataMate.hu</a>
           {" | "}
           <a href="mailto:info@datamate.hu" className="hover:text-foreground transition-colors">info@datamate.hu</a>
-          {" | "}
+        </p>
+        <p>
           <a href="tel:+36204349647" className="hover:text-foreground transition-colors">+36 20 434 9647</a>
         </p>
-        <p>Copyright © {new Date().getFullYear()} Datamate</p>
+        <p>Copyright © {new Date().getFullYear()} DataMate</p>
       </div>
     </footer>
   );
