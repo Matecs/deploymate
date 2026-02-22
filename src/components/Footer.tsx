@@ -1,19 +1,25 @@
-import { Shield, ArrowRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import datamateLogo from "@/assets/datamate-logo.png";
 
 const Footer = () => {
   const { t } = useLang();
 
   return (
     <footer className="border-t border-border py-10">
-      <div className="container max-w-5xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4 text-accent" />
-            <span>{t("footer.tagline")}</span>
-          </div>
-          <p>© {new Date().getFullYear()} · {t("footer.rights")}</p>
+      <div className="container max-w-5xl mx-auto px-6 flex flex-col items-center gap-4 text-sm text-muted-foreground text-center">
+        <div className="flex items-center gap-2">
+          <span>Powered by</span>
+          <img src={datamateLogo} alt="Datamate logo" className="h-6 w-auto" />
         </div>
+        <p className="font-medium text-foreground">Release & Compliance Operations Architect</p>
+        <p>
+          <a href="https://datamate.hu" className="hover:text-foreground transition-colors">datamate.hu</a>
+          {" | "}
+          <a href="mailto:info@datamate.hu" className="hover:text-foreground transition-colors">info@datamate.hu</a>
+          {" | "}
+          <a href="tel:+36204349647" className="hover:text-foreground transition-colors">+36 20 434 9647</a>
+        </p>
+        <p>Copyright © {new Date().getFullYear()} Datamate</p>
       </div>
     </footer>
   );
