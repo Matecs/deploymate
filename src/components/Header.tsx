@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-accent" />
-          <span className="font-semibold text-foreground text-sm">RCOA</span>
+          <span className="font-semibold text-foreground text-sm">datamate.hu</span>
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <button onClick={() => scrollTo("audience")} className="hover:text-foreground transition-colors">{t("nav.audience")}</button>
