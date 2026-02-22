@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container max-w-5xl mx-auto px-6 flex flex-col items-center gap-4 text-sm text-muted-foreground text-center">
         <div className="flex items-center gap-2">
           <span>Powered by</span>
-          <img src={datamateLogo} alt="Datamate logo" className="h-6 w-auto" />
+          <img src={datamateLogo} alt="Datamate logo" className="h-10 w-auto" />
         </div>
         <p className="font-medium text-foreground">Release & Compliance Operations Architect</p>
         <p>
