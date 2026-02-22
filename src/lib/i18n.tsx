@@ -51,7 +51,11 @@ const t = {
     en: "Three focused engagement types — pick the one that matches your pain.",
     hu: "Három fókuszált szolgáltatáscsomag – válaszd, amelyik illik a problémádra.",
   },
-  "packages.requestBtn": { en: "Request This Package", hu: "Kérem ezt a csomagot" },
+  "packages.requestBtn": { en: "📅 Book a 15-Min Call", hu: "📅 15 perces hívás foglalása" },
+  "packages.calendlyDesc": {
+    en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
+    hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
+  },
   "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M HUF | 2 hét" },
   "packages.p2.price": { en: "€5,500 | 3 weeks", hu: "2,2M HUF | 3 hét" },
   "packages.p3.price": { en: "€3,000 | 10 days", hu: "1,2M HUF | 10 nap" },
@@ -169,7 +173,11 @@ const t = {
     en: "Book a 15-minute intro call and let's see if I can help before your next audit or release chaos.",
     hu: "Foglalj egy 15 perces intro hívást, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt.",
   },
-  "cta.bookBtn": { en: "Book a Call", hu: "Foglalj időpontot" },
+  "cta.bookBtn": { en: "📅 Book a 15-Min Call", hu: "📅 15 perces hívás foglalása" },
+  "cta.calendlyDesc": {
+    en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
+    hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
+  },
   "cta.sent.title": { en: "Message Sent!", hu: "Üzenet elküldve!" },
   "cta.sent.desc": { en: "I'll get back to you within 24 hours.", hu: "24 órán belül válaszolok." },
   "cta.form.name": { en: "Name", hu: "Név" },
@@ -183,6 +191,11 @@ const t = {
   "cta.form.submit": { en: "Send Message", hu: "Üzenet küldése" },
 
   // Footer
+  "footer.calendlyBtn": { en: "📅 Book a 15-Min Call", hu: "📅 15 perces hívás foglalása" },
+  "footer.calendlyDesc": {
+    en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
+    hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
+  },
   "footer.tagline": {
     en: "Release & Compliance Operations Architect",
     hu: "Release & Compliance Operations Architect",
