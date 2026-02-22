@@ -10,7 +10,7 @@ const CTASection = () => {
         <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("cta.tag")}</p>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">{t("cta.title")}</h2>
         <p className="text-muted-foreground text-base leading-relaxed mb-4">{t("cta.desc")}</p>
-        <p className="text-muted-foreground text-sm italic mb-10">{t("cta.calendlyDesc")}</p>
+        <div className="mb-10" />
         <a
           href="https://calendly.com"
           target="_blank"
