@@ -42,7 +42,7 @@ const PackagesSection = () => {
               <p className="text-accent font-semibold text-sm mb-4">{pkg.price}</p>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">{pkg.description}</p>
               <a
-                href="https://calendly.com"
+                href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 rounded-lg bg-accent text-accent-foreground font-semibold text-sm hover:opacity-90 transition-opacity text-center block"

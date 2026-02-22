@@ -19,7 +19,7 @@ const t = {
     en: "18 years of experience building stable, audit-ready release pipelines",
     hu: "18 év tapasztalat stabil, audit-ready release pipeline-ek építésében",
   },
-  "hero.cta": { en: "Book a 15-Min Call", hu: "15 perces hívás" },
+  "hero.cta": { en: "Book a 15-min call in my Google Calendar", hu: "Foglalj 15 perces hívást a Google Calendar-omban" },
 
   // Audience
   "audience.tag": { en: "Who Is This For?", hu: "Kinek szól?" },
@@ -87,7 +87,7 @@ const t = {
     en: "Book a 15-minute intro call and let's see if I can help before your next audit or release chaos.",
     hu: "Foglalj egy 15 perces intro hívást, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt.",
   },
-  "cta.bookBtn": { en: "📅 Book a 15-Min Call", hu: "📅 15 perces hívás foglalása" },
+  "cta.bookBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
   "cta.calendlyDesc": {
     en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
     hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
@@ -105,7 +105,7 @@ const t = {
   "cta.form.submit": { en: "Send Message", hu: "Üzenet küldése" },
 
   // Footer
-  "footer.calendlyBtn": { en: "📅 Book a 15-Min Call", hu: "📅 15 perces hívás foglalása" },
+  "footer.calendlyBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
   "footer.calendlyDesc": {
     en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
     hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
