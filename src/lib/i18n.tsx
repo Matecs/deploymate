@@ -52,9 +52,9 @@ const t = {
     hu: "Három fókuszált szolgáltatáscsomag – válaszd, amelyik illik a problémádra.",
   },
   "packages.requestBtn": { en: "Request This Package", hu: "Kérem ezt a csomagot" },
-  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M Ft | 2 hét" },
-  "packages.p2.price": { en: "€5,500 | 3 weeks", hu: "2,2M Ft | 3 hét" },
-  "packages.p3.price": { en: "€3,000 | 10 days", hu: "1,2M Ft | 10 nap" },
+  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M HUF | 2 hét" },
+  "packages.p2.price": { en: "€5,500 | 3 weeks", hu: "2,2M HUF | 3 hét" },
+  "packages.p3.price": { en: "€3,000 | 10 days", hu: "1,2M HUF | 10 nap" },
   "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
   "packages.p1.desc": {
     en: "3-day deep technical audit + 1-week plan: how to cut rollbacks by 75% and make your release process audit-compatible.",
