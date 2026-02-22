@@ -1,6 +1,9 @@
 import { Shield } from "lucide-react";
+import { useLang } from "@/lib/i18n";
 
 const Header = () => {
+  const { lang, setLang, t } = useLang();
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,11 +16,17 @@ const Header = () => {
           <span className="font-semibold text-foreground text-sm">RCOA</span>
         </div>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <button onClick={() => scrollTo("packages")} className="hover:text-foreground transition-colors">Services</button>
-          <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">Why Me</button>
-          <button onClick={() => scrollTo("process")} className="hover:text-foreground transition-colors">Process</button>
+          <button onClick={() => scrollTo("packages")} className="hover:text-foreground transition-colors">{t("nav.services")}</button>
+          <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
+          <button onClick={() => scrollTo("process")} className="hover:text-foreground transition-colors">{t("nav.process")}</button>
+          <button
+            onClick={() => setLang(lang === "en" ? "hu" : "en")}
+            className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
+          >
+            {lang === "en" ? "HU 🇭🇺" : "EN 🇬🇧"}
+          </button>
           <button onClick={() => scrollTo("cta")} className="hover:text-foreground transition-colors bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium">
-            Book a Call
+            {t("nav.bookCall")}
           </button>
         </nav>
       </div>
