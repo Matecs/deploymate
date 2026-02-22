@@ -19,8 +19,9 @@ const CTASection = () => {
           <div>
             <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("cta.tag")}</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">{t("cta.title")}</h2>
-            <p className="text-muted-foreground text-base leading-relaxed mb-8">{t("cta.desc")}</p>
-            <a href="#cta" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity">
+            <p className="text-muted-foreground text-base leading-relaxed mb-4">{t("cta.desc")}</p>
+            <p className="text-muted-foreground text-sm italic mb-8">{t("cta.calendlyDesc")}</p>
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3.5 rounded-lg font-semibold text-base hover:opacity-90 transition-opacity">
               {t("cta.bookBtn")}
               <ArrowRight className="w-4 h-4" />
             </a>

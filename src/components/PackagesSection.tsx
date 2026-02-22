@@ -57,9 +57,10 @@ const PackagesSection = () => {
                 ))}
               </ul>
               <p className="text-center text-accent font-semibold text-sm mb-4">{pkg.price}</p>
-              <button onClick={() => scrollTo("cta")} className="w-full py-2.5 rounded-md border border-border text-foreground font-medium text-sm hover:bg-muted transition-colors">
+              <p className="text-center text-muted-foreground text-xs mb-4 italic">{t("packages.calendlyDesc")}</p>
+              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="w-full py-2.5 rounded-md bg-accent text-accent-foreground font-semibold text-sm hover:opacity-90 transition-opacity text-center block">
                 {t("packages.requestBtn")}
-              </button>
+              </a>
             </div>
           ))}
         </div>
