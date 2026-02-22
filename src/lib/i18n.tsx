@@ -10,19 +10,16 @@ const t = {
   "nav.bookCall": { en: "Book a Call", hu: "Foglalj hívást" },
 
   // Hero
-  "hero.tag": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
-  "hero.title1": { en: "Release & Compliance", hu: "Release & Compliance" },
-  "hero.title2": { en: "Operations Architect", hu: "Operations Architect" },
+  "hero.title": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
   "hero.stats": {
-    en: "18 years enterprise experience | 109 releases/year | 75% rollback reduction",
-    hu: "18 év enterprise tapasztalat | 109 release/év | 75% rollback csökkentés",
+    en: "109 releases/year · 1 rollback · 12+ cloud migrations with 0 downtime",
+    hu: "109 releases/év · 1 rollback · 12+ cloud migráció 0 downtime-mal",
   },
   "hero.desc": {
-    en: "I've stabilized release pipelines for 40+ person engineering orgs. Yours is next — before or during your SOC2/ISO audit.",
-    hu: "Stabilizáltam már 40 fős fejlesztői szervezetek release pipeline-ját. Most a tiéd következik – SOC2/ISO audit előtt vagy közben.",
+    en: "18 years of experience building stable, audit-ready release pipelines",
+    hu: "18 év tapasztalat stabil, audit-ready release pipeline-ek építésében",
   },
-  "hero.cta1": { en: "Book a 15-Minute Call", hu: "Foglalj 15 perces hívást" },
-  "hero.cta2": { en: "See What I Do", hu: "Nézd meg, mit csinálok" },
+  "hero.cta": { en: "Book a 15-Min Call", hu: "15 perces hívás" },
 
   // Audience
   "audience.tag": { en: "Who Is This For?", hu: "Kinek szól?" },
