@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# Release Clarity
 
-## Project info
+A bilingual (English / Hungarian) professional services landing page for a **Release & Compliance Operations Architect**. The site presents three consulting packages aimed at 20–150 person SaaS teams that are preparing for SOC2/ISO27001 audits or struggling with unstable release pipelines.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Live site:** [datamate.hu](https://datamate.hu)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Table of Contents
 
-**Use Lovable**
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Internationalization](#internationalization)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Features
 
-**Use your preferred IDE**
+- **Single-page layout** with smooth-scroll navigation (Hero → Audience → Services → Track Record → CTA → Footer)
+- **Three service packages** with pricing displayed in both EUR and HUF
+- **Bilingual UI** — English and Hungarian, switchable at runtime with preference persisted to `localStorage`
+- **Responsive design** — mobile navigation via a slide-out sheet, desktop navigation bar
+- **Book-a-call CTA** linked directly to a Google Calendar scheduling page
+- **Accessible components** built on Radix UI primitives
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+| Category | Technology |
+|---|---|
+| Language | TypeScript 5 |
+| Framework | React 18 |
+| Build tool | Vite 5 |
+| Styling | Tailwind CSS 3, PostCSS |
+| UI primitives | shadcn-ui (Radix UI) |
+| Icons | Lucide React |
+| Routing | React Router DOM 6 |
+| State / data | TanStack React Query 5 |
+| Forms | React Hook Form 7 + Zod |
+| Testing | Vitest 3, Testing Library |
+| Linting | ESLint 9, typescript-eslint |
+
+---
+
+## Project Structure
+
+```
+release-clarity/
+├── public/                  # Static assets served as-is
+├── src/
+│   ├── assets/              # Images and other imported assets
+│   ├── components/          # Page section components
+│   │   ├── Header.tsx       # Fixed navigation bar with language switcher
+│   │   ├── HeroSection.tsx  # Full-viewport hero with stats and CTA
+│   │   ├── AudienceSection.tsx  # "Who is this for?" pain-point cards
+│   │   ├── PackagesSection.tsx  # Three service package cards
+│   │   ├── CredibilitySection.tsx  # Testimonials / track record
+│   │   ├── CTASection.tsx   # Final call-to-action block
+│   │   ├── Footer.tsx       # Contact details and copyright
+│   │   ├── NavLink.tsx      # Reusable navigation link
+│   │   └── ui/              # shadcn-ui generated primitives
+│   ├── hooks/               # Custom React hooks
+│   │   ├── use-mobile.tsx   # Detects mobile viewport
+│   │   └── use-toast.ts     # Toast notification helpers
+│   ├── lib/
+│   │   ├── i18n.tsx         # Translation dictionary + LangContext provider
+│   │   └── utils.ts         # Utility helpers (cn, etc.)
+│   ├── pages/
+│   │   ├── Index.tsx        # Main page — composes all sections
+│   │   └── NotFound.tsx     # 404 page
+│   ├── test/
+│   │   ├── setup.ts         # Vitest global setup (jest-dom)
+│   │   └── example.test.ts  # Baseline test
+│   ├── App.tsx              # Root component, routing, global providers
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global CSS and Tailwind directives
+├── components.json          # shadcn-ui configuration
+├── index.html               # HTML shell
+├── tailwind.config.ts       # Tailwind theme configuration
+├── vite.config.ts           # Vite bundler configuration
+├── vitest.config.ts         # Vitest test runner configuration
+├── tsconfig.json            # Root TypeScript configuration
+├── tsconfig.app.json        # Application TypeScript configuration
+└── tsconfig.node.json       # Node/tooling TypeScript configuration
+```
+
+For a deeper explanation of component relationships and data flow see [docs/architecture.md](docs/architecture.md).
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js ≥ 18** — install with [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **npm** (bundled with Node.js)
+
+### Local development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Clone the repository
+git clone https://github.com/Matecs/release-clarity.git
+cd release-clarity
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Start the development server (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server supports Hot Module Replacement (HMR), so changes to source files are reflected instantly in the browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Available Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Script | Description |
+|---|---|
+| `npm run dev` | Start the Vite development server on port 8080 |
+| `npm run build` | Production build output to `dist/` |
+| `npm run build:dev` | Development-mode build (includes source maps) |
+| `npm run preview` | Locally preview the production build |
+| `npm run lint` | Run ESLint across the entire project |
+| `npm test` | Run the Vitest test suite once |
+| `npm run test:watch` | Run Vitest in interactive watch mode |
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## Internationalization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The site supports **English** and **Hungarian**. Language preference is stored in `localStorage` under the key `lang` and defaults to English.
 
-## How can I deploy this project?
+All translatable strings live in `src/lib/i18n.tsx` as a single typed dictionary. Components access translations through the `useLang()` hook:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```tsx
+import { useLang } from "@/lib/i18n";
 
-## Can I connect a custom domain to my Lovable project?
+const MyComponent = () => {
+  const { t, lang, setLang } = useLang();
+  return <h1>{t("hero.title")}</h1>;
+};
+```
 
-Yes, you can!
+To add a new string, add an entry to the `t` object in `src/lib/i18n.tsx` with both `en` and `hu` values. TypeScript will enforce that every key has both translations.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+For a full guide see [docs/i18n.md](docs/i18n.md).
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## Deployment
+
+The project produces a fully static bundle and can be hosted on any static host (Netlify, Vercel, GitHub Pages, etc.).
+
+```sh
+npm run build
+# Upload the contents of dist/ to your hosting provider
+```
+
+**Lovable:** The repository is connected to a [Lovable](https://lovable.dev) project. Pushing to the default branch automatically triggers a Lovable deployment. You can also deploy directly from the Lovable dashboard via **Share → Publish**.
+
+**Custom domain:** In the Lovable dashboard go to **Project → Settings → Domains** and click **Connect Domain**. See the [Lovable custom domain docs](https://docs.lovable.dev/features/custom-domain#custom-domain) for details.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on branching, code style, testing, and submitting pull requests.
