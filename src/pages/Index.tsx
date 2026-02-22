@@ -1,3 +1,4 @@
+import { LangProvider } from "@/lib/i18n";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AudienceSection from "@/components/AudienceSection";
@@ -9,16 +10,18 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <HeroSection />
-      <AudienceSection />
-      <PackagesSection />
-      <CredibilitySection />
-      <ProcessSection />
-      <CTASection />
-      <Footer />
-    </div>
+    <LangProvider>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <HeroSection />
+        <AudienceSection />
+        <PackagesSection />
+        <CredibilitySection />
+        <ProcessSection />
+        <CTASection />
+        <Footer />
+      </div>
+    </LangProvider>
   );
 };
 
