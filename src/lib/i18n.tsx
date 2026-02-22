@@ -198,7 +198,15 @@ interface LangContextType {
 const LangContext = createContext<LangContextType | null>(null);
 
 export const LangProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>(() => {
+    const saved = localStorage.getItem("lang");
+    return saved === "hu" ? "hu" : "en";
+  });
+
+  const setLang = (l: Lang) => {
+    setLangState(l);
+    localStorage.setItem("lang", l);
+  };
 
   const translate = (key: TranslationKey): string => {
     return t[key]?.[lang] ?? key;
