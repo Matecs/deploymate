@@ -11,11 +11,11 @@ const AudienceSection = () => {
   ];
 
   return (
-    <section id="audience" className="py-24 md:py-32">
+    <section id="audience" className="py-28 md:py-36">
       <div className="container max-w-3xl mx-auto px-6 text-center">
         <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("audience.tag")}</p>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t("audience.title")}</h2>
-        <p className="text-muted-foreground mb-12 text-lg">{t("audience.subtitle")}</p>
+        <p className="text-muted-foreground mb-14 text-lg">{t("audience.subtitle")}</p>
         <div className="grid gap-6 text-left">
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-4 bg-card rounded-lg p-6 border border-border" style={{ boxShadow: "var(--card-shadow)" }}>

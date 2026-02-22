@@ -22,7 +22,7 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <button onClick={() => scrollTo("packages")} className="hover:text-foreground transition-colors">{t("nav.services")}</button>
           <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
-          <button onClick={() => scrollTo("process")} className="hover:text-foreground transition-colors">{t("nav.process")}</button>
+          
           <button
             onClick={() => setLang(lang === "en" ? "hu" : "en")}
             className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
@@ -53,7 +53,7 @@ const Header = () => {
             <div className="flex flex-col gap-6 mt-8 text-sm">
               <button onClick={() => scrollTo("packages")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.services")}</button>
               <button onClick={() => scrollTo("credibility")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
-              <button onClick={() => scrollTo("process")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.process")}</button>
+              
               <button
                 onClick={() => setLang(lang === "en" ? "hu" : "en")}
                 className="w-fit px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
