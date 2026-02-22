@@ -4,9 +4,9 @@ export type Lang = "en" | "hu";
 
 const t = {
   // Header
+  "nav.audience": { en: "Who It's For", hu: "Kinek szól" },
   "nav.services": { en: "Services", hu: "Szolgáltatások" },
   "nav.whyMe": { en: "Why Me", hu: "Miért én?" },
-  "nav.process": { en: "Process", hu: "Folyamat" },
   "nav.bookCall": { en: "Book a Call", hu: "Foglalj hívást" },
 
   // Hero
