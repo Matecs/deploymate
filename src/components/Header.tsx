@@ -34,13 +34,20 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile menu */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <button className="md:hidden p-2 text-foreground">
-              <Menu className="w-5 h-5" />
-            </button>
-          </SheetTrigger>
+        {/* Language switcher + mobile menu */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={() => setLang(lang === "en" ? "hu" : "en")}
+            className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
+          >
+            {lang === "en" ? "HU 🇭🇺" : "EN 🇬🇧"}
+          </button>
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button className="p-2 text-foreground">
+                <Menu className="w-5 h-5" />
+              </button>
+            </SheetTrigger>
           <SheetContent side="right" className="w-64 bg-card">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="flex flex-col gap-6 mt-8 text-sm">
@@ -58,7 +65,8 @@ const Header = () => {
               </button>
             </div>
           </SheetContent>
-        </Sheet>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
