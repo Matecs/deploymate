@@ -14,18 +14,21 @@ const PackagesSection = () => {
       title: t("packages.p1.title"),
       description: t("packages.p1.desc"),
       bullets: [t("packages.p1.b1"), t("packages.p1.b2"), t("packages.p1.b3")],
+      price: t("packages.p1.price"),
     },
     {
       icon: FileText,
       title: t("packages.p2.title"),
       description: t("packages.p2.desc"),
       bullets: [t("packages.p2.b1"), t("packages.p2.b2"), t("packages.p2.b3")],
+      price: t("packages.p2.price"),
     },
     {
       icon: Cloud,
       title: t("packages.p3.title"),
       description: t("packages.p3.desc"),
       bullets: [t("packages.p3.b1"), t("packages.p3.b2"), t("packages.p3.b3")],
+      price: t("packages.p3.price"),
     },
   ];
 
@@ -53,6 +56,7 @@ const PackagesSection = () => {
                   </li>
                 ))}
               </ul>
+              <p className="text-center text-accent font-semibold text-sm mb-4">{pkg.price}</p>
               <button onClick={() => scrollTo("cta")} className="w-full py-2.5 rounded-md border border-border text-foreground font-medium text-sm hover:bg-muted transition-colors">
                 {t("packages.requestBtn")}
               </button>
