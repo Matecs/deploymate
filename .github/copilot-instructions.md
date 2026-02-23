@@ -1,0 +1,98 @@
+# GitHub Copilot Instructions
+
+## Project Overview
+
+Release Clarity is a React single-page application that helps users understand and manage release notes. It is built with Vite, TypeScript, Tailwind CSS, and shadcn-ui (Radix UI primitives), and supports English and Hungarian through a custom i18n layer.
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| UI framework | React 18 |
+| Language | TypeScript (strict) |
+| Build tool | Vite |
+| Styling | Tailwind CSS + `tailwind-merge` + `class-variance-authority` |
+| Component library | shadcn-ui (Radix UI) |
+| Routing | React Router v6 |
+| Server state | TanStack Query v5 |
+| Forms | React Hook Form + Zod |
+| Testing | Vitest + Testing Library |
+| Linting | ESLint + typescript-eslint |
+
+## Repository Layout
+
+```
+src/
+  assets/          Static assets imported by components
+  components/
+    ui/            Primitive shadcn-ui components (generated via CLI)
+  hooks/           Custom React hooks
+  lib/
+    i18n.tsx       All UI strings (English + Hungarian)
+    utils.ts       Shared utility functions (cn helper, etc.)
+  pages/           Route-level page components
+  test/            Vitest test files (*.test.ts / *.test.tsx)
+  App.tsx          Root component with router
+  main.tsx         Entry point
+```
+
+## Development Commands
+
+```sh
+npm install        # Install dependencies
+npm run dev        # Start dev server at http://localhost:8080 with HMR
+npm run lint       # Lint with ESLint
+npm test           # Run test suite once (Vitest)
+npm run test:watch # Run tests in watch mode
+npm run build      # Production build
+```
+
+Always run `npm run lint` and `npm test` before opening a pull request.
+
+## Code Conventions
+
+- **TypeScript everywhere** — avoid `any`; prefer explicit types and Zod schemas for runtime validation.
+- **Named exports** for all components (`export const MyComponent = ...`). Default exports are acceptable only for top-level page components.
+- **`@/` path alias** maps to `src/`; always use it for non-relative imports (e.g., `import { useLang } from "@/lib/i18n"`).
+- **Tailwind CSS** for all styling. Avoid inline styles unless applying a CSS custom property (`var(--...)`). Compose class names with `cn()` from `@/lib/utils`.
+- **Radix UI / shadcn-ui** primitives for interactive elements — prefer them over native HTML elements when an accessible equivalent exists.
+- **Small, focused components** — extract reusable UI into `src/components/ui/`.
+- **React hooks rules** — respect the rules of hooks; never call hooks inside loops, conditions, or nested functions.
+
+## i18n
+
+All visible UI strings must be defined in `src/lib/i18n.tsx` with both `en` and `hu` translations. Access strings through the `useLang()` hook inside components. Do not hardcode display text.
+
+## Adding shadcn-ui Components
+
+```sh
+npx shadcn-ui@latest add <component-name>
+```
+
+The generated file is placed in `src/components/ui/`. Commit it as part of the relevant feature branch.
+
+## Testing
+
+- Tests live in `src/test/` and follow the naming pattern `<subject>.test.ts` or `<subject>.test.tsx`.
+- The global test setup (`src/test/setup.ts`) imports `@testing-library/jest-dom` matchers.
+- Every new feature must include at least one test covering the happy path.
+- Use `@testing-library/react` for component tests and plain Vitest `describe`/`it`/`expect` for unit tests.
+
+## Pull Request Guidelines
+
+1. One concern per PR — keep changes focused and reviewable.
+2. Use the imperative mood in the title (e.g., `Add mobile menu animation`).
+3. Describe *what* changed and *why* in the PR body.
+4. `npm run lint` and `npm test` must pass before requesting review.
+5. Squash or tidy commits before merging to keep `main` history clean.
+
+## Branching
+
+| Branch pattern | Purpose |
+|---|---|
+| `main` | Production-ready; auto-deployed |
+| `feature/<description>` | New features or enhancements |
+| `fix/<description>` | Bug fixes |
+| `docs/<description>` | Documentation-only changes |
+
+Always branch from `main`.
