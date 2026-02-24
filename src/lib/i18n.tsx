@@ -72,7 +72,7 @@ const t = {
     hu: "109 release egy évben, csak 1 rollback – jelentősen javult a stabilitásunk.",
   },
   "cred.t2": {
-    en: "He led the full GoToAssist Corporate stack migration to AWS with zero downtime.",
+    en: "He led full enterprise product stack migration to cloud with zero downtime across multiple regions.",
     hu: "A teljes GoToAssist Corporate stack migrációját végigvitte AWS‑re leállás nélkül.",
   },
   "cred.source": { en: "— Engineering Leadership", hu: "— Engineering Leadership" },
