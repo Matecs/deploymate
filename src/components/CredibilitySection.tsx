@@ -7,7 +7,7 @@ const CredibilitySection = () => {
   const testimonials = [t("cred.t1"), t("cred.t2")];
 
   return (
-    <section id="credibility" className="py-28 md:py-36">
+    <section id="credibility" className="py-16 md:py-20">
       <div className="container max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("cred.tag")}</p>

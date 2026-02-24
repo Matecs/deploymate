@@ -26,7 +26,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section id="packages" className="py-28 md:py-36 bg-muted/50">
+    <section id="packages" className="py-16 md:py-20 bg-muted/50">
       <div className="container max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("packages.tag")}</p>

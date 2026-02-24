@@ -11,7 +11,7 @@ const AudienceSection = () => {
   ];
 
   return (
-    <section id="audience" className="py-28 md:py-36">
+    <section id="audience" className="py-16 md:py-20">
       <div className="container max-w-3xl mx-auto px-6 text-center">
         <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("audience.tag")}</p>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t("audience.title")}</h2>
