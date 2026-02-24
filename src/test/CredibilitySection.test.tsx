@@ -30,7 +30,7 @@ describe("CredibilitySection", () => {
       screen.getByText(/109 releases in a single year/)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/GoToAssist Corporate stack migration/)
+      screen.getByText(/enterprise product stack migration/)
     ).toBeInTheDocument();
   });
 
