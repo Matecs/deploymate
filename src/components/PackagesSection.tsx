@@ -1,5 +1,6 @@
 import { ClipboardCheck, FileText, Cloud } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import { motion } from "framer-motion";
 
 const PackagesSection = () => {
   const { t } = useLang();
@@ -29,12 +30,12 @@ const PackagesSection = () => {
     <section id="packages" className="py-16 md:py-20 bg-muted/50">
       <div className="container max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("packages.tag")}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">{t("packages.title")}</h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("packages.tag")}</motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="text-3xl md:text-4xl font-bold text-foreground">{t("packages.title")}</motion.h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {packages.map((pkg, i) => (
-            <div key={i} className="bg-card rounded-xl border border-border p-8 flex flex-col text-center transition-shadow hover:shadow-lg" style={{ boxShadow: "var(--card-shadow)" }}>
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.15 }} className="bg-card rounded-xl border border-border p-8 flex flex-col text-center transition-shadow hover:shadow-lg" style={{ boxShadow: "var(--card-shadow)" }}>
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-5">
                 <pkg.icon className="w-5 h-5 text-accent" />
               </div>
@@ -49,7 +50,7 @@ const PackagesSection = () => {
               >
                 {t("packages.requestBtn")}
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
