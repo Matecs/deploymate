@@ -5,7 +5,7 @@ const CTASection = () => {
   const { t } = useLang();
 
   return (
-    <section id="cta" className="py-28 md:py-36 bg-muted/50">
+    <section id="cta" className="py-16 md:py-20 bg-muted/50">
       <div className="container max-w-2xl mx-auto px-6 text-center">
         <p className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("cta.tag")}</p>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">{t("cta.title")}</h2>
