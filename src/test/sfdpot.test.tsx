@@ -103,8 +103,8 @@ describe("F – Function: what the product does", () => {
 
   it("language toggle switches display language from EN to HU", () => {
     renderWithProviders(<Header />);
-    fireEvent.click(screen.getAllByText("🇭🇺")[0]);
-    expect(screen.getAllByText("🇬🇧").length).toBeGreaterThan(0);
+    fireEvent.click(screen.getAllByText("🇭🇺 HU")[0]);
+    expect(screen.getAllByText("🇬🇧 EN").length).toBeGreaterThan(0);
   });
 
   it("nav 'Who It's For' button calls scrollIntoView on #audience", () => {
@@ -258,7 +258,7 @@ describe("P – Platform: what the product depends on", () => {
     renderWithProviders(<Header />);
     expect(localStorage.getItem("lang")).toBeNull();
 
-    fireEvent.click(screen.getAllByText("🇭🇺")[0]);
+    fireEvent.click(screen.getAllByText("🇭🇺 HU")[0]);
 
     expect(localStorage.getItem("lang")).toBe("hu");
   });
@@ -267,7 +267,7 @@ describe("P – Platform: what the product depends on", () => {
     localStorage.setItem("lang", "hu");
     renderWithProviders(<Header />);
     // Hungarian is active → toggle button shows the EN flag
-    expect(screen.getAllByText("🇬🇧").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("🇬🇧 EN").length).toBeGreaterThan(0);
   });
 
   it("all new-tab links carry rel='noopener noreferrer' to prevent tabnapping", () => {
@@ -330,9 +330,9 @@ describe("O – Operations: how the product is used", () => {
 
   it("language can be toggled EN → HU → EN (round-trip)", () => {
     renderWithProviders(<Header />);
-    fireEvent.click(screen.getAllByText("🇭🇺")[0]);
-    fireEvent.click(screen.getAllByText("🇬🇧")[0]);
-    expect(screen.getAllByText("🇭🇺").length).toBeGreaterThan(0);
+    fireEvent.click(screen.getAllByText("🇭🇺 HU")[0]);
+    fireEvent.click(screen.getAllByText("🇬🇧 EN")[0]);
+    expect(screen.getAllByText("🇭🇺 HU").length).toBeGreaterThan(0);
   });
 
   it("package 'I want this' buttons all link to the booking URL", () => {
