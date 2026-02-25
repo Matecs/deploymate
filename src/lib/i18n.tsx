@@ -21,6 +21,29 @@ const t = {
   },
   "hero.cta": { en: "Book a 15-min call in my Google Calendar", hu: "Foglalj 15 perces hívást a Google Calendar-omban" },
 
+  // Pain Points
+  "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
+  "pain.title": {
+    en: "Typical Problems at 20–150 Person SaaS Companies",
+    hu: "Tipikus problémák 20-150 fős SaaS cégeknél",
+  },
+  "pain.item1": {
+    en: "Weekly 1–2 rollbacks with overnight firefighting",
+    hu: "Heti 1-2 rollback éjszakai tűzoltással",
+  },
+  "pain.item2": {
+    en: "Panic evidence gathering before SOC2/ISO audits",
+    hu: "SOC2/ISO audit előtt pánik evidence gyűjtéssel",
+  },
+  "pain.item3": {
+    en: "Outdated CI/CD (Jenkins → GitHub Actions needed)",
+    hu: "Elavult CI/CD (Jenkins → GitHub Actions kell)",
+  },
+  "pain.item4": {
+    en: "CTO lacks visibility into release and on-call processes",
+    hu: "CTO nem lát át a release és on-call folyamatokra",
+  },
+
   // Audience
   "audience.tag": { en: "Who Is This For?", hu: "Kinek szól?" },
   "audience.title": { en: "20–150 Person SaaS Teams", hu: "20–150 fős SaaS csapatok" },
