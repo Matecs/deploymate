@@ -4,8 +4,10 @@ export type Lang = "en" | "hu";
 
 const t = {
   // Header
+  "nav.painPoints": { en: "Challenges", hu: "Kihívások" },
   "nav.audience": { en: "Who It's For", hu: "Kinek szól" },
   "nav.services": { en: "Services", hu: "Szolgáltatások" },
+  "nav.howItWorks": { en: "How It Works", hu: "Hogyan működik" },
   "nav.whyMe": { en: "Why Me", hu: "Miért én?" },
   "nav.bookCall": { en: "Book a Call", hu: "Foglalj hívást" },
 
