@@ -13,7 +13,7 @@ const t = {
   "hero.title": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
   "hero.stats": {
     en: "109 releases/year · 1 rollback · 12+ cloud migrations with 0 downtime",
-    hu: "109 releases/év · 1 rollback · 12+ cloud migráció 0 downtime-mal",
+    hu: "109 release/év · 1 rollback · 12+ cloud migráció downtime nélkül",
   },
   "hero.desc": {
     en: "18 years of experience building stable, audit-ready release pipelines",
