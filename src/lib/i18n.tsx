@@ -17,7 +17,7 @@ const t = {
   },
   "hero.desc": {
     en: "18 years of experience building stable, audit-ready release pipelines",
-    hu: "18 év tapasztalat stabil, audit-ready release pipeline-ek építésében",
+    hu: "18 év tapasztalat stabil, audit-ready release folyamatok építésében",
   },
   "hero.pricing": {
     en: "Project: €4,500 | Monthly retainer: €5,000/mo",
