@@ -41,7 +41,6 @@ const HeroSection = () => {
         <line x1="90%" y1="0" x2="90%" y2="100%" stroke="hsl(210 40% 98%)" strokeWidth="1" />
         <line x1="0" y1="30%" x2="100%" y2="30%" stroke="hsl(210 40% 98%)" strokeWidth="1" />
         <line x1="0" y1="70%" x2="100%" y2="70%" stroke="hsl(210 40% 98%)" strokeWidth="1" />
-        {/* Pipeline nodes */}
         <circle cx="10%" cy="30%" r="4" fill="hsl(160 72% 37%)" opacity="0.4" />
         <circle cx="30%" cy="70%" r="4" fill="hsl(160 72% 37%)" opacity="0.3" />
         <circle cx="70%" cy="30%" r="4" fill="hsl(160 72% 37%)" opacity="0.35" />
@@ -57,8 +56,11 @@ const HeroSection = () => {
         <p className="text-primary-foreground/80 text-lg md:text-xl font-semibold mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {t("hero.stats")}
         </p>
-        <p className="text-primary-foreground/50 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-primary-foreground/50 text-base md:text-lg max-w-2xl mx-auto mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {t("hero.desc")}
+        </p>
+        <p className="text-accent font-bold text-lg md:text-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+          {t("hero.pricing")}
         </p>
         <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <a
@@ -72,7 +74,7 @@ const HeroSection = () => {
           </a>
         </div>
         <button
-          onClick={() => scrollTo("audience")}
+          onClick={() => scrollTo("pain-points")}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary-foreground/30 hover:text-primary-foreground/60 transition-colors animate-bounce"
         >
           <ChevronDown className="w-6 h-6" />

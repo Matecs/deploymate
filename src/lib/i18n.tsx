@@ -19,17 +19,21 @@ const t = {
     en: "18 years of experience building stable, audit-ready release pipelines",
     hu: "18 év tapasztalat stabil, audit-ready release pipeline-ek építésében",
   },
+  "hero.pricing": {
+    en: "Project: €4,500 | Monthly retainer: €5,000/mo",
+    hu: "Projekt: 1,8M Ft | Havi retainer: 2M Ft/hó",
+  },
   "hero.cta": { en: "Book a 15-min call in my Google Calendar", hu: "Foglalj 15 perces hívást a Google Calendar-omban" },
 
   // Pain Points
   "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
   "pain.title": {
-    en: "Typical Problems at 20–150 Person SaaS Companies",
-    hu: "Tipikus problémák 20-150 fős SaaS cégeknél",
+    en: "This Hurts at 20–150 Person SaaS Companies",
+    hu: "Ez fáj a 20–150 fős SaaS cégeknél",
   },
   "pain.item1": {
     en: "Weekly 1–2 rollbacks with overnight firefighting",
-    hu: "Heti 1-2 rollback éjszakai tűzoltással",
+    hu: "Heti rollback-ek éjszakai tűzoltással",
   },
   "pain.item2": {
     en: "Panic evidence gathering before SOC2/ISO audits",
@@ -37,11 +41,11 @@ const t = {
   },
   "pain.item3": {
     en: "Outdated CI/CD (Jenkins → GitHub Actions needed)",
-    hu: "Elavult CI/CD (Jenkins → GitHub Actions kell)",
+    hu: "Elavult Jenkins/TeamCity pipeline",
   },
   "pain.item4": {
     en: "CTO lacks visibility into release and on-call processes",
-    hu: "CTO nem lát át a release és on-call folyamatokra",
+    hu: "CTO nem lát át a release folyamatokra",
   },
 
   // Audience
@@ -64,39 +68,65 @@ const t = {
     hu: "A CTO nem lát rá elég tisztán a release és compliance folyamatokra",
   },
 
-  // Packages
+  // Packages — Tiered pricing
   "packages.tag": { en: "Services", hu: "Szolgáltatások" },
-  "packages.title": { en: "Choose Your Package", hu: "Válaszd ki a csomagod" },
-  "packages.requestBtn": { en: "I want this", hu: "Kérem ezt" },
-  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M HUF | 2 hét" },
-  "packages.p2.price": { en: "€5,500 | 3 weeks", hu: "2,2M HUF | 3 hét" },
-  "packages.p3.price": { en: "€3,000 | 10 days", hu: "1,2M HUF | 10 nap" },
-  "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
+  "packages.title": { en: "Choose Your Service", hu: "Válassz szolgáltatást" },
+
+  "packages.p1.title": { en: "Project", hu: "Projekt" },
+  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M Ft | 2 hét" },
   "packages.p1.desc": {
-    en: "Deep technical audit of your release pipeline with a concrete plan to cut rollbacks by 75%.",
-    hu: "Mély technikai audit a release pipeline-odról, konkrét tervvel a rollbackek 75%-os csökkentésére.",
+    en: "Release Audit — Pipeline review, rollback reduction plan, audit playbook.",
+    hu: "Release Audit — Pipeline átvilágítás, rollback csökkentés terv, audit playbook.",
   },
-  "packages.p2.title": { en: "Compliance Runbook", hu: "Compliance Runbook" },
+  "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
+
+  "packages.p2.title": { en: "Monthly Retainer", hu: "Havi Retainer" },
+  "packages.p2.price": { en: "€5,000/mo | 10 hrs/week", hu: "2M Ft/hó | 10 óra/hét" },
   "packages.p2.desc": {
-    en: "Technical evidence and runbooks for SOC2/ISO27001 — DevOps/QA/Release side, audit-ready.",
-    hu: "Technikai evidence és runbook SOC2/ISO27001 audithoz — DevOps/QA/Release oldal, audit-ready.",
+    en: "Monthly review, Slack support, hiring advice, compliance coaching.",
+    hu: "Havi review, Slack support, hiring tanács, compliance coaching.",
   },
-  "packages.p3.title": { en: "Migration Sprint", hu: "Migration Sprint" },
+  "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
+
+  "packages.p3.title": { en: "Fractional VP of Engineering", hu: "Fractional VP of Engineering" },
+  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "4M Ft/hó | 20 óra/hét" },
   "packages.p3.desc": {
-    en: "Migrate a key pipeline to GitHub Actions with zero-downtime target.",
-    hu: "Kulcs pipeline migrálása GitHub Actions-re, 0 downtime céllal.",
+    en: "Full engineering leadership, roadmap ownership, architecture review.",
+    hu: "Teljes engineering leadership, roadmap, architecture review.",
+  },
+  "packages.p3.cta": { en: "Premium", hu: "Prémium" },
+
+  "packages.requestBtn": { en: "I want this", hu: "Kérem ezt" },
+
+  // How it works
+  "how.tag": { en: "How It Works", hu: "Hogyan működik" },
+  "how.title": { en: "3 Simple Steps", hu: "3 egyszerű lépés" },
+  "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
+  "how.step1.desc": {
+    en: "I understand your pain points and current setup.",
+    hu: "Megértem a pain pontjaidat és a jelenlegi setup-ot.",
+  },
+  "how.step2.title": { en: "Project (€4,500)", hu: "Projekt (1,8M Ft)" },
+  "how.step2.desc": {
+    en: "Concrete deliverables in 2 weeks.",
+    hu: "Konkrét deliverables 2 hét alatt.",
+  },
+  "how.step3.title": { en: "Optional: Monthly retainer", hu: "Opcionális: Havi retainer" },
+  "how.step3.desc": {
+    en: "Ongoing support starting at €5,000/mo.",
+    hu: "Folyamatos támogatás 2M Ft/hó-tól.",
   },
 
   // Credibility
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
   "cred.title": { en: "Why Me", hu: "Miért én?" },
   "cred.t1": {
-    en: "109 releases in a single year, only 1 rollback — our stability improved dramatically.",
-    hu: "109 release egy évben, csak 1 rollback – jelentősen javult a stabilitásunk.",
-  },
-  "cred.t2": {
     en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization.",
     hu: "109 release/év 1 rollback-kal (75%-os csökkentés) egy 40 fős mérnökcsapatban.",
+  },
+  "cred.t2": {
+    en: "Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.",
+    hu: "Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken keresztül.",
   },
   "cred.source": { en: "— Engineering Leadership", hu: "— Engineering Leadership" },
 
@@ -138,6 +168,7 @@ const t = {
     hu: "Release & Compliance Operations Architect",
   },
   "footer.rights": { en: "All rights reserved", hu: "Minden jog fenntartva" },
+  "footer.hours": { en: "Mon–Fri 9–17 CET", hu: "H–P 9–17 CET" },
 } as const;
 
 type TranslationKey = keyof typeof t;
