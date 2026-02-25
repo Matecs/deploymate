@@ -1,5 +1,7 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import heroBgMobile from "@/assets/hero-bg-clean-mobile.jpg";
+import heroBgDesktop from "@/assets/hero-bg-clean-desktop.jpg";
 
 const HeroSection = () => {
   const { t } = useLang();
@@ -10,8 +12,11 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Base gradient */}
-      <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
+      {/* Hero background image – mobile/desktop responsive */}
+      <picture className="absolute inset-0 w-full h-full">
+        <source media="(min-width: 768px)" srcSet={heroBgDesktop} />
+        <img src={heroBgMobile} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      </picture>
 
       {/* Subtle grid overlay */}
       <div
