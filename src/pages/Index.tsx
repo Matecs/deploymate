@@ -4,11 +4,11 @@ import HeroSection from "@/components/HeroSection";
 import PainPointsSection from "@/components/PainPointsSection";
 import AudienceSection from "@/components/AudienceSection";
 import PackagesSection from "@/components/PackagesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import CredibilitySection from "@/components/CredibilitySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-// Force rebuild
 const Index = () => {
   return (
     <LangProvider>
@@ -18,6 +18,7 @@ const Index = () => {
         <PainPointsSection />
         <AudienceSection />
         <PackagesSection />
+        <HowItWorksSection />
         <CredibilitySection />
         <CTASection />
         <Footer />
