@@ -28,7 +28,7 @@ const Header = () => {
             onClick={() => setLang(lang === "en" ? "hu" : "en")}
             className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
           >
-            {lang === "en" ? "🇭🇺" : "🇬🇧"}
+            {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
           </button>
           <button onClick={() => scrollTo("cta")} className="hover:text-foreground transition-colors bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium">
             {t("nav.bookCall")}
@@ -41,7 +41,7 @@ const Header = () => {
             onClick={() => setLang(lang === "en" ? "hu" : "en")}
             className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
           >
-            {lang === "en" ? "🇭🇺" : "🇬🇧"}
+            {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
           </button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -60,7 +60,7 @@ const Header = () => {
                 onClick={() => setLang(lang === "en" ? "hu" : "en")}
                 className="w-fit px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
               >
-                {lang === "en" ? "🇭🇺" : "🇬🇧"}
+                {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
               </button>
               <button onClick={() => scrollTo("cta")} className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-center">
                 {t("nav.bookCall")}

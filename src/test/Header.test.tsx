@@ -50,24 +50,24 @@ describe("Header", () => {
 
   it("language toggle switches from EN to HU", () => {
     renderHeader();
-    // Initially shows "🇭🇺" buttons (to switch to Hungarian)
-    const langButtons = screen.getAllByText("🇭🇺");
+    // Initially shows "🇭🇺 HU" buttons (to switch to Hungarian)
+    const langButtons = screen.getAllByText("🇭🇺 HU");
     expect(langButtons.length).toBeGreaterThan(0);
 
     fireEvent.click(langButtons[0]);
 
-    // After toggle, buttons should show "🇬🇧"
-    expect(screen.getAllByText("🇬🇧").length).toBeGreaterThan(0);
+    // After toggle, buttons should show "🇬🇧 EN"
+    expect(screen.getAllByText("🇬🇧 EN").length).toBeGreaterThan(0);
   });
 
   it("language toggle switches back from HU to EN", () => {
     renderHeader();
-    const toLang = screen.getAllByText("🇭🇺");
+    const toLang = screen.getAllByText("🇭🇺 HU");
     fireEvent.click(toLang[0]);
 
-    const toEn = screen.getAllByText("🇬🇧");
+    const toEn = screen.getAllByText("🇬🇧 EN");
     fireEvent.click(toEn[0]);
 
-    expect(screen.getAllByText("🇭🇺").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("🇭🇺 HU").length).toBeGreaterThan(0);
   });
 });
