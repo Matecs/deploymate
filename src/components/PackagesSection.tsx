@@ -15,6 +15,7 @@ const PackagesSection = () => {
       price: t("packages.p1.price"),
       cta: t("packages.p1.cta"),
       highlighted: false,
+      source: "package-project",
     },
     {
       icon: RefreshCw,
@@ -23,6 +24,7 @@ const PackagesSection = () => {
       price: t("packages.p2.price"),
       cta: t("packages.p2.cta"),
       highlighted: true,
+      source: "package-retainer",
     },
     {
       icon: Crown,
@@ -31,6 +33,7 @@ const PackagesSection = () => {
       price: t("packages.p3.price"),
       cta: t("packages.p3.cta"),
       highlighted: false,
+      source: "package-vpe",
     },
   ];
 
@@ -71,7 +74,7 @@ const PackagesSection = () => {
                 href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleBookingClick}
+                onClick={handleBookingClick(pkg.source)}
                 className={`w-full py-3 rounded-lg font-semibold text-sm transition-opacity text-center block ${
                   pkg.highlighted
                     ? "bg-accent text-accent-foreground hover:opacity-90"
