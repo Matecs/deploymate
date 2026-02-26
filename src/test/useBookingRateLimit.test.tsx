@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { useBookingRateLimit } from "@/hooks/use-booking-rate-limit";
+import { useBookingRateLimit, SESSION_COUNT_KEY, MAX_CLICKS } from "@/hooks/use-booking-rate-limit";
 import { LangProvider } from "@/lib/i18n";
 
 vi.mock("@/hooks/use-toast", () => ({
@@ -20,6 +20,7 @@ describe("useBookingRateLimit", () => {
   beforeEach(() => {
     vi.useFakeTimers();
     localStorage.clear();
+    sessionStorage.clear();
     vi.clearAllMocks();
   });
 
@@ -40,6 +41,17 @@ describe("useBookingRateLimit", () => {
 
     expect(e.preventDefault).not.toHaveBeenCalled();
     expect(localStorage.getItem("lastBookingClick")).toBe(String(now));
+  });
+
+  it("increments the session click count on each allowed click", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick(makeEvent());
+    });
+
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("1");
   });
 
   it("blocks a second click within the 60 s cooldown", () => {
@@ -124,6 +136,51 @@ describe("useBookingRateLimit", () => {
 
     expect(toast).toHaveBeenCalledWith(
       expect.objectContaining({ variant: "destructive" })
+    );
+  });
+
+  it("blocks further clicks once the session limit (3) is reached", () => {
+    sessionStorage.setItem(SESSION_COUNT_KEY, String(MAX_CLICKS));
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent();
+
+    act(() => {
+      result.current.handleBookingClick(e);
+    });
+
+    expect(e.preventDefault).toHaveBeenCalled();
+    expect(toast).toHaveBeenCalledWith(
+      expect.objectContaining({ variant: "destructive" })
+    );
+  });
+
+  it("does not update localStorage or session count when session limit is reached", () => {
+    sessionStorage.setItem(SESSION_COUNT_KEY, String(MAX_CLICKS));
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick(makeEvent());
+    });
+
+    expect(localStorage.getItem("lastBookingClick")).toBeNull();
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe(String(MAX_CLICKS));
+  });
+
+  it("session limit block shows the max-clicks toast description", () => {
+    sessionStorage.setItem(SESSION_COUNT_KEY, String(MAX_CLICKS));
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick(makeEvent());
+    });
+
+    expect(toast).toHaveBeenCalledWith(
+      expect.objectContaining({
+        description: expect.stringContaining("maximum number of booking"),
+      })
     );
   });
 });
