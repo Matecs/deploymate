@@ -1,9 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
+import { useBookingRateLimit } from "@/hooks/use-booking-rate-limit";
 
 const CTASection = () => {
   const { t } = useLang();
+  const { handleBookingClick } = useBookingRateLimit();
 
   return (
     <section id="cta" className="py-16 md:py-20 bg-muted/50">
@@ -17,6 +19,7 @@ const CTASection = () => {
           href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleBookingClick}
           className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
         >
           {t("cta.bookBtn")}

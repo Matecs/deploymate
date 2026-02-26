@@ -1,9 +1,11 @@
 import { ClipboardCheck, RefreshCw, Crown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
+import { useBookingRateLimit } from "@/hooks/use-booking-rate-limit";
 
 const PackagesSection = () => {
   const { t } = useLang();
+  const { handleBookingClick } = useBookingRateLimit();
 
   const packages = [
     {
@@ -69,6 +71,7 @@ const PackagesSection = () => {
                 href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleBookingClick}
                 className={`w-full py-3 rounded-lg font-semibold text-sm transition-opacity text-center block ${
                   pkg.highlighted
                     ? "bg-accent text-accent-foreground hover:opacity-90"
