@@ -19,7 +19,7 @@ const CTASection = () => {
           href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={handleBookingClick}
+          onClick={handleBookingClick("cta")}
           className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
         >
           {t("cta.bookBtn")}

@@ -3,13 +3,14 @@ import { toast } from "@/hooks/use-toast";
 
 export const STORAGE_KEY = "lastBookingClick";
 export const SESSION_COUNT_KEY = "bookingClickCount";
+export const BOOKING_SOURCE_KEY = "bookingClickSource";
 export const COOLDOWN_MS = 60_000;
 export const MAX_CLICKS = 3;
 
 export const useBookingRateLimit = () => {
   const { t } = useLang();
 
-  const handleBookingClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleBookingClick = (source: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     const sessionCount = Number(sessionStorage.getItem(SESSION_COUNT_KEY) ?? "0");
 
     if (sessionCount >= MAX_CLICKS) {
@@ -38,7 +39,16 @@ export const useBookingRateLimit = () => {
     }
 
     localStorage.setItem(STORAGE_KEY, String(now));
+    localStorage.setItem(BOOKING_SOURCE_KEY, source);
     sessionStorage.setItem(SESSION_COUNT_KEY, String(sessionCount + 1));
+
+    try {
+      const url = new URL(e.currentTarget.href);
+      url.searchParams.set("utm_content", source);
+      e.currentTarget.href = url.toString();
+    } catch {
+      // proceed without URL modification if parsing fails
+    }
   };
 
   return { handleBookingClick };
