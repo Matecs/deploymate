@@ -159,6 +159,13 @@ const t = {
   "cta.form.messagePh": { en: "Tell me about your challenge...", hu: "Meséld el a kihívásodat..." },
   "cta.form.submit": { en: "Send Message", hu: "Üzenet küldése" },
 
+  // Booking rate limit
+  "booking.rateLimitTitle": { en: "Please slow down", hu: "Lassíts egy kicsit" },
+  "booking.rateLimitDesc": {
+    en: "You can open the booking link again in {s} s.",
+    hu: "A foglalási linket {s} mp múlva nyithatod meg újra.",
+  },
+
   // Footer
   "footer.calendlyBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
   "footer.calendlyDesc": {
