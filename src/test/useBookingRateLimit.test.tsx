@@ -243,4 +243,155 @@ describe("useBookingRateLimit", () => {
 
     expect(e.currentTarget.href).toBe(originalHref);
   });
+
+  // ── Tracking: source storage ──────────────────────────────────────────────
+
+  it("stores 'cta' source when the CTA section button is clicked", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick("cta")(makeEvent());
+    });
+
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBe("cta");
+  });
+
+  it("stores 'package-retainer' source when that package button is clicked", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick("package-retainer")(makeEvent());
+    });
+
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBe("package-retainer");
+  });
+
+  it("stores 'package-vpe' source when that package button is clicked", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick("package-vpe")(makeEvent());
+    });
+
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBe("package-vpe");
+  });
+
+  it("overwrites the source when a second allowed click comes from a different button", () => {
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    // First click from hero
+    vi.setSystemTime(1_000_000);
+    act(() => {
+      result.current.handleBookingClick("hero")(makeEvent());
+    });
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBe("hero");
+
+    // Second click after cooldown from packages
+    vi.setSystemTime(1_000_000 + 61_000);
+    act(() => {
+      result.current.handleBookingClick("package-project")(makeEvent());
+    });
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBe("package-project");
+  });
+
+  it("does not update the booking source when the session limit is reached", () => {
+    sessionStorage.setItem(SESSION_COUNT_KEY, String(MAX_CLICKS));
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick("cta")(makeEvent());
+    });
+
+    expect(localStorage.getItem(BOOKING_SOURCE_KEY)).toBeNull();
+  });
+
+  it("does not modify the URL when the session limit is reached", () => {
+    sessionStorage.setItem(SESSION_COUNT_KEY, String(MAX_CLICKS));
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const originalHref = "https://calendar.app.google/qVYtuXUBupAUzsQ18";
+    const e = makeEvent(originalHref);
+
+    act(() => {
+      result.current.handleBookingClick("cta")(e);
+    });
+
+    expect(e.currentTarget.href).toBe(originalHref);
+  });
+
+  // ── Rate limiting: session counter ────────────────────────────────────────
+
+  it("increments the session counter on each successive allowed click", () => {
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    vi.setSystemTime(1_000_000);
+    act(() => { result.current.handleBookingClick("hero")(makeEvent()); });
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("1");
+
+    vi.setSystemTime(1_000_000 + 61_000);
+    act(() => { result.current.handleBookingClick("cta")(makeEvent()); });
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("2");
+
+    vi.setSystemTime(1_000_000 + 122_000);
+    act(() => { result.current.handleBookingClick("package-project")(makeEvent()); });
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("3");
+  });
+
+  it("triggers the cooldown toast on a rapid second click", () => {
+    const now = 1_000_000;
+    vi.setSystemTime(now);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    // First click — allowed
+    act(() => { result.current.handleBookingClick("hero")(makeEvent()); });
+    expect(toast).not.toHaveBeenCalled();
+
+    // Second click immediately — should be blocked
+    const e2 = makeEvent();
+    act(() => { result.current.handleBookingClick("hero")(e2); });
+    expect(e2.preventDefault).toHaveBeenCalled();
+    expect(toast).toHaveBeenCalledWith(
+      expect.objectContaining({ variant: "destructive" })
+    );
+  });
+
+  // ── UTM param: per-source values ─────────────────────────────────────────
+
+  it("appends utm_content=hero to the URL from the hero button", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent("https://calendar.app.google/qVYtuXUBupAUzsQ18");
+
+    act(() => { result.current.handleBookingClick("hero")(e); });
+
+    expect(e.currentTarget.href).toBe(
+      "https://calendar.app.google/qVYtuXUBupAUzsQ18?utm_content=hero"
+    );
+  });
+
+  it("appends utm_content=package-retainer to the URL from the retainer button", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent("https://calendar.app.google/qVYtuXUBupAUzsQ18");
+
+    act(() => { result.current.handleBookingClick("package-retainer")(e); });
+
+    expect(e.currentTarget.href).toBe(
+      "https://calendar.app.google/qVYtuXUBupAUzsQ18?utm_content=package-retainer"
+    );
+  });
+
+  it("appends utm_content=package-vpe to the URL from the VP Eng button", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent("https://calendar.app.google/qVYtuXUBupAUzsQ18");
+
+    act(() => { result.current.handleBookingClick("package-vpe")(e); });
+
+    expect(e.currentTarget.href).toBe(
+      "https://calendar.app.google/qVYtuXUBupAUzsQ18?utm_content=package-vpe"
+    );
+  });
 });
