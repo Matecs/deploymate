@@ -30,8 +30,8 @@ const t = {
   // Pain Points
   "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
   "pain.title": {
-    en: "This Hurts at 20–150 Person SaaS Companies",
-    hu: "Ez fáj a 20–150 fős SaaS cégeknél",
+    en: "Typical Problems at 20–150 Person SaaS Companies",
+    hu: "Tipikus problémák a 20–150 fős SaaS cégeknél",
   },
   "pain.item1": {
     en: "Weekly 1–2 rollbacks with overnight firefighting",
@@ -72,29 +72,29 @@ const t = {
 
   // Packages — Tiered pricing
   "packages.tag": { en: "Services", hu: "Szolgáltatások" },
-  "packages.title": { en: "Choose Your Service", hu: "Válassz szolgáltatást" },
+  "packages.title": { en: "Choose Your Package", hu: "Válassz csomagot" },
 
-  "packages.p1.title": { en: "Project", hu: "Projekt" },
-  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M Ft | 2 hét" },
+  "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
+  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M HUF | 2 hét" },
   "packages.p1.desc": {
-    en: "Release Audit — Pipeline review, rollback reduction plan, audit playbook.",
-    hu: "Release Audit — Pipeline átvilágítás, rollback csökkentés terv, audit playbook.",
+    en: "Deep technical audit of your release pipeline. Rollback reduction plan, CI/CD review, audit playbook.",
+    hu: "Release pipeline mélyaudit. Rollback-csökkentési terv, CI/CD átvizsgálás, audit playbook.",
   },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
-  "packages.p2.title": { en: "Monthly Retainer", hu: "Havi Retainer" },
-  "packages.p2.price": { en: "€5,000/mo | 10 hrs/week", hu: "2M Ft/hó | 10 óra/hét" },
+  "packages.p2.title": { en: "Compliance Runbook", hu: "Compliance Runbook" },
+  "packages.p2.price": { en: "€5,500 | 3 weeks", hu: "2,2M HUF | 3 hét" },
   "packages.p2.desc": {
-    en: "Monthly review, Slack support, hiring advice, compliance coaching.",
-    hu: "Havi review, Slack support, hiring tanács, compliance coaching.",
+    en: "Technical evidence and runbooks for SOC2/ISO27001 readiness. Audit-proof documentation delivered.",
+    hu: "Technikai evidence és runbookok SOC2/ISO27001 felkészüléshez. Audit-ready dokumentáció.",
   },
   "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
 
-  "packages.p3.title": { en: "Fractional VP of Engineering", hu: "Fractional VP of Engineering" },
-  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "4M Ft/hó | 20 óra/hét" },
+  "packages.p3.title": { en: "Migration Sprint", hu: "Migration Sprint" },
+  "packages.p3.price": { en: "€3,000 | 10 days", hu: "1,2M HUF | 10 nap" },
   "packages.p3.desc": {
-    en: "Full engineering leadership, roadmap ownership, architecture review.",
-    hu: "Teljes engineering leadership, roadmap, architecture review.",
+    en: "Migrate a key pipeline from legacy CI to modern tooling with zero downtime and a handover guide.",
+    hu: "Migrálj egy kulcsfontosságú pipeline-t legacy CI-ból modern eszközökre, zero downtime-mal és átadási útmutatóval.",
   },
   "packages.p3.cta": { en: "Premium", hu: "Prémium" },
 
@@ -123,12 +123,12 @@ const t = {
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
   "cred.title": { en: "Why Me", hu: "Miért én?" },
   "cred.t1": {
-    en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization.",
-    hu: "109 release/év 1 rollback-kal (75%-os csökkentés) egy 40 fős mérnökcsapatban.",
+    en: "We shipped 109 releases in a single year with just 1 rollback — a 75% reduction in failures for a 40-engineer org.",
+    hu: "Egyetlen év alatt 109 release-t szállítottunk mindössze 1 rollback-kal — 75%-os csökkentés egy 40 fős csapatban.",
   },
   "cred.t2": {
-    en: "Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.",
-    hu: "Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken keresztül.",
+    en: "Led the GoToAssist Corporate stack migration and maintained 109 releases/year with zero unplanned downtime.",
+    hu: "Vezettük a GoToAssist Corporate stack migrációját és fenntartottuk a 109 release/év ütemet tervezett leállás nélkül.",
   },
   "cred.source": { en: "— Engineering Leadership", hu: "— Engineering Leadership" },
 
@@ -169,6 +169,8 @@ const t = {
     en: "You have reached the maximum number of booking link opens for this session.",
     hu: "Elérted a foglalási link megnyitásának maximális számát ebben a munkamenetben.",
   },
+  "booking.clickedTitle": { en: "Booking link opened", hu: "Foglalási link megnyitva" },
+  "booking.clickedSource": { en: "Source: {source}", hu: "Forrás: {source}" },
 
   // Footer
   "footer.calendlyBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
