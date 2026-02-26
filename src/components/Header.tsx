@@ -20,8 +20,10 @@ const Header = () => {
           <img src={datamateLogo} alt="DataMate logo" className="h-12 w-auto" />
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+          <button onClick={() => scrollTo("pain-points")} className="hover:text-foreground transition-colors">{t("nav.painPoints")}</button>
           <button onClick={() => scrollTo("audience")} className="hover:text-foreground transition-colors">{t("nav.audience")}</button>
           <button onClick={() => scrollTo("packages")} className="hover:text-foreground transition-colors">{t("nav.services")}</button>
+          <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">{t("nav.howItWorks")}</button>
           <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
           
           <button
@@ -52,8 +54,10 @@ const Header = () => {
           <SheetContent side="right" className="w-64 bg-card">
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <div className="flex flex-col gap-6 mt-8 text-sm">
+              <button onClick={() => scrollTo("pain-points")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.painPoints")}</button>
               <button onClick={() => scrollTo("audience")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.audience")}</button>
               <button onClick={() => scrollTo("packages")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.services")}</button>
+              <button onClick={() => scrollTo("how-it-works")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.howItWorks")}</button>
               <button onClick={() => scrollTo("credibility")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
               
               <button
