@@ -344,9 +344,11 @@ describe("useBookingRateLimit", () => {
     vi.setSystemTime(now);
     const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
 
-    // First click — allowed
+    // First click — allowed (fires success toast, not destructive)
     act(() => { result.current.handleBookingClick("hero")(makeEvent()); });
-    expect(toast).not.toHaveBeenCalled();
+    expect(toast).not.toHaveBeenCalledWith(
+      expect.objectContaining({ variant: "destructive" })
+    );
 
     // Second click immediately — should be blocked
     const e2 = makeEvent();

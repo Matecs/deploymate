@@ -169,6 +169,8 @@ const t = {
     en: "You have reached the maximum number of booking link opens for this session.",
     hu: "Elérted a foglalási link megnyitásának maximális számát ebben a munkamenetben.",
   },
+  "booking.clickedTitle": { en: "Booking link opened", hu: "Foglalási link megnyitva" },
+  "booking.clickedSource": { en: "Source: {source}", hu: "Forrás: {source}" },
 
   // Footer
   "footer.calendlyBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
