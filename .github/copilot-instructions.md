@@ -49,6 +49,8 @@ npm run build      # Production build
 
 Always run `npm run lint` and `npm test` before opening a pull request.
 
+**After every code modification, run the full test suite (`npm test`) to catch regressions immediately before proceeding further.**
+
 ## Code Conventions
 
 - **TypeScript everywhere** — avoid `any`; prefer explicit types and Zod schemas for runtime validation.
@@ -77,6 +79,9 @@ The generated file is placed in `src/components/ui/`. Commit it as part of the r
 - The global test setup (`src/test/setup.ts`) imports `@testing-library/jest-dom` matchers.
 - Every new feature must include at least one test covering the happy path.
 - Use `@testing-library/react` for component tests and plain Vitest `describe`/`it`/`expect` for unit tests.
+- **Run `npm test` after every code change** to verify that existing tests still pass before making further modifications.
+
+See [docs/testing.md](../docs/testing.md) for a comprehensive guide on writing and running tests.
 
 ## Pull Request Guidelines
 
@@ -84,7 +89,8 @@ The generated file is placed in `src/components/ui/`. Commit it as part of the r
 2. Use the imperative mood in the title (e.g., `Add mobile menu animation`).
 3. Describe *what* changed and *why* in the PR body.
 4. `npm run lint` and `npm test` must pass before requesting review.
-5. Squash or tidy commits before merging to keep `main` history clean.
+5. **Review documentation** — if your change affects behavior, configuration, or public API, update the relevant docs in `docs/` and verify that `README.md` and `CONTRIBUTING.md` are still accurate.
+6. Squash or tidy commits before merging to keep `main` history clean.
 
 ## Branching
 

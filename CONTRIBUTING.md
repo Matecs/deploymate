@@ -99,7 +99,11 @@ npm test
 npm run test:watch
 ```
 
+**Run `npm test` after every code change** to catch regressions before proceeding further.
+
 When adding a new feature, add at least one test that exercises the happy path. Tests should be placed in `src/test/` and follow the existing naming pattern (`<subject>.test.ts` or `<subject>.test.tsx`).
+
+See [docs/testing.md](docs/testing.md) for a comprehensive guide covering component test patterns, mocking, and conventions.
 
 ---
 
@@ -133,4 +137,5 @@ See [docs/i18n.md](docs/i18n.md) for a detailed guide and examples.
 2. **Descriptive title** — use the imperative mood (e.g. `Add mobile menu animation`).
 3. **Fill in the PR description** — explain *what* changed and *why*.
 4. Ensure `npm run lint` and `npm test` pass locally before opening the PR.
-5. Squash or tidy up commits before merging so that `main` history stays clean.
+5. **Review documentation** — if your change affects behavior, configuration, or public API, update the relevant docs in `docs/` and verify that `README.md` and `CONTRIBUTING.md` are still accurate.
+6. Squash or tidy up commits before merging so that `main` history stays clean.
