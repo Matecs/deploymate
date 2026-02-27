@@ -14,6 +14,7 @@ A bilingual (English / Hungarian) professional services landing page for a **Rel
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
 - [Internationalization](#internationalization)
+- [Testing](#testing)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 
@@ -91,6 +92,7 @@ release-clarity/
 ```
 
 For a deeper explanation of component relationships and data flow see [docs/architecture.md](docs/architecture.md).
+For the testing guide see [docs/testing.md](docs/testing.md).
 
 ---
 
@@ -151,6 +153,24 @@ const MyComponent = () => {
 To add a new string, add an entry to the `t` object in `src/lib/i18n.tsx` with both `en` and `hu` values. TypeScript will enforce that every key has both translations.
 
 For a full guide see [docs/i18n.md](docs/i18n.md).
+
+---
+
+## Testing
+
+The project uses **Vitest** and **@testing-library/react**. Test files live in `src/test/`.
+
+```sh
+# Run the full test suite once
+npm test
+
+# Watch mode for TDD
+npm run test:watch
+```
+
+> **Run `npm test` after every code change** to catch regressions before proceeding further.
+
+For patterns, mocking, and conventions see [docs/testing.md](docs/testing.md).
 
 ---
 

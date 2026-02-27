@@ -99,7 +99,11 @@ npm test
 npm run test:watch
 ```
 
+**Run `npm test` after every code change** to catch regressions before proceeding further.
+
 When adding a new feature, add at least one test that exercises the happy path. Tests should be placed in `src/test/` and follow the existing naming pattern (`<subject>.test.ts` or `<subject>.test.tsx`).
+
+See [docs/testing.md](docs/testing.md) for a comprehensive guide covering component test patterns, mocking, and conventions.
 
 ---
 
