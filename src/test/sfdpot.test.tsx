@@ -198,7 +198,7 @@ describe("D – Data: what the product processes", () => {
 
   it("displays the hero statistics line", () => {
     renderPage();
-    expect(screen.getAllByText(/109 releases\/year/).length).toBeGreaterThan(0);
+    expect(screen.getByText(/109 releases\/year/)).toBeInTheDocument();
   });
 
   it("renders the experience claim in the hero description", () => {

@@ -81,7 +81,7 @@ const PackagesSection = () => {
                     : "bg-accent/10 text-accent hover:bg-accent/20"
                 }`}
               >
-                {t("packages.requestBtn")}
+                {pkg.cta}
               </a>
             </motion.div>
           ))}
