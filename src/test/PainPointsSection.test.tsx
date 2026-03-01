@@ -30,7 +30,7 @@ describe("PainPointsSection", () => {
   it("renders the section title", () => {
     renderPainPoints();
     expect(
-      screen.getByText("Typical Problems at 20–150 Person SaaS Companies")
+      screen.getByText("This Hurts at 20–150 Person SaaS Companies")
     ).toBeInTheDocument();
   });
 

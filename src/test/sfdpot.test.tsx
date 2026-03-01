@@ -74,9 +74,9 @@ describe("S – Structure: what the product is made of", () => {
 
   it("renders all three service package cards", () => {
     renderPage();
-    expect(screen.getByText("Release Audit")).toBeInTheDocument();
-    expect(screen.getByText("Compliance Runbook")).toBeInTheDocument();
-    expect(screen.getByText("Migration Sprint")).toBeInTheDocument();
+    expect(screen.getByText("Project")).toBeInTheDocument();
+    expect(screen.getByText("Monthly Retainer")).toBeInTheDocument();
+    expect(screen.getByText("Fractional VP of Engineering")).toBeInTheDocument();
   });
 
   it("renders three audience item cards", () => {
@@ -149,11 +149,11 @@ describe("F – Function: what the product does", () => {
     document.body.removeChild(el);
   });
 
-  it("hero scroll chevron calls scrollIntoView on #audience", () => {
+  it("hero scroll chevron calls scrollIntoView on #pain-points", () => {
     renderWithProviders(<HeroSection />);
     const mockScroll = vi.fn();
     const el = document.createElement("div");
-    el.id = "audience";
+    el.id = "pain-points";
     el.scrollIntoView = mockScroll;
     document.body.appendChild(el);
 
@@ -198,7 +198,8 @@ describe("D – Data: what the product processes", () => {
 
   it("displays the hero statistics line", () => {
     renderPage();
-    expect(screen.getByText(/109 releases\/year/)).toBeInTheDocument();
+    const matches = screen.getAllByText(/109 releases\/year/);
+    expect(matches.length).toBeGreaterThan(0);
   });
 
   it("renders the experience claim in the hero description", () => {
@@ -209,31 +210,31 @@ describe("D – Data: what the product processes", () => {
   it("renders all three package prices in English", () => {
     renderPage();
     expect(screen.getByText("€4,500 | 2 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€5,500 | 3 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€3,000 | 10 days")).toBeInTheDocument();
+    expect(screen.getByText("€5,000/mo | 10 hrs/week")).toBeInTheDocument();
+    expect(screen.getByText("€10,000/mo | 20 hrs/week")).toBeInTheDocument();
   });
 
   it("renders all three package prices in Hungarian when lang is HU", () => {
     localStorage.setItem("lang", "hu");
     renderWithProviders(<PackagesSection />);
-    expect(screen.getByText("1,8M HUF | 2 hét")).toBeInTheDocument();
-    expect(screen.getByText("2,2M HUF | 3 hét")).toBeInTheDocument();
-    expect(screen.getByText("1,2M HUF | 10 nap")).toBeInTheDocument();
+    expect(screen.getByText("1,8M Ft | 2 hét")).toBeInTheDocument();
+    expect(screen.getByText("2M Ft/hó | 10 óra/hét")).toBeInTheDocument();
+    expect(screen.getByText("4M Ft/hó | 20 óra/hét")).toBeInTheDocument();
   });
 
   it("renders both credibility testimonials", () => {
     renderPage();
     expect(
-      screen.getByText(/109 releases in a single year/)
+      screen.getByText(/Led 109 releases\/year with 1 rollback/)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/GoToAssist Corporate stack migration/)
+      screen.getByText(/Seamless quarterly compliance/)
     ).toBeInTheDocument();
   });
 
   it("renders the contact email as plain text, not a hyperlink", () => {
     renderWithProviders(<Footer />);
-    const email = screen.getByText("info@datamate.hu");
+    const email = screen.getByText("mate@datamate.hu");
     expect(email).toBeInTheDocument();
     expect(email.closest("a")).toBeNull();
   });
@@ -335,16 +336,14 @@ describe("O – Operations: how the product is used", () => {
     expect(screen.getAllByText("🇭🇺 HU").length).toBeGreaterThan(0);
   });
 
-  it("package 'I want this' buttons all link to the booking URL", () => {
+  it("package CTA buttons all link to the booking URL", () => {
     renderWithProviders(<PackagesSection />);
-    const buttons = screen.getAllByText("I want this");
-    expect(buttons).toHaveLength(3);
-    buttons.forEach((btn) => {
-      expect(btn.closest("a")).toHaveAttribute(
-        "href",
-        "https://calendar.app.google/qVYtuXUBupAUzsQ18"
+    const bookingLinks = screen
+      .getAllByRole("link")
+      .filter(
+        (l) => l.getAttribute("href") === "https://calendar.app.google/qVYtuXUBupAUzsQ18"
       );
-    });
+    expect(bookingLinks).toHaveLength(3);
   });
 });
 

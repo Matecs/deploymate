@@ -35,7 +35,7 @@ describe("Footer", () => {
 
   it("renders the email address as plain text (not a link)", () => {
     renderFooter();
-    const el = screen.getByText("info@datamate.hu");
+    const el = screen.getByText("mate@datamate.hu");
     expect(el).toBeInTheDocument();
     expect(el.tagName.toLowerCase()).toBe("span");
     expect(el.closest("a")).toBeNull();
