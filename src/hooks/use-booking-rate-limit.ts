@@ -42,11 +42,6 @@ export const useBookingRateLimit = () => {
     localStorage.setItem(BOOKING_SOURCE_KEY, source);
     sessionStorage.setItem(SESSION_COUNT_KEY, String(sessionCount + 1));
 
-    toast({
-      title: t("booking.clickedTitle"),
-      description: t("booking.clickedSource").replace("{source}", source),
-    });
-
     try {
       const url = new URL(e.currentTarget.href);
       url.searchParams.set("utm_content", source);

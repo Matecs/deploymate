@@ -33,6 +33,17 @@ describe("useBookingRateLimit", () => {
     vi.useRealTimers();
   });
 
+  it("does not show the success toast on an allowed click", () => {
+    vi.setSystemTime(1_000_000);
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+
+    act(() => {
+      result.current.handleBookingClick("hero")(makeEvent());
+    });
+
+    expect(toast).not.toHaveBeenCalled();
+  });
+
   it("allows the first click and stores the timestamp in localStorage", () => {
     const now = 1_000_000;
     vi.setSystemTime(now);
@@ -344,7 +355,7 @@ describe("useBookingRateLimit", () => {
     vi.setSystemTime(now);
     const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
 
-    // First click — allowed (fires success toast, not destructive)
+    // First click — allowed (logs to console, no destructive toast)
     act(() => { result.current.handleBookingClick("hero")(makeEvent()); });
     expect(toast).not.toHaveBeenCalledWith(
       expect.objectContaining({ variant: "destructive" })
