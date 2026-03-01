@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <p className="font-medium text-foreground">{t("footer.tagline")}</p>
         <p>
-          <a href="https://datamate.hu" className="hover:text-foreground transition-colors">DataMate.hu</a>
+          <a href="https://datamate.hu" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">DataMate.hu</a>
           {" | "}
           <span className="cursor-text select-all">mate@datamate.hu</span>
         </p>
