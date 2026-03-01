@@ -21,39 +21,36 @@ describe("PackagesSection", () => {
 
   it("renders the section title", () => {
     renderPackages();
-    expect(screen.getByText("Choose Your Package")).toBeInTheDocument();
+    expect(screen.getByText("Choose Your Service")).toBeInTheDocument();
   });
 
   it("renders all three package titles", () => {
     renderPackages();
-    expect(screen.getByText("Release Audit")).toBeInTheDocument();
-    expect(screen.getByText("Compliance Runbook")).toBeInTheDocument();
-    expect(screen.getByText("Migration Sprint")).toBeInTheDocument();
+    expect(screen.getByText("Project")).toBeInTheDocument();
+    expect(screen.getByText("Monthly Retainer")).toBeInTheDocument();
+    expect(screen.getByText("Fractional VP of Engineering")).toBeInTheDocument();
   });
 
   it("renders all three package prices", () => {
     renderPackages();
     expect(screen.getByText("€4,500 | 2 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€5,500 | 3 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€3,000 | 10 days")).toBeInTheDocument();
+    expect(screen.getByText("€5,000/mo | 10 hrs/week")).toBeInTheDocument();
+    expect(screen.getByText("€10,000/mo | 20 hrs/week")).toBeInTheDocument();
   });
 
   it("renders all three package descriptions", () => {
     renderPackages();
-    expect(screen.getByText(/Deep technical audit/)).toBeInTheDocument();
-    expect(screen.getByText(/Technical evidence and runbooks/)).toBeInTheDocument();
-    expect(screen.getByText(/Migrate a key pipeline/)).toBeInTheDocument();
+    expect(screen.getByText(/Release Audit — Pipeline review/)).toBeInTheDocument();
+    expect(screen.getByText(/Monthly review, Slack support/)).toBeInTheDocument();
+    expect(screen.getByText(/Full engineering leadership/)).toBeInTheDocument();
   });
 
-  it("renders three 'I want this' CTA links pointing to the booking URL", () => {
+  it("renders three CTA links pointing to the booking URL", () => {
     renderPackages();
-    const links = screen.getAllByText("I want this");
-    expect(links).toHaveLength(3);
-    links.forEach((link) => {
-      expect(link.closest("a")).toHaveAttribute(
-        "href",
-        "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-      );
-    });
+    const links = screen.getAllByRole("link");
+    const bookingLinks = links.filter(
+      (l) => l.getAttribute("href") === "https://calendar.app.google/qVYtuXUBupAUzsQ18"
+    );
+    expect(bookingLinks).toHaveLength(3);
   });
 });

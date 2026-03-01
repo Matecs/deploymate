@@ -53,7 +53,7 @@ describe("HeroSection", () => {
     renderHero();
     const mockScrollIntoView = vi.fn();
     const el = document.createElement("div");
-    el.id = "audience";
+    el.id = "pain-points";
     el.scrollIntoView = mockScrollIntoView;
     document.body.appendChild(el);
 

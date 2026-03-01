@@ -27,10 +27,10 @@ describe("CredibilitySection", () => {
   it("renders both testimonials", () => {
     renderCredibility();
     expect(
-      screen.getByText(/109 releases in a single year/)
+      screen.getByText(/Led 109 releases\/year with 1 rollback/)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/109 releases\/year/)
+      screen.getByText(/Seamless quarterly compliance/)
     ).toBeInTheDocument();
   });
 
