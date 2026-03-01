@@ -51,14 +51,16 @@ The main page (`src/pages/Index.tsx`) wraps all sections inside `<LangProvider>`
 
 ```
 Index.tsx
-  └── LangProvider        ← i18n context (language state + translations)
-        ├── Header
-        ├── HeroSection
-        ├── AudienceSection
-        ├── PackagesSection
-        ├── CredibilitySection
-        ├── CTASection
-        └── Footer
+   └── LangProvider        ← i18n context (language state + translations)
+         ├── Header
+         ├── HeroSection
+         ├── PainPointsSection
+         ├── AudienceSection
+         ├── PackagesSection
+         ├── HowItWorksSection
+         ├── CredibilitySection
+         ├── CTASection
+         └── Footer
 ```
 
 Each section component is a **pure presentational component** — it calls `useLang()` to get translated strings and renders them, but owns no other state.
@@ -78,13 +80,20 @@ Each section component is a **pure presentational component** — it calls `useL
 - Displays the headline, key performance stats, and a primary CTA link to the Google Calendar booking page.
 - Contains a smooth-scroll arrow button that targets the `#audience` section.
 
+### `PainPointsSection`
+- Four pain-point cards highlighting the problems the service solves.
+- Icons sourced from `lucide-react`.
+
 ### `AudienceSection` (`id="audience"`)
-- Three pain-point cards built from a local `items` array populated at render time from `t()` calls.
+- Three target-audience cards built from a local `items` array populated at render time from `t()` calls.
 - Icons sourced from `lucide-react`.
 
 ### `PackagesSection` (`id="packages"`)
 - Three service package cards rendered from a local `packages` array.
 - Each card links to the Google Calendar booking URL.
+
+### `HowItWorksSection`
+- Three-step visual guide explaining the engagement process.
 
 ### `CredibilitySection` (`id="credibility"`)
 - Testimonial cards rendered from a local `testimonials` array.
