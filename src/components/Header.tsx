@@ -2,6 +2,7 @@ import { Menu } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import datamateLogo from "@/assets/datamate-logo.png";
 
 const FlagHU = () => (
@@ -48,12 +49,19 @@ const Header = () => {
           <button onClick={() => scrollTo("how-it-works")} className="hover:text-foreground transition-colors">{t("nav.howItWorks")}</button>
           <button onClick={() => scrollTo("credibility")} className="hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
           
-          <button
-            onClick={() => setLang(lang === "en" ? "hu" : "en")}
-            className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
-          >
-            <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
-          </button>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => setLang(lang === "en" ? "hu" : "en")}
+                  className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
+                >
+                  <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>{lang === "en" ? "Switch to Hungarian" : "Váltás angolra"}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <button onClick={() => scrollTo("cta")} className="hover:text-foreground transition-colors bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium">
             {t("nav.bookCall")}
           </button>
@@ -61,12 +69,19 @@ const Header = () => {
 
         {/* Language switcher + mobile menu */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setLang(lang === "en" ? "hu" : "en")}
-            className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
-          >
-            <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
-          </button>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => setLang(lang === "en" ? "hu" : "en")}
+                  className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
+                >
+                  <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>{lang === "en" ? "Switch to Hungarian" : "Váltás angolra"}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button className="p-2 text-foreground">
@@ -82,12 +97,19 @@ const Header = () => {
               <button onClick={() => scrollTo("how-it-works")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.howItWorks")}</button>
               <button onClick={() => scrollTo("credibility")} className="text-left text-muted-foreground hover:text-foreground transition-colors">{t("nav.whyMe")}</button>
               
-              <button
-                onClick={() => setLang(lang === "en" ? "hu" : "en")}
-                className="w-fit px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
-              >
-                <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
-              </button>
+              <TooltipProvider delayDuration={300}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => setLang(lang === "en" ? "hu" : "en")}
+                      className="w-fit px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
+                    >
+                      <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>{lang === "en" ? "Switch to Hungarian" : "Váltás angolra"}</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
               <button onClick={() => scrollTo("cta")} className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-center">
                 {t("nav.bookCall")}
               </button>
