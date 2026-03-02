@@ -4,6 +4,28 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import datamateLogo from "@/assets/datamate-logo.png";
 
+const FlagHU = () => (
+  <svg width="20" height="14" viewBox="0 0 20 14" className="inline-block rounded-sm">
+    <rect width="20" height="4.67" fill="#CE2939" />
+    <rect y="4.67" width="20" height="4.67" fill="#fff" />
+    <rect y="9.33" width="20" height="4.67" fill="#477050" />
+  </svg>
+);
+
+const FlagGB = () => (
+  <svg width="20" height="14" viewBox="0 0 60 30" className="inline-block rounded-sm">
+    <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+    <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+    <g clipPath="url(#s)">
+      <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
+    </g>
+  </svg>
+);
+
 const Header = () => {
   const { lang, setLang, t } = useLang();
   const [open, setOpen] = useState(false);
@@ -30,7 +52,7 @@ const Header = () => {
             onClick={() => setLang(lang === "en" ? "hu" : "en")}
             className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
           >
-            {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
+            <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
           </button>
           <button onClick={() => scrollTo("cta")} className="hover:text-foreground transition-colors bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium">
             {t("nav.bookCall")}
@@ -43,7 +65,7 @@ const Header = () => {
             onClick={() => setLang(lang === "en" ? "hu" : "en")}
             className="px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
           >
-            {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
+            <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
           </button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -64,7 +86,7 @@ const Header = () => {
                 onClick={() => setLang(lang === "en" ? "hu" : "en")}
                 className="w-fit px-3 py-1.5 rounded-md border border-border text-foreground font-medium text-xs hover:bg-muted transition-colors"
               >
-                {lang === "en" ? "🇭🇺 HU" : "🇬🇧 EN"}
+                <span className="flex items-center gap-1.5">{lang === "en" ? <><FlagHU /> HU</> : <><FlagGB /> EN</>}</span>
               </button>
               <button onClick={() => scrollTo("cta")} className="bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium text-center">
                 {t("nav.bookCall")}
