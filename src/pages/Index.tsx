@@ -9,6 +9,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import CredibilitySection from "@/components/CredibilitySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 
 const PageContent = () => {
   const { lang } = useLang();
@@ -29,6 +30,7 @@ const PageContent = () => {
         <CredibilitySection />
         <CTASection />
       </main>
+      <StickyCTA />
       <Footer />
     </div>
   );
