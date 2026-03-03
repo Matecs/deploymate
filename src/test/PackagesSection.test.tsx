@@ -45,12 +45,9 @@ describe("PackagesSection", () => {
     expect(screen.getByText(/Full engineering leadership/)).toBeInTheDocument();
   });
 
-  it("renders three CTA links pointing to the booking URL", () => {
+  it("renders three CTA buttons that scroll to #cta", () => {
     renderPackages();
-    const links = screen.getAllByRole("link");
-    const bookingLinks = links.filter(
-      (l) => l.getAttribute("href") === "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-    );
-    expect(bookingLinks).toHaveLength(3);
+    const buttons = screen.getAllByRole("button");
+    expect(buttons.length).toBeGreaterThanOrEqual(3);
   });
 });

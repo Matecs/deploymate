@@ -29,17 +29,19 @@ describe("CTASection", () => {
   it("renders the section description", () => {
     renderCTA();
     expect(
-      screen.getByText(/Book a 15-minute intro call/)
+      screen.getByText(/Write me or call/)
     ).toBeInTheDocument();
   });
 
-  it("renders the booking CTA link with correct href", () => {
+  it("renders the email contact link", () => {
     renderCTA();
-    const link = screen.getByRole("link");
-    expect(link).toHaveAttribute(
-      "href",
-      "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-    );
-    expect(link).toHaveAttribute("target", "_blank");
+    const link = screen.getByRole("link", { name: /mate@datamate.hu/ });
+    expect(link).toHaveAttribute("href", "mailto:mate@datamate.hu");
+  });
+
+  it("renders the phone contact link", () => {
+    renderCTA();
+    const link = screen.getByRole("link", { name: /36 20 434 9647/ });
+    expect(link).toHaveAttribute("href", "tel:+36204349647");
   });
 });

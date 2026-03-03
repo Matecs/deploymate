@@ -9,7 +9,7 @@ const t = {
   "nav.services": { en: "Services", hu: "Szolgáltatások" },
   "nav.howItWorks": { en: "How It Works", hu: "Hogyan működik" },
   "nav.whyMe": { en: "Why Me", hu: "Miért én?" },
-  "nav.bookCall": { en: "Book a Call", hu: "Foglalj hívást" },
+  "nav.bookCall": { en: "Contact Me", hu: "Lépjünk kapcsolatba" },
 
   // Hero
   "hero.title": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
@@ -25,7 +25,7 @@ const t = {
     en: "Project: €4,500 | Monthly retainer: €5,000/mo",
     hu: "Projekt: 1,8M Ft | Havi retainer: 2M Ft/hó",
   },
-  "hero.cta": { en: "Book a 15-min call in my Google Calendar", hu: "Foglalj 15 perces hívást a Google Calendar-omban" },
+  "hero.cta": { en: "Contact Me", hu: "Lépjünk kapcsolatba" },
 
   // Pain Points
   "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
@@ -139,10 +139,9 @@ const t = {
     hu: "Készen állsz egy audit‑ready release pipeline‑ra?",
   },
   "cta.desc": {
-    en: "Book a 15-minute intro call and let's see if I can help before your next audit or release chaos.",
-    hu: "Foglalj egy 15 perces intro hívást, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt.",
+    en: "Write me or call and let's see if I can help before your next audit or release chaos:",
+    hu: "Írj, vagy hívj, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt:",
   },
-  "cta.bookBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
 
   // Booking rate limit
   "booking.rateLimitTitle": { en: "Please slow down", hu: "Lassíts egy kicsit" },

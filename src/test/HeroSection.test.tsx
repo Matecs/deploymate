@@ -39,17 +39,14 @@ describe("HeroSection", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the booking CTA link with correct href", () => {
+  it("renders the Contact Me CTA button that scrolls to #cta", () => {
     renderHero();
-    const links = screen.getAllByRole("link");
-    const ctaLink = links.find((l) =>
-      l.getAttribute("href") === "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-    );
-    expect(ctaLink).toBeDefined();
-    expect(ctaLink).toHaveAttribute("target", "_blank");
+    const buttons = screen.getAllByRole("button");
+    const ctaBtn = buttons.find((b) => b.textContent?.includes("Contact Me"));
+    expect(ctaBtn).toBeDefined();
   });
 
-  it("scrollTo calls scrollIntoView on the audience section when chevron is clicked", () => {
+  it("scrollTo calls scrollIntoView on the pain-points section when chevron is clicked", () => {
     renderHero();
     const mockScrollIntoView = vi.fn();
     const el = document.createElement("div");
@@ -57,9 +54,10 @@ describe("HeroSection", () => {
     el.scrollIntoView = mockScrollIntoView;
     document.body.appendChild(el);
 
-    // The chevron-down scroll button is the only button in HeroSection
-    const scrollBtn = screen.getByRole("button");
-    fireEvent.click(scrollBtn);
+    // Find the chevron button (not the Contact Me button)
+    const buttons = screen.getAllByRole("button");
+    const scrollBtn = buttons.find((b) => !b.textContent?.includes("Contact Me"));
+    fireEvent.click(scrollBtn!);
 
     expect(mockScrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
     document.body.removeChild(el);

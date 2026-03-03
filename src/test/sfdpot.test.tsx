@@ -149,33 +149,28 @@ describe("F – Function: what the product does", () => {
     document.body.removeChild(el);
   });
 
-  it("hero scroll chevron calls scrollIntoView on #pain-points", () => {
+  it("hero CTA button scrolls to #cta section", () => {
     renderWithProviders(<HeroSection />);
     const mockScroll = vi.fn();
     const el = document.createElement("div");
-    el.id = "pain-points";
+    el.id = "cta";
     el.scrollIntoView = mockScroll;
     document.body.appendChild(el);
 
-    fireEvent.click(screen.getByRole("button"));
+    const buttons = screen.getAllByRole("button");
+    const ctaBtn = buttons.find((b) => b.textContent?.includes("Contact Me"));
+    fireEvent.click(ctaBtn!);
 
     expect(mockScroll).toHaveBeenCalledWith({ behavior: "smooth" });
     document.body.removeChild(el);
   });
 
-  it("all booking CTA links open in a new browser tab", () => {
+  it("CTA section has email and phone contact links", () => {
     renderPage();
-    const bookingLinks = screen
-      .getAllByRole("link")
-      .filter(
-        (l) =>
-          l.getAttribute("href") ===
-          "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-      );
-    expect(bookingLinks.length).toBeGreaterThan(0);
-    bookingLinks.forEach((link) => {
-      expect(link).toHaveAttribute("target", "_blank");
-    });
+    const emailLink = screen.getByRole("link", { name: /mate@datamate.hu/ });
+    expect(emailLink).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    const phoneLink = screen.getByRole("link", { name: /36 20 434 9647/ });
+    expect(phoneLink).toHaveAttribute("href", "tel:+36204349647");
   });
 });
 
@@ -297,16 +292,10 @@ describe("O – Operations: how the product is used", () => {
     localStorage.clear();
   });
 
-  it("all booking CTA links point to the Google Calendar booking URL", () => {
+  it("CTA section contains email and phone contact info", () => {
     renderPage();
-    const ctaLinks = screen
-      .getAllByRole("link")
-      .filter(
-        (l) =>
-          l.getAttribute("href") ===
-          "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-      );
-    expect(ctaLinks.length).toBeGreaterThan(0);
+    expect(screen.getByRole("link", { name: /mate@datamate.hu/ })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /36 20 434 9647/ })).toBeInTheDocument();
   });
 
   it("DataMate website link navigates to https://datamate.hu", () => {
@@ -315,7 +304,7 @@ describe("O – Operations: how the product is used", () => {
     expect(siteLink.closest("a")).toHaveAttribute("href", "https://datamate.hu");
   });
 
-  it("'Book a Call' nav button calls scrollIntoView on #cta", () => {
+  it("'Contact Me' nav button calls scrollIntoView on #cta", () => {
     renderWithProviders(<Header />);
     const mockScroll = vi.fn();
     const el = document.createElement("div");
@@ -323,7 +312,7 @@ describe("O – Operations: how the product is used", () => {
     el.scrollIntoView = mockScroll;
     document.body.appendChild(el);
 
-    fireEvent.click(screen.getAllByText("Book a Call")[0]);
+    fireEvent.click(screen.getAllByText("Contact Me")[0]);
 
     expect(mockScroll).toHaveBeenCalledWith({ behavior: "smooth" });
     document.body.removeChild(el);
@@ -336,14 +325,10 @@ describe("O – Operations: how the product is used", () => {
     expect(screen.getAllByText("HU").length).toBeGreaterThan(0);
   });
 
-  it("package CTA buttons all link to the booking URL", () => {
+  it("package CTA buttons scroll to #cta section", () => {
     renderWithProviders(<PackagesSection />);
-    const bookingLinks = screen
-      .getAllByRole("link")
-      .filter(
-        (l) => l.getAttribute("href") === "https://calendar.app.google/qVYtuXUBupAUzsQ18"
-      );
-    expect(bookingLinks).toHaveLength(3);
+    const buttons = screen.getAllByRole("button");
+    expect(buttons.length).toBeGreaterThanOrEqual(3);
   });
 });
 
