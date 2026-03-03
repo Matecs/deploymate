@@ -10,6 +10,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+
   return (
     <LangProvider>
       <div className="min-h-screen bg-background">
