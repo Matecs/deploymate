@@ -33,20 +33,16 @@ describe("Footer", () => {
     expect(link.closest("a")).toHaveAttribute("href", "https://datamate.hu");
   });
 
-  it("renders the email address as plain text (not a link)", () => {
+  it("renders the email address as a mailto link", () => {
     renderFooter();
-    const el = screen.getByText("mate@datamate.hu");
-    expect(el).toBeInTheDocument();
-    expect(el.tagName.toLowerCase()).toBe("span");
-    expect(el.closest("a")).toBeNull();
+    const link = screen.getByRole("link", { name: "mate@datamate.hu" });
+    expect(link).toHaveAttribute("href", "mailto:mate@datamate.hu");
   });
 
-  it("renders the phone number as plain text (not a link)", () => {
+  it("renders the phone number as a tel link", () => {
     renderFooter();
-    const el = screen.getByText("+36 20 434 9647");
-    expect(el).toBeInTheDocument();
-    expect(el.tagName.toLowerCase()).toBe("span");
-    expect(el.closest("a")).toBeNull();
+    const link = screen.getByRole("link", { name: "+36 20 434 9647" });
+    expect(link).toHaveAttribute("href", "tel:+36204349647");
   });
 
   it("renders the current year in the copyright notice", () => {
