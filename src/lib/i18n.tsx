@@ -143,21 +143,6 @@ const t = {
     hu: "Foglalj egy 15 perces intro hívást, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt.",
   },
   "cta.bookBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
-  "cta.calendlyDesc": {
-    en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
-    hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
-  },
-  "cta.sent.title": { en: "Message Sent!", hu: "Üzenet elküldve!" },
-  "cta.sent.desc": { en: "I'll get back to you within 24 hours.", hu: "24 órán belül válaszolok." },
-  "cta.form.name": { en: "Name", hu: "Név" },
-  "cta.form.namePh": { en: "Your name", hu: "Neved" },
-  "cta.form.email": { en: "Email", hu: "Email" },
-  "cta.form.emailPh": { en: "you@company.com", hu: "te@ceg.com" },
-  "cta.form.company": { en: "Company", hu: "Cég" },
-  "cta.form.companyPh": { en: "Company name", hu: "Cégnév" },
-  "cta.form.message": { en: "Message", hu: "Üzenet" },
-  "cta.form.messagePh": { en: "Tell me about your challenge...", hu: "Meséld el a kihívásodat..." },
-  "cta.form.submit": { en: "Send Message", hu: "Üzenet küldése" },
 
   // Booking rate limit
   "booking.rateLimitTitle": { en: "Please slow down", hu: "Lassíts egy kicsit" },
@@ -170,11 +155,6 @@ const t = {
     hu: "Elérted a foglalási link megnyitásának maximális számát ebben a munkamenetben.",
   },
   // Footer
-  "footer.calendlyBtn": { en: "📅 Book a 15-min call in my Google Calendar", hu: "📅 Foglalj 15 perces hívást a Google Calendar-omban" },
-  "footer.calendlyDesc": {
-    en: "I'll explain how I can achieve the same 75% rollback reduction for your team.",
-    hu: "Elmagyarázom, hogyan tudom a korábban elért 75% rollback-csökkentést nálatok is elérni.",
-  },
   "footer.tagline": {
     en: "Release & Compliance Operations Architect",
     hu: "Release & Compliance Operations Architect",
