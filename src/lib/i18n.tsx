@@ -160,6 +160,9 @@ const t = {
   },
   "footer.rights": { en: "All rights reserved", hu: "Minden jog fenntartva" },
   "footer.hours": { en: "Mon–Fri 9–17 CET", hu: "H–P 9–17 CET" },
+
+  // Sticky CTA
+  "sticky.text": { en: "Ready to stabilize your releases?", hu: "Stabilizáld a release folyamataidat!" },
 } as const;
 
 type TranslationKey = keyof typeof t;
