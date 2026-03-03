@@ -8,7 +8,7 @@ const CredibilitySection = () => {
   const testimonials = [t("cred.t1"), t("cred.t2")];
 
   return (
-    <section id="credibility" className="py-16 md:py-20">
+    <section id="credibility" aria-label="Credibility and track record" className="py-16 md:py-20">
       <div className="container max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("cred.tag")}</motion.p>
