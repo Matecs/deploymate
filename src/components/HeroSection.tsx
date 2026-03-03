@@ -11,7 +11,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Hero background image – mobile/desktop responsive */}
       <picture className="absolute inset-0 w-full h-full">
         <source media="(min-width: 768px)" srcSet={heroBgDesktop} />

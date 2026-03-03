@@ -1,4 +1,5 @@
-import { LangProvider } from "@/lib/i18n";
+import { useEffect } from "react";
+import { LangProvider, useLang } from "@/lib/i18n";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import PainPointsSection from "@/components/PainPointsSection";
@@ -9,12 +10,17 @@ import CredibilitySection from "@/components/CredibilitySection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const PageContent = () => {
+  const { lang } = useLang();
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   return (
-    <LangProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
         <HeroSection />
         <PainPointsSection />
         <AudienceSection />
@@ -22,8 +28,16 @@ const Index = () => {
         <HowItWorksSection />
         <CredibilitySection />
         <CTASection />
-        <Footer />
-      </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const Index = () => {
+  return (
+    <LangProvider>
+      <PageContent />
     </LangProvider>
   );
 };
