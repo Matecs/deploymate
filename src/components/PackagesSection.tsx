@@ -1,11 +1,9 @@
 import { ClipboardCheck, RefreshCw, Crown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
-import { useBookingRateLimit } from "@/hooks/use-booking-rate-limit";
 
 const PackagesSection = () => {
   const { t } = useLang();
-  const { handleBookingClick } = useBookingRateLimit();
 
   const packages = [
     {
@@ -24,7 +22,6 @@ const PackagesSection = () => {
       price: t("packages.p2.price"),
       cta: t("packages.p2.cta"),
       highlighted: true,
-      source: "package-retainer",
     },
     {
       icon: Crown,
@@ -33,7 +30,6 @@ const PackagesSection = () => {
       price: t("packages.p3.price"),
       cta: t("packages.p3.cta"),
       highlighted: false,
-      source: "package-vpe",
     },
   ];
 
@@ -70,11 +66,8 @@ const PackagesSection = () => {
               <h3 className="text-xl font-bold text-foreground mb-2">{pkg.title}</h3>
               <p className="text-accent font-semibold text-sm mb-4">{pkg.price}</p>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">{pkg.description}</p>
-              <a
-                href="https://calendar.app.google/qVYtuXUBupAUzsQ18"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleBookingClick(pkg.source)}
+              <button
+                onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
                 className={`w-full py-3 rounded-lg font-semibold text-sm transition-opacity text-center block ${
                   pkg.highlighted
                     ? "bg-accent text-accent-foreground hover:opacity-90"
@@ -82,7 +75,7 @@ const PackagesSection = () => {
                 }`}
               >
                 {pkg.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>

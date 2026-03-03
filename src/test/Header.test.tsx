@@ -30,7 +30,7 @@ describe("Header", () => {
     expect(screen.getAllByText("Who It's For").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Services").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Why Me").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("Book a Call").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Contact Me").length).toBeGreaterThan(0);
   });
 
   it("scrollTo calls scrollIntoView on the target element", () => {
