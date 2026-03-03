@@ -167,10 +167,12 @@ describe("F – Function: what the product does", () => {
 
   it("CTA section has email and phone contact links", () => {
     renderPage();
-    const emailLink = screen.getByRole("link", { name: /mate@datamate.hu/ });
-    expect(emailLink).toHaveAttribute("href", "mailto:mate@datamate.hu");
-    const phoneLink = screen.getByRole("link", { name: /36 20 434 9647/ });
-    expect(phoneLink).toHaveAttribute("href", "tel:+36204349647");
+    const emailLinks = screen.getAllByRole("link", { name: /mate@datamate.hu/ });
+    expect(emailLinks.length).toBeGreaterThanOrEqual(1);
+    expect(emailLinks[0]).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    const phoneLinks = screen.getAllByRole("link", { name: /36 20 434 9647/ });
+    expect(phoneLinks.length).toBeGreaterThanOrEqual(1);
+    expect(phoneLinks[0]).toHaveAttribute("href", "tel:+36204349647");
   });
 });
 
@@ -227,18 +229,16 @@ describe("D – Data: what the product processes", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the contact email as plain text, not a hyperlink", () => {
+  it("renders the contact email as a mailto link in footer", () => {
     renderWithProviders(<Footer />);
-    const email = screen.getByText("mate@datamate.hu");
-    expect(email).toBeInTheDocument();
-    expect(email.closest("a")).toBeNull();
+    const emailLink = screen.getByRole("link", { name: "mate@datamate.hu" });
+    expect(emailLink).toHaveAttribute("href", "mailto:mate@datamate.hu");
   });
 
-  it("renders the phone number as plain text, not a hyperlink", () => {
+  it("renders the phone number as a tel link in footer", () => {
     renderWithProviders(<Footer />);
-    const phone = screen.getByText("+36 20 434 9647");
-    expect(phone).toBeInTheDocument();
-    expect(phone.closest("a")).toBeNull();
+    const phoneLink = screen.getByRole("link", { name: "+36 20 434 9647" });
+    expect(phoneLink).toHaveAttribute("href", "tel:+36204349647");
   });
 });
 
@@ -294,8 +294,10 @@ describe("O – Operations: how the product is used", () => {
 
   it("CTA section contains email and phone contact info", () => {
     renderPage();
-    expect(screen.getByRole("link", { name: /mate@datamate.hu/ })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /36 20 434 9647/ })).toBeInTheDocument();
+    const emailLinks = screen.getAllByRole("link", { name: /mate@datamate.hu/ });
+    expect(emailLinks.length).toBeGreaterThanOrEqual(1);
+    const phoneLinks = screen.getAllByRole("link", { name: /36 20 434 9647/ });
+    expect(phoneLinks.length).toBeGreaterThanOrEqual(1);
   });
 
   it("DataMate website link navigates to https://datamate.hu", () => {

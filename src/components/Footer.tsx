@@ -16,10 +16,10 @@ const Footer = () => {
         <p>
           <a href="https://datamate.hu" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">DataMate.hu</a>
           {" | "}
-          <span className="cursor-text select-all">mate@datamate.hu</span>
+          <a href="mailto:mate@datamate.hu" className="hover:text-foreground transition-colors">mate@datamate.hu</a>
         </p>
         <p>
-          <span className="cursor-text select-all">+36 20 434 9647</span>
+          <a href="tel:+36204349647" className="hover:text-foreground transition-colors">+36 20 434 9647</a>
         </p>
         <p>Copyright © {new Date().getFullYear()} DataMate</p>
       </div>
