@@ -143,16 +143,6 @@ const t = {
     hu: "Írj, vagy hívj, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt:",
   },
 
-  // Booking rate limit
-  "booking.rateLimitTitle": { en: "Please slow down", hu: "Lassíts egy kicsit" },
-  "booking.rateLimitDesc": {
-    en: "You can open the booking link again in {s} s.",
-    hu: "A foglalási linket {s} mp múlva nyithatod meg újra.",
-  },
-  "booking.maxClicksDesc": {
-    en: "You have reached the maximum number of booking link opens for this session.",
-    hu: "Elérted a foglalási link megnyitásának maximális számát ebben a munkamenetben.",
-  },
   // Footer
   "footer.tagline": {
     en: "Release & Compliance Operations Architect",
