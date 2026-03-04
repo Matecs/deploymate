@@ -18,7 +18,11 @@ const HowItWorksSection = () => {
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("how.tag")}</motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="text-3xl md:text-4xl font-bold text-foreground">{t("how.title")}</motion.h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="relative grid md:grid-cols-3 gap-8">
+          {/* Connecting line between steps – desktop only */}
+          <div className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-[2px]">
+            <div className="w-full h-full border-t-2 border-dashed border-accent/25" />
+          </div>
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -26,9 +30,9 @@ const HowItWorksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center"
+              className="text-center relative z-10"
             >
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 relative">
+              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 relative border-2 border-background">
                 <step.icon className="w-6 h-6 text-accent" />
                 <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">
                   {step.num}

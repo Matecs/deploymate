@@ -23,6 +23,27 @@ const CredibilitySection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Trust badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-muted-foreground text-xs uppercase tracking-widest mb-4">{t("cred.badges")}</p>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            {["SOC2", "ISO 27001", "SOX", "GDPR"].map((badge) => (
+              <div
+                key={badge}
+                className="px-4 py-2 rounded-md border border-border bg-muted/30 text-muted-foreground text-xs font-semibold tracking-wider"
+              >
+                {badge}
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

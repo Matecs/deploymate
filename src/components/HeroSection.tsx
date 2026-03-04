@@ -1,10 +1,33 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import heroBgMobile from "@/assets/hero-bg-clean-mobile.jpg";
 import heroBgDesktop from "@/assets/hero-bg-clean-desktop.jpg";
 
+const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 1500;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isInView, target]);
+
+  return <span ref={ref}>{value}{suffix}</span>;
+};
+
 const HeroSection = () => {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -12,7 +35,6 @@ const HeroSection = () => {
 
   return (
     <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Hero background image – mobile/desktop responsive */}
       <picture className="absolute inset-0 w-full h-full">
         <source media="(min-width: 768px)" srcSet={heroBgDesktop} />
         <img src={heroBgMobile} alt="" className="absolute inset-0 w-full h-full object-cover" />
@@ -58,8 +80,9 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
           {t("hero.title")}
         </h1>
+        {/* Animated stats */}
         <p className="text-primary-foreground/80 text-lg md:text-xl font-semibold mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          {t("hero.stats")}
+          <AnimatedNumber target={109} /> {lang === "en" ? "releases/year" : "release/év"} · <AnimatedNumber target={1} /> rollback · <AnimatedNumber target={12} suffix="+" /> {lang === "en" ? "cloud migrations with 0 downtime" : "cloud migráció downtime nélkül"}
         </p>
         <p className="text-primary-foreground/50 text-base md:text-lg max-w-2xl mx-auto mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {t("hero.desc")}
