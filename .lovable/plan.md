@@ -1,40 +1,81 @@
 
 
-## SEO Improvements Plan
+## Profizmus-növelő ötletek — Kivitelezési terv
 
-### Current State
-- Basic meta tags exist in `index.html` (title, description, OG, Twitter)
-- `robots.txt` exists but has no `Sitemap` reference
-- No `sitemap.xml`
-- No structured data (JSON-LD)
-- No OG image specified
-- Missing `og:locale`, `og:site_name`
-- No `lang` attribute switching (always `en`)
-- No semantic HTML landmarks (`<main>`, `<article>`)
+Az oldal jelenlegi állapota tiszta és funkcionális. Az alábbi finomítások emelnék a prémium érzetet, anélkül hogy túldíszítenék:
 
-### Changes
+---
 
-**1. `public/sitemap.xml`** — Create a static sitemap for the single-page site pointing to `https://datamate.hu/`.
+### 1. Szekció-elválasztók (Section dividers)
+Finom SVG hullám vagy ferde vonal a szekciók között a `bg-muted/30` és fehér háttér közötti átmenethez. Jelenleg az átmenetek „laposak" — egy subtle divider vizuális ritmust ad.
 
-**2. `public/robots.txt`** — Add `Sitemap: https://datamate.hu/sitemap.xml` directive.
+**Hol:** Új `SectionDivider.tsx` komponens, beszúrva a szekciók közé az `Index.tsx`-ben.
 
-**3. `index.html`** — Enhance meta tags:
-- Add `og:image` and `twitter:image` (use the desktop hero background as a fallback social share image)
-- Add `og:locale` (`en_US`), `og:site_name` (`DataMate`)
-- Add `theme-color` meta tag
-- Add structured data (JSON-LD) for `ProfessionalService` schema with service details, contact info, and pricing
+---
 
-**4. `src/pages/Index.tsx`** — Wrap content in `<main>` for semantic HTML. Add `lang` attribute switching on `<html>` element based on current i18n language.
+### 2. Számok animálása a Hero-ban (Animated counters)
+A Hero statisztikák (pl. „109 release / 1 rollback") jelenleg statikus szöveg. Egy count-up animáció (Framer Motion + `useInView`) azonnal „data-driven" érzetet kelt.
 
-**5. Semantic sections** — Add `aria-label` attributes to key `<section>` elements in components (HeroSection, PainPointsSection, etc.) for accessibility and SEO crawlability.
+**Hol:** `HeroSection.tsx` — a `hero.stats` szöveget szétbontani számokra és animálni.
 
-### Technical Details
+---
 
-JSON-LD schema will include:
-- `@type: ProfessionalService`
-- Name, description, URL, contact point (email, phone)
-- `areaServed`, `serviceType` for B2B SaaS compliance consulting
-- `priceRange` indicator
+### 3. Hover micro-interakciók a kártyákon
+A kártyák (`PainPointsSection`, `AudienceSection`, `PackagesSection`) jelenleg csak `hover:shadow-lg`-t kapnak. Subtle `scale(1.01)` + border-szín váltás (`border-accent/40`) professzionálisabb érzetet ad.
 
-The `lang` attribute on `<html>` will be dynamically updated via a `useEffect` in `Index.tsx` based on the current language from the i18n provider, improving hreflang signals for search engines.
+**Hol:** Framer Motion `whileHover` prop hozzáadása a meglévő `motion.div` elemekhez.
+
+---
+
+### 4. „How It Works" lépések közötti összekötő vonal
+A 3 lépés között jelenleg nincs vizuális kapcsolat. Egy vízszintes vonallal vagy pontozott összekötővel (desktop-on) egyértelmű folyamatábrázolás lesz.
+
+**Hol:** `HowItWorksSection.tsx` — CSS/SVG vonal a lépések között, `hidden md:block`.
+
+---
+
+### 5. Logo kliensek / „Trusted by" szekcióba trust badge-ek
+Compliance badge-ek (SOC2, ISO27001, SOX logók) a Credibility vagy CTA szekció közelében. Ezek szürke/muted ikonok, nem kell tényleges tanúsítvány — elég a „helping teams prepare for" kontextus.
+
+**Hol:** Új sor a `CredibilitySection.tsx`-ben vagy a `CTASection.tsx` fölött.
+
+---
+
+### 6. Footer finomítás
+A jelenlegi footer minimális. Hozzáadni: szekció-linkek (Pain Points, Packages stb.), LinkedIn ikon, és „Made with precision" típusú tagline.
+
+**Hol:** `Footer.tsx` — oszlopos layout navigációs linkekkel.
+
+---
+
+### 7. Smooth scroll progress bar
+Egy vékony zöld csík a header alatt, ami mutatja, hol tartasz az oldalon. Mérnöki precizitás érzetét kelti.
+
+**Hol:** Új `ScrollProgress.tsx` komponens a `Header.tsx`-be integrálva.
+
+---
+
+### Implementációs sorrend (ajánlott)
+
+1. Hover micro-interakciók (kártyák) — gyors, nagy vizuális hatás
+2. Scroll progress bar — azonnal „polished" érzet
+3. How It Works összekötő vonal — folyamat-vizualizáció
+4. Szekció-elválasztók — vizuális ritmus
+5. Compliance trust badge-ek — bizalomépítés
+6. Footer finomítás — professzionális lezárás
+7. Hero counter animáció — data-driven hatás
+
+### Érintett fájlok
+- `src/components/ScrollProgress.tsx` (új)
+- `src/components/SectionDivider.tsx` (új)
+- `src/components/Header.tsx`
+- `src/components/HeroSection.tsx`
+- `src/components/PainPointsSection.tsx`
+- `src/components/AudienceSection.tsx`
+- `src/components/PackagesSection.tsx`
+- `src/components/HowItWorksSection.tsx`
+- `src/components/CredibilitySection.tsx`
+- `src/components/Footer.tsx`
+- `src/pages/Index.tsx`
+- `src/lib/i18n.tsx` (új kulcsok)
 
