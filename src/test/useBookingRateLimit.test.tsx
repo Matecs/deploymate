@@ -407,4 +407,63 @@ describe("useBookingRateLimit", () => {
       "https://calendar.app.google/qVYtuXUBupAUzsQ18?utm_content=package-vpe"
     );
   });
+
+  // ── Security: NaN-bypass protection ──────────────────────────────────────
+
+  it("treats a non-numeric lastBookingClick in localStorage as 0 (no bypass)", () => {
+    vi.setSystemTime(1_000_000);
+    // Injecting a non-numeric string that would produce NaN, bypassing the cooldown
+    localStorage.setItem("lastBookingClick", "not-a-number");
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent();
+
+    act(() => { result.current.handleBookingClick("hero")(e); });
+
+    // Should be allowed — NaN is treated as 0, so elapsed = now - 0 which is > COOLDOWN_MS
+    expect(e.preventDefault).not.toHaveBeenCalled();
+    expect(localStorage.getItem("lastBookingClick")).toBe(String(1_000_000));
+  });
+
+  it("treats a non-numeric session count in sessionStorage as 0 (no bypass)", () => {
+    vi.setSystemTime(1_000_000);
+    // Injecting a non-numeric string that would produce NaN, bypassing the session limit
+    sessionStorage.setItem(SESSION_COUNT_KEY, "not-a-number");
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent();
+
+    act(() => { result.current.handleBookingClick("hero")(e); });
+
+    // Should be allowed — NaN is treated as 0, count < MAX_CLICKS
+    expect(e.preventDefault).not.toHaveBeenCalled();
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("1");
+  });
+
+  it("treats a negative session count in sessionStorage as 0 (no bypass)", () => {
+    vi.setSystemTime(1_000_000);
+    sessionStorage.setItem(SESSION_COUNT_KEY, "-99");
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent();
+
+    act(() => { result.current.handleBookingClick("hero")(e); });
+
+    // Negative value treated as 0; click is allowed and count becomes 1
+    expect(e.preventDefault).not.toHaveBeenCalled();
+    expect(sessionStorage.getItem(SESSION_COUNT_KEY)).toBe("1");
+  });
+
+  it("treats Infinity as 0 for lastBookingClick in localStorage (no bypass)", () => {
+    vi.setSystemTime(1_000_000);
+    localStorage.setItem("lastBookingClick", "Infinity");
+
+    const { result } = renderHook(() => useBookingRateLimit(), { wrapper });
+    const e = makeEvent();
+
+    act(() => { result.current.handleBookingClick("hero")(e); });
+
+    // Infinity is not finite so treated as 0; elapsed is large, click allowed
+    expect(e.preventDefault).not.toHaveBeenCalled();
+  });
 });
