@@ -351,10 +351,11 @@ describe("T – Time: how the product handles time", () => {
   it("copyright year is dynamically generated, not a hardcoded past value", () => {
     renderWithProviders(<Footer />);
     const year = new Date().getFullYear();
+    // Footer renders "© {year} DataMate" — no "Copyright" prefix
     expect(
-      screen.getByText(new RegExp(`Copyright © ${year}`))
+      screen.getByText(new RegExp(String(year)))
     ).toBeInTheDocument();
     // Ensure a past year is not shown as the copyright year
-    expect(screen.queryByText(/Copyright © 2023/)).toBeNull();
+    expect(screen.queryByText(/2023/)).toBeNull();
   });
 });

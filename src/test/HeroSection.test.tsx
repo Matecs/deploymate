@@ -27,9 +27,9 @@ describe("HeroSection", () => {
 
   it("renders the stats line", () => {
     renderHero();
-    expect(
-      screen.getByText(/109 releases\/year/)
-    ).toBeInTheDocument();
+    // AnimatedNumber starts at 0 in JSDOM (IntersectionObserver never fires),
+    // so check for the static text surrounding the animated values.
+    expect(screen.getByText(/releases\/year/)).toBeInTheDocument();
   });
 
   it("renders the description text", () => {
