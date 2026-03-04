@@ -12,7 +12,7 @@ const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: stri
 
   useEffect(() => {
     if (!isInView) return;
-    const duration = 1500;
+    const duration = 3000;
     const start = performance.now();
     const step = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
