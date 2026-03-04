@@ -1,5 +1,20 @@
 # GitHub Copilot Instructions
 
+## ⚠️ Mandatory PR Closing Steps
+
+> These steps are **non-negotiable** and must be completed on **every PR** before the session is finished, even if the user does not explicitly ask for them.
+
+1. **Lint** — `npm run lint` must pass with no errors.
+2. **Run the full test suite** — `npm test` must pass.
+3. **Run the production build** — `npm run build` must exit with code 0.
+4. **Visual browser test** — start the dev server (`node_modules/.bin/vite --host 0.0.0.0 --port 8080` as a detached background process), run the Playwright screenshot script documented in `docs/testing.md § Visual / Browser Testing`, confirm every section (hero, pain-points, audience, packages, how-it-works, credibility, cta) renders with no unexpected console errors, and share the screenshots in the PR.
+5. **Update affected docs** — update any `docs/` pages, `README.md`, or `CONTRIBUTING.md` that describe the behavior you changed.
+6. **Update learnings** — append new gotchas or correct stale entries in the `docs/testing.md § Visual / Browser Testing` learnings section.
+
+Failure to complete steps 4–6 violates the project's PR guidelines and will require a follow-up session.
+
+---
+
 ## Project Overview
 
 Release Clarity is a React single-page application that helps users understand and manage release notes. It is built with Vite, TypeScript, Tailwind CSS, and shadcn-ui (Radix UI primitives), and supports English and Hungarian through a custom i18n layer.
