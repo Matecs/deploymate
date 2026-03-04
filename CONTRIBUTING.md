@@ -139,4 +139,5 @@ See [docs/i18n.md](docs/i18n.md) for a detailed guide and examples.
 4. Ensure `npm run lint` and `npm test` pass locally before opening the PR.
 5. **Test the website in a browser** — after all code changes are done, boot the site and visually verify every section still renders correctly. Follow the workflow in [docs/testing.md § Visual / Browser Testing](docs/testing.md#visual--browser-testing).
 6. **Review documentation** — if your change affects behavior, configuration, or public API, update the relevant docs in `docs/` and verify that `README.md` and `CONTRIBUTING.md` are still accurate.
-7. Squash or tidy up commits before merging so that `main` history stays clean.
+7. **Review and update learnings** — re-read the learnings recorded in `docs/testing.md` (Visual / Browser Testing section). Correct any entries that are no longer accurate and append any new experiences or gotchas discovered during this PR.
+8. Squash or tidy up commits before merging so that `main` history stays clean.
