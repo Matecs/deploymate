@@ -11,7 +11,8 @@ export const useBookingRateLimit = () => {
   const { t } = useLang();
 
   const handleBookingClick = (source: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const sessionCount = Number(sessionStorage.getItem(SESSION_COUNT_KEY) ?? "0");
+    const rawCount = Number(sessionStorage.getItem(SESSION_COUNT_KEY));
+    const sessionCount = Number.isFinite(rawCount) && rawCount >= 0 ? rawCount : 0;
 
     if (sessionCount >= MAX_CLICKS) {
       e.preventDefault();
@@ -24,7 +25,8 @@ export const useBookingRateLimit = () => {
     }
 
     const now = Date.now();
-    const last = Number(localStorage.getItem(STORAGE_KEY) ?? "0");
+    const rawLast = Number(localStorage.getItem(STORAGE_KEY));
+    const last = Number.isFinite(rawLast) && rawLast >= 0 ? rawLast : 0;
     const elapsed = now - last;
 
     if (elapsed < COOLDOWN_MS) {

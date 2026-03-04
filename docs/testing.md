@@ -18,6 +18,7 @@ Release Clarity uses **Vitest** as the test runner together with **@testing-libr
 - [Mocking](#mocking)
 - [What to Test](#what-to-test)
 - [After Every Modification](#after-every-modification)
+- [Visual / Browser Testing](#visual--browser-testing)
 
 ---
 
@@ -248,3 +249,92 @@ npm test
 ```
 
 If any tests fail, fix the failures **before** proceeding with further changes. This keeps regressions from accumulating and makes debugging easier.
+
+---
+
+## Visual / Browser Testing
+
+> **Rule: Test the website in a real browser after every PR is done** — run the unit tests first, then boot the site and capture screenshots of each section to confirm the UI is intact.
+
+The sandbox environment (GitHub Copilot agent) cannot open a browser GUI, so the workflow below uses the Vite dev server plus a headless Chromium driven by Python Playwright.
+
+### 1 — Start the dev server
+
+`npm run dev` only binds to `localhost` which the headless browser cannot reach inside the sandbox. Use the explicit flag instead:
+
+```sh
+node_modules/.bin/vite --host 0.0.0.0 --port 8080 &
+VITE_PID=$!
+```
+
+Wait ~3 s and confirm it is listening:
+
+```sh
+netstat -tlnp | grep 8080
+# Expected: tcp  0  0  0.0.0.0:8080  0.0.0.0:*  LISTEN
+```
+
+To stop the server once testing is done:
+
+```sh
+kill $VITE_PID
+```
+
+### 2 — Install Python Playwright (first run only)
+
+```sh
+pip install playwright
+python3 -m playwright install chromium
+```
+
+These are downloaded to `~/.cache/ms-playwright` and survive between sessions on the same runner. The packages are **not** committed to the repo.
+
+### 3 — Capture screenshots and check for console errors
+
+```python
+from playwright.sync_api import sync_playwright
+
+js_errors = []
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(args=["--no-sandbox", "--disable-setuid-sandbox"])
+    page = browser.new_page(viewport={"width": 1280, "height": 900})
+
+    # Capture JS / CSP errors
+    page.on("console", lambda msg: js_errors.append(msg.text) if msg.type == "error" else None)
+
+    page.goto("http://127.0.0.1:8080", wait_until="networkidle", timeout=20000)
+    page.wait_for_timeout(1500)
+
+    # Hero section
+    page.screenshot(path="/tmp/site-hero.png")
+
+    # Scroll to each section (framer-motion sections start at opacity:0 and
+    # animate in on scroll — scrollIntoView triggers the animation)
+    for section_id in ["pain-points", "audience", "packages", "how-it-works", "credibility", "cta"]:
+        page.evaluate("id => document.getElementById(id)?.scrollIntoView({behavior:'instant'})", section_id)
+        page.wait_for_timeout(800)
+        page.screenshot(path=f"/tmp/site-{section_id}.png")
+
+    browser.close()
+
+print("Console errors:", js_errors or "none")
+```
+
+### 4 — Known sandbox network limitation
+
+Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, so a `net::ERR_NAME_NOT_RESOLVED` error will always appear in the console output for that resource. This is **expected** and does not indicate a CSP problem — the font loads correctly in production.
+
+### 5 — What to look for
+
+| Check | Pass criteria |
+|---|---|
+| No unexpected JS errors | Only the known Google Fonts DNS error above |
+| Hero section renders | Logo, headline, stats, CTA button visible |
+| All page sections render | Pain-points, Audience, Packages, How It Works, Credibility, CTA all show content |
+| Build succeeds | `npm run build` exits with code 0 and no warnings |
+
+### 6 — CSP notes (learned from security audit)
+
+- `frame-ancestors` is **silently ignored** by all browsers when delivered via `<meta http-equiv="Content-Security-Policy">`. It only works as an HTTP response header. Remove it from the meta tag to avoid the browser warning.
+- The existing `@import url('https://fonts.googleapis.com/...')` in `src/index.css` requires `https://fonts.googleapis.com` in `style-src` and `https://fonts.gstatic.com` in `font-src`. Without these the font stylesheet is blocked at runtime even though the import looks correct at build time.
