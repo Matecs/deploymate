@@ -163,6 +163,14 @@ const t = {
 
   // Sticky CTA
   "sticky.text": { en: "Ready to stabilize your releases?", hu: "Stabilizáld a release folyamataidat!" },
+
+  // Credibility badges
+  "cred.badges": { en: "Helping teams prepare for", hu: "Felkészítés az alábbiakra" },
+
+  // Footer extras
+  "footer.nav": { en: "Navigation", hu: "Navigáció" },
+  "footer.contact": { en: "Contact", hu: "Kapcsolat" },
+  "footer.precision": { en: "Built with engineering precision", hu: "Mérnöki precizitással építve" },
 } as const;
 
 type TranslationKey = keyof typeof t;

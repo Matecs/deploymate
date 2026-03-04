@@ -48,7 +48,8 @@ const PackagesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className={`bg-card rounded-xl border p-8 flex flex-col text-center transition-shadow hover:shadow-lg relative ${
+              whileHover={{ scale: pkg.highlighted ? 1.03 : 1.02 }}
+              className={`bg-card rounded-xl border p-8 flex flex-col text-center transition-all hover:shadow-lg relative ${
                 pkg.highlighted
                   ? "border-accent ring-2 ring-accent/20 scale-[1.02]"
                   : "border-border"
