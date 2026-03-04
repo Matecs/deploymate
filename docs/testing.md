@@ -19,6 +19,7 @@ Release Clarity uses **Vitest** as the test runner together with **@testing-libr
 - [What to Test](#what-to-test)
 - [After Every Modification](#after-every-modification)
 - [Visual / Browser Testing](#visual--browser-testing)
+  - [PR Closing Checklist](#pr-closing-checklist)
 
 ---
 
@@ -342,3 +343,20 @@ Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, s
 - **`node_modules/.bin/vite --host 0.0.0.0 --port 8080 &`** must be run as a detached background process (`detach: true` in the bash tool), otherwise the Vite server exits when the shell session ends and Playwright gets `ERR_CONNECTION_REFUSED`.
 - After removing `QueryClientProvider` from `App.tsx`, the site still renders correctly and the `@tanstack/react-query` package is still in `package.json` — that is fine; a future `npm prune` can remove it if desired.
 - The `useBookingRateLimit.test.tsx` file in `docs/testing.md § File Structure` listing was stale after the hook was deleted — always update the file-listing table when test files are removed.
+
+---
+
+## PR Closing Checklist
+
+> **This checklist must be completed on every PR, without exception, before the session is finished — even if the user does not explicitly ask.**
+
+```
+- [ ] npm run lint            — no lint errors
+- [ ] npm test                — all tests green
+- [ ] npm run build           — exits with code 0, no warnings
+- [ ] Browser test            — screenshots captured for hero, pain-points, audience, packages, how-it-works, credibility, cta; no unexpected console errors
+- [ ] Docs updated            — affected docs/, README.md, CONTRIBUTING.md updated
+- [ ] Learnings updated       — new gotchas appended / stale entries corrected in § Visual / Browser Testing
+```
+
+Copy this checklist into the PR description (the pull_request_template.md does it automatically) and tick each box before requesting review.
