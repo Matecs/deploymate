@@ -54,7 +54,6 @@ All test files live in `src/test/` and follow the naming convention:
 ```
 src/test/
   setup.ts                   # Global Vitest setup (imported before every test file)
-  example.test.ts            # Baseline smoke test
   Header.test.tsx            # Tests for src/components/Header.tsx
   HeroSection.test.tsx       # Tests for src/components/HeroSection.tsx
   AudienceSection.test.tsx   # Tests for src/components/AudienceSection.tsx
@@ -63,8 +62,7 @@ src/test/
   CTASection.test.tsx
   Footer.test.tsx
   NavLink.test.tsx
-  useBookingRateLimit.test.tsx  # Hook tests
-  sfdpot.test.tsx            # Security / edge-case tests
+  sfdpot.test.tsx            # SFDPOT heuristic integration tests
 ```
 
 Name new test files `<SubjectName>.test.ts` (plain logic) or `<SubjectName>.test.tsx` (JSX/React).
@@ -338,3 +336,9 @@ Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, s
 
 - `frame-ancestors` is **silently ignored** by all browsers when delivered via `<meta http-equiv="Content-Security-Policy">`. It only works as an HTTP response header. Remove it from the meta tag to avoid the browser warning.
 - The existing `@import url('https://fonts.googleapis.com/...')` in `src/index.css` requires `https://fonts.googleapis.com` in `style-src` and `https://fonts.gstatic.com` in `font-src`. Without these the font stylesheet is blocked at runtime even though the import looks correct at build time.
+
+### 7 — Learnings from the "Remove unnecessary functions and files" PR
+
+- **`node_modules/.bin/vite --host 0.0.0.0 --port 8080 &`** must be run as a detached background process (`detach: true` in the bash tool), otherwise the Vite server exits when the shell session ends and Playwright gets `ERR_CONNECTION_REFUSED`.
+- After removing `QueryClientProvider` from `App.tsx`, the site still renders correctly and the `@tanstack/react-query` package is still in `package.json` — that is fine; a future `npm prune` can remove it if desired.
+- The `useBookingRateLimit.test.tsx` file in `docs/testing.md § File Structure` listing was stale after the hook was deleted — always update the file-listing table when test files are removed.
