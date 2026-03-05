@@ -99,6 +99,7 @@ const t = {
   "packages.p3.cta": { en: "Premium", hu: "Prémium" },
 
   "packages.requestBtn": { en: "I want this", hu: "Kérem ezt" },
+  "packages.popular": { en: "Popular", hu: "Népszerű" },
 
   // How it works
   "how.tag": { en: "How It Works", hu: "Hogyan működik" },

@@ -101,6 +101,7 @@ const HeroSection = () => {
         </div>
         <button
           onClick={() => scrollTo("pain-points")}
+          aria-label={lang === "en" ? "Scroll to challenges" : "Tovább a kihívásokhoz"}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary-foreground/30 hover:text-primary-foreground/60 transition-colors animate-bounce"
         >
           <ChevronDown className="w-6 h-6" />

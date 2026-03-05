@@ -58,7 +58,7 @@ const PackagesSection = () => {
             >
               {pkg.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-4 py-1 rounded-full">
-                  Popular
+                  {t("packages.popular")}
                 </div>
               )}
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-5">
