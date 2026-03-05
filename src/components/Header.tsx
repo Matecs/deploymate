@@ -84,7 +84,7 @@ const Header = () => {
           </TooltipProvider>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button className="p-2 text-foreground">
+              <button className="p-2 text-foreground" aria-label="Open menu">
                 <Menu className="w-5 h-5" />
               </button>
             </SheetTrigger>
