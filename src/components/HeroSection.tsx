@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import heroBgMobile from "@/assets/hero-bg-clean-mobile.jpg";
 import heroBgDesktop from "@/assets/hero-bg-clean-desktop.jpg";
+import heroBgMobileWebp from "@/assets/hero-bg-clean-mobile.webp";
+import heroBgDesktopWebp from "@/assets/hero-bg-clean-desktop.webp";
 
 const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -36,7 +38,9 @@ const HeroSection = () => {
   return (
     <section id="hero" aria-label="Hero" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       <picture className="absolute inset-0 w-full h-full">
-        <source media="(min-width: 768px)" srcSet={heroBgDesktop} />
+        <source media="(min-width: 768px)" srcSet={heroBgDesktopWebp} type="image/webp" />
+        <source srcSet={heroBgMobileWebp} type="image/webp" />
+        <source media="(min-width: 768px)" srcSet={heroBgDesktop} type="image/jpeg" />
         <img src={heroBgMobile} alt="" className="absolute inset-0 w-full h-full object-cover" fetchPriority="high" />
       </picture>
 
