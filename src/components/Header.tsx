@@ -40,7 +40,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
-          <img src={datamateLogo} alt="DataMate logo" className="h-12 w-auto" />
+          <img src={datamateLogo} alt="DataMate — Release & Compliance Operations Architect" className="h-12 w-auto" />
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <button onClick={() => scrollTo("pain-points")} className="hover:text-foreground transition-colors">{t("nav.painPoints")}</button>

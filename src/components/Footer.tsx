@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <img src={datamateLogo} alt="DataMate logo" className="h-10 w-auto" />
+            <img src={datamateLogo} alt="DataMate logo" className="h-10 w-auto" loading="lazy" />
             <p className="text-muted-foreground text-sm">{t("footer.tagline")}</p>
           </div>
 
