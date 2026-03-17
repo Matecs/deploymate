@@ -88,8 +88,9 @@ describe("S – Structure: what the product is made of", () => {
 
   it("renders the DataMate logo in both header and footer", () => {
     renderPage();
-    const logos = screen.getAllByAltText("DataMate logo");
-    expect(logos.length).toBeGreaterThanOrEqual(2);
+    // Header uses full descriptive alt text, footer uses short alt text
+    expect(screen.getByAltText("DataMate — Release & Compliance Operations Architect")).toBeInTheDocument();
+    expect(screen.getByAltText("DataMate logo")).toBeInTheDocument();
   });
 });
 

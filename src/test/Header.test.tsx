@@ -21,7 +21,7 @@ describe("Header", () => {
 
   it("renders the logo image", () => {
     renderHeader();
-    expect(screen.getByAltText("DataMate logo")).toBeInTheDocument();
+    expect(screen.getByAltText("DataMate — Release & Compliance Operations Architect")).toBeInTheDocument();
   });
 
   it("renders desktop nav buttons with translated labels", () => {
