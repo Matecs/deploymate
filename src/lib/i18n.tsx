@@ -158,6 +158,28 @@ const t = {
   // Credibility badges
   "cred.badges": { en: "Helping teams prepare for", hu: "Felkészítés az alábbiakra" },
 
+  // Case study
+  "cred.case.tag": { en: "Case Study", hu: "Esettanulmány" },
+  "cred.case.title": { en: "40-Engineer SaaS Company — 2-Week Release Audit", hu: "40 fős SaaS cég — 2 hetes Release Audit" },
+  "cred.case.week1.title": { en: "Week 1 — Discovery & Analysis", hu: "1. hét — Feltérképezés & Elemzés" },
+  "cred.case.week1.items": {
+    en: "Pipeline audit across 4 products|Identified 3 critical bottlenecks|Mapped compliance gaps for SOC2",
+    hu: "Pipeline audit 4 terméken|3 kritikus szűk keresztmetszet azonosítása|SOC2 compliance hiányosságok feltérképezése",
+  },
+  "cred.case.week2.title": { en: "Week 2 — Implementation & Results", hu: "2. hét — Implementáció & Eredmények" },
+  "cred.case.week2.items": {
+    en: "Automated rollback detection in CI/CD|Compliance evidence collection playbook|Release cadence optimization plan",
+    hu: "Automatizált rollback detekció a CI/CD-ben|Compliance evidence gyűjtési playbook|Release ütemezés optimalizálási terv",
+  },
+  "cred.case.stat1.value": { en: "75%", hu: "75%" },
+  "cred.case.stat1.label": { en: "Fewer rollbacks", hu: "Kevesebb rollback" },
+  "cred.case.stat2.value": { en: "40%", hu: "40%" },
+  "cred.case.stat2.label": { en: "Faster deploys", hu: "Gyorsabb deploy" },
+  "cred.case.stat3.value": { en: "0", hu: "0" },
+  "cred.case.stat3.label": { en: "Audit findings", hu: "Audit finding" },
+  "cred.case.stat4.value": { en: "2 weeks", hu: "2 hét" },
+  "cred.case.stat4.label": { en: "Time to results", hu: "Eredményig eltelt idő" },
+
   // Footer extras
   "footer.nav": { en: "Navigation", hu: "Navigáció" },
   "footer.contact": { en: "Contact", hu: "Kapcsolat" },
