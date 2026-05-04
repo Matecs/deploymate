@@ -129,7 +129,7 @@ const t = {
   "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
   "how.step1.desc": {
     en: "I understand your pain points and current setup.",
-    hu: "Megértem a pain pontjaidat és a jelenlegi setup-ot.",
+    hu: "Megértem a problémáidat és a jelenlegi helyzetet.",
   },
   "how.step2.title": { en: "Project (€4,500)", hu: "Projekt (1,8M Ft)" },
   "how.step2.desc": {
