@@ -1,4 +1,4 @@
-import { Quote, CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock } from "lucide-react";
+import { Quote, CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock, AlertTriangle, Wrench } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
@@ -14,8 +14,15 @@ const CredibilitySection = () => {
     { value: t("cred.case.stat4.value"), label: t("cred.case.stat4.label"), icon: Clock },
   ];
 
-  const week1Items = t("cred.case.week1.items").split("|");
-  const week2Items = t("cred.case.week2.items").split("|");
+  const beforeItems = t("cred.case.before.items").split("|");
+  const afterItems = t("cred.case.after.items").split("|");
+  const howItems = t("cred.case.how.items").split("|");
+
+  const blocks = [
+    { title: t("cred.case.before.title"), items: beforeItems, icon: AlertTriangle, tone: "destructive" as const },
+    { title: t("cred.case.after.title"), items: afterItems, icon: CheckCircle2, tone: "accent" as const },
+    { title: t("cred.case.how.title"), items: howItems, icon: Wrench, tone: "muted" as const },
+  ];
 
   return (
     <section id="credibility" aria-label="Credibility and track record" className="py-16 md:py-20">
@@ -45,7 +52,8 @@ const CredibilitySection = () => {
           className="mt-16"
         >
           <p className="text-accent font-medium text-sm tracking-widest uppercase mb-3 text-center">{t("cred.case.tag")}</p>
-          <h3 className="text-xl md:text-2xl font-bold text-foreground text-center mb-10">{t("cred.case.title")}</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-foreground text-center mb-2">{t("cred.case.title")}</h3>
+          <p className="text-muted-foreground text-sm text-center mb-10">{t("cred.case.context")}</p>
 
           {/* Stats grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -66,50 +74,40 @@ const CredibilitySection = () => {
             ))}
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-border" />
-
-            {/* Week 1 */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative pl-12 md:pl-16 mb-8"
-            >
-              <div className="absolute left-2 md:left-4 top-1 w-4 h-4 rounded-full bg-accent border-2 border-background" />
-              <h4 className="text-base font-semibold text-foreground mb-3">{t("cred.case.week1.title")}</h4>
-              <ul className="space-y-2">
-                {week1Items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-foreground/80 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Week 2 */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="relative pl-12 md:pl-16"
-            >
-              <div className="absolute left-2 md:left-4 top-1 w-4 h-4 rounded-full bg-accent border-2 border-background" />
-              <h4 className="text-base font-semibold text-foreground mb-3">{t("cred.case.week2.title")}</h4>
-              <ul className="space-y-2">
-                {week2Items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-foreground/80 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          {/* Before / After / How */}
+          <div className="grid md:grid-cols-3 gap-4">
+            {blocks.map((b, i) => {
+              const accent =
+                b.tone === "destructive"
+                  ? "text-destructive bg-destructive/10"
+                  : b.tone === "accent"
+                  ? "text-accent bg-accent/10"
+                  : "text-foreground bg-muted";
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="bg-card rounded-xl border border-border p-5"
+                  style={{ boxShadow: "var(--card-shadow)" }}
+                >
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider mb-3 ${accent}`}>
+                    <b.icon className="w-3.5 h-3.5" />
+                    {b.title}
+                  </div>
+                  <ul className="space-y-2">
+                    {b.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-foreground/80 text-sm leading-relaxed">
+                        <span className="text-accent mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 
