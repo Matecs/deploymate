@@ -1,32 +1,9 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
 import heroBgMobile from "@/assets/hero-bg-clean-mobile.jpg";
 import heroBgDesktop from "@/assets/hero-bg-clean-desktop.jpg";
 import heroBgMobileWebp from "@/assets/hero-bg-clean-mobile.webp";
 import heroBgDesktopWebp from "@/assets/hero-bg-clean-desktop.webp";
-
-const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const duration = 3000;
-    const start = performance.now();
-    const step = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [isInView, target]);
-
-  return <span ref={ref}>{value}{suffix}</span>;
-};
 
 const HeroSection = () => {
   const { t, lang } = useLang();
@@ -84,23 +61,25 @@ const HeroSection = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
           {t("hero.title")}
         </h1>
-        {/* Animated stats */}
-        <p className="text-primary-foreground/80 text-lg md:text-xl font-semibold mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          <AnimatedNumber target={109} /> {lang === "en" ? "releases/year" : "release/év"} · <AnimatedNumber target={1} /> rollback · <AnimatedNumber target={12} suffix="+" /> {lang === "en" ? "cloud migrations with 0 downtime" : "cloud migráció downtime nélkül"}
+        <p className="text-primary-foreground/80 text-base md:text-lg font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          {t("hero.stats")}
         </p>
-        <p className="text-primary-foreground/50 text-base md:text-lg max-w-2xl mx-auto mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-primary-foreground/60 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {t("hero.desc")}
         </p>
-        <p className="text-accent font-bold text-lg md:text-xl mb-10 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
-          {t("hero.pricing")}
-        </p>
-        <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <button
             onClick={() => scrollTo("cta")}
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg font-bold text-base md:text-lg hover:opacity-90 transition-opacity shadow-lg"
           >
             {t("hero.cta")}
             <ArrowRight className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => scrollTo("packages")}
+            className="inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-primary-foreground/10 transition-colors"
+          >
+            {t("hero.ctaSecondary")}
           </button>
         </div>
         <button

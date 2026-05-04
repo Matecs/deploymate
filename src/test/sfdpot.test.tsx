@@ -159,7 +159,7 @@ describe("F – Function: what the product does", () => {
     document.body.appendChild(el);
 
     const buttons = screen.getAllByRole("button");
-    const ctaBtn = buttons.find((b) => b.textContent?.includes("Contact Me"));
+    const ctaBtn = buttons.find((b) => b.textContent?.includes("Release Audit call"));
     fireEvent.click(ctaBtn!);
 
     expect(mockScroll).toHaveBeenCalledWith({ behavior: "smooth" });
@@ -189,14 +189,14 @@ describe("D – Data: what the product processes", () => {
     renderPage();
     expect(
       screen.getByRole("heading", {
-        name: "Release & Compliance Operations Architect",
+        name: /Stop losing weekends to rollbacks/,
       })
     ).toBeInTheDocument();
   });
 
   it("displays the hero statistics line", () => {
     renderPage();
-    const matches = screen.getAllByText(/109 releases\/year/);
+    const matches = screen.getAllByText(/1 rollback per 109 releases/);
     expect(matches.length).toBeGreaterThan(0);
   });
 

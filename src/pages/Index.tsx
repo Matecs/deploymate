@@ -8,6 +8,7 @@ import PackagesSection from "@/components/PackagesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CredibilitySection from "@/components/CredibilitySection";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -37,6 +38,8 @@ const PageContent = () => {
         <SectionDivider variant="wave" />
         <CredibilitySection />
         <SectionDivider variant="wave" flip />
+        <FAQSection />
+        <SectionDivider variant="wave" />
         <CTASection />
       </main>
       <StickyCTA />

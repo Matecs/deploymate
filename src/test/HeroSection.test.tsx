@@ -21,15 +21,13 @@ describe("HeroSection", () => {
   it("renders the hero title", () => {
     renderHero();
     expect(
-      screen.getByText("Release & Compliance Operations Architect")
+      screen.getByText(/Stop losing weekends to rollbacks/)
     ).toBeInTheDocument();
   });
 
   it("renders the stats line", () => {
     renderHero();
-    // AnimatedNumber starts at 0 in JSDOM (IntersectionObserver never fires),
-    // so check for the static text surrounding the animated values.
-    expect(screen.getByText(/releases\/year/)).toBeInTheDocument();
+    expect(screen.getByText(/1 rollback per 109 releases/)).toBeInTheDocument();
   });
 
   it("renders the description text", () => {
@@ -39,10 +37,10 @@ describe("HeroSection", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the Contact Me CTA button that scrolls to #cta", () => {
+  it("renders the primary CTA button that scrolls to #cta", () => {
     renderHero();
     const buttons = screen.getAllByRole("button");
-    const ctaBtn = buttons.find((b) => b.textContent?.includes("Contact Me"));
+    const ctaBtn = buttons.find((b) => b.textContent?.includes("Release Audit call"));
     expect(ctaBtn).toBeDefined();
   });
 
@@ -54,9 +52,9 @@ describe("HeroSection", () => {
     el.scrollIntoView = mockScrollIntoView;
     document.body.appendChild(el);
 
-    // Find the chevron button (not the Contact Me button)
+    // Find the chevron button (the one with no text content)
     const buttons = screen.getAllByRole("button");
-    const scrollBtn = buttons.find((b) => !b.textContent?.includes("Contact Me"));
+    const scrollBtn = buttons.find((b) => !b.textContent?.trim());
     fireEvent.click(scrollBtn!);
 
     expect(mockScrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
