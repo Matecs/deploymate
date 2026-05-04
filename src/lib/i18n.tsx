@@ -47,8 +47,8 @@ const t = {
     hu: "Elavult Jenkins/TeamCity pipeline",
   },
   "pain.item4": {
-    en: "CTO lacks visibility into release and on-call processes",
-    hu: "A CTO nem látja át a release és on-call folyamatokat",
+    en: "No real-time visibility into deploys and on-call incidents",
+    hu: "Nincs valós idejű rálátás a deploy-okra és on-call incidensekre",
   },
 
   // Audience
@@ -67,8 +67,8 @@ const t = {
     hu: "Heti rollback‑ek, tűzoltás, CI/CD káosz",
   },
   "audience.item3": {
-    en: "Your CTO lacks visibility into release and compliance processes",
-    hu: "A CTO nem látja át a release és compliance folyamatokat",
+    en: "Leadership has no metrics on release quality or compliance status",
+    hu: "A vezetésnek nincs metrikája a release minőségről és compliance állapotról",
   },
 
   // Packages — Tiered pricing
