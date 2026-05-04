@@ -48,7 +48,7 @@ const t = {
   },
   "pain.item4": {
     en: "CTO lacks visibility into release and on-call processes",
-    hu: "CTO nem lát át a release folyamatokra",
+    hu: "A CTO nem látja át a release és on-call folyamatokat",
   },
 
   // Audience
