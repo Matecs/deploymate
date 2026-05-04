@@ -153,7 +153,7 @@ const t = {
     en: "Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.",
     hu: "Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken keresztül.",
   },
-  "cred.source": { en: "— Engineering Leadership", hu: "— Engineering Leadership" },
+  "cred.source": { en: "— Engineering Leadership, Series B SaaS (anonymized on request)", hu: "— Engineering Leadership, Series B SaaS (kérésre anonimizálva)" },
 
   // CTA
   "cta.tag": { en: "Get Started", hu: "Kezdjük el" },
