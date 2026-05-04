@@ -68,7 +68,7 @@ const t = {
   },
   "audience.item3": {
     en: "Your CTO lacks visibility into release and compliance processes",
-    hu: "A CTO nem lát rá elég tisztán a release és compliance folyamatokra",
+    hu: "A CTO nem látja át a release és compliance folyamatokat",
   },
 
   // Packages — Tiered pricing
