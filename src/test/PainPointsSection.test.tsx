@@ -36,7 +36,7 @@ describe("PainPointsSection", () => {
 
   it("renders all four pain point items", () => {
     renderPainPoints();
-    expect(screen.getByText(/Weekly 1–2 rollbacks/)).toBeInTheDocument();
+    expect(screen.getByText(/on-call engineer just texted at 2 AM/)).toBeInTheDocument();
     expect(screen.getByText(/Panic evidence gathering/)).toBeInTheDocument();
     expect(screen.getByText(/Outdated CI\/CD/)).toBeInTheDocument();
     expect(screen.getByText(/CTO lacks visibility/)).toBeInTheDocument();
@@ -44,7 +44,7 @@ describe("PainPointsSection", () => {
 
   it("renders exactly four item cards", () => {
     renderPainPoints();
-    const items = screen.getAllByText(/rollbacks|evidence|CI\/CD|CTO/);
+    const items = screen.getAllByText(/on-call|evidence|CI\/CD|CTO/);
     expect(items).toHaveLength(4);
   });
 });
