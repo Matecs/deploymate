@@ -1,32 +1,9 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "@/lib/i18n";
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
 import heroBgMobile from "@/assets/hero-bg-clean-mobile.jpg";
 import heroBgDesktop from "@/assets/hero-bg-clean-desktop.jpg";
 import heroBgMobileWebp from "@/assets/hero-bg-clean-mobile.webp";
 import heroBgDesktopWebp from "@/assets/hero-bg-clean-desktop.webp";
-
-const AnimatedNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const duration = 3000;
-    const start = performance.now();
-    const step = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [isInView, target]);
-
-  return <span ref={ref}>{value}{suffix}</span>;
-};
 
 const HeroSection = () => {
   const { t, lang } = useLang();
