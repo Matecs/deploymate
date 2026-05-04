@@ -183,6 +183,22 @@ const t = {
   // Case study
   "cred.case.tag": { en: "Case Study", hu: "Esettanulmány" },
   "cred.case.title": { en: "40-Engineer SaaS Company — 2-Week Release Audit", hu: "40 fős SaaS cég — 2 hetes Release Audit" },
+  "cred.case.context": { en: "Series B fintech, Germany · 4 products · 40 engineers", hu: "Series B fintech, Németország · 4 termék · 40 mérnök" },
+  "cred.case.before.title": { en: "Before", hu: "Előtte" },
+  "cred.case.before.items": {
+    en: "2 rollbacks/week with 2 AM firefighting|3-day audit prep panic before every quarter|Jenkins spaghetti held together with bash scripts",
+    hu: "Heti 2 rollback hajnali tűzoltással|3 napos audit pánik minden negyedév előtt|Jenkins spagetti bash scriptekkel összetartva",
+  },
+  "cred.case.after.title": { en: "After", hu: "Utána" },
+  "cred.case.after.items": {
+    en: "1 rollback per 109 releases (0.9% failure rate)|0 audit findings, evidence auto-collected|GitHub Actions pipeline, 40% faster deploys",
+    hu: "1 rollback / 109 release (0,9% hibaarány)|0 audit finding, evidence automatikusan gyűjtve|GitHub Actions pipeline, 40%-kal gyorsabb deploy",
+  },
+  "cred.case.how.title": { en: "How", hu: "Hogyan" },
+  "cred.case.how.items": {
+    en: "Migrated CI/CD from Jenkins to GitHub Actions with zero downtime|Automated SOC2 evidence collection from PRs and deploys|Built rollback detection + release metrics dashboard",
+    hu: "CI/CD migráció Jenkinsről GitHub Actions-re zero downtime-mal|SOC2 evidence automatikus gyűjtése PR-ekből és deployokból|Rollback detekció + release metrics dashboard kiépítése",
+  },
   "cred.case.week1.title": { en: "Week 1 — Discovery & Analysis", hu: "1. hét — Feltérképezés & Elemzés" },
   "cred.case.week1.items": {
     en: "Pipeline audit across 4 products|Identified 3 critical bottlenecks|Mapped compliance gaps for SOC2",
