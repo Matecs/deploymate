@@ -77,14 +77,26 @@ const t = {
 
   "packages.p1.title": { en: "Project", hu: "Projekt" },
   "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M Ft | 2 hét" },
+  "packages.p1.forWhom": {
+    en: "You need a diagnosis and a plan. Start here.",
+    hu: "Diagnózis és terv kell. Kezdd itt.",
+  },
   "packages.p1.desc": {
     en: "Release Audit — Pipeline review, rollback reduction plan, audit playbook.",
     hu: "Release Audit — Pipeline átvilágítás, rollback csökkentés terv, audit playbook.",
+  },
+  "packages.p1.deliverables": {
+    en: "Pipeline Audit Report (15–20 page PDF)|SOC2 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap",
+    hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap",
   },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
   "packages.p2.title": { en: "Monthly Retainer", hu: "Havi Retainer" },
   "packages.p2.price": { en: "€5,000/mo | 10 hrs/week", hu: "2M Ft/hó | 10 óra/hét" },
+  "packages.p2.forWhom": {
+    en: "You have the plan, need ongoing execution help.",
+    hu: "Van terv, folyamatos végrehajtási támogatás kell.",
+  },
   "packages.p2.desc": {
     en: "Monthly review, Slack support, hiring advice, compliance coaching.",
     hu: "Havi review, Slack support, hiring tanács, compliance coaching.",
@@ -93,6 +105,10 @@ const t = {
 
   "packages.p3.title": { en: "Fractional VP of Engineering", hu: "Fractional VP of Engineering" },
   "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "4M Ft/hó | 20 óra/hét" },
+  "packages.p3.forWhom": {
+    en: "You need a leader, not just an advisor.",
+    hu: "Vezető kell, nem csak tanácsadó.",
+  },
   "packages.p3.desc": {
     en: "Full engineering leadership, roadmap ownership, architecture review.",
     hu: "Teljes engineering leadership, roadmap, architecture review.",
@@ -101,6 +117,11 @@ const t = {
 
   "packages.requestBtn": { en: "I want this", hu: "Kérem ezt" },
   "packages.popular": { en: "Popular", hu: "Népszerű" },
+  "packages.deliverablesTitle": { en: "What you'll get", hu: "Amit kapsz" },
+  "packages.guarantee": {
+    en: "Risk-free: if after Week 1 you don't see clear value, you pay nothing.",
+    hu: "Kockázatmentes: ha az 1. hét után nem látsz tiszta értéket, nem fizetsz.",
+  },
 
   // How it works
   "how.tag": { en: "How It Works", hu: "Hogyan működik" },
