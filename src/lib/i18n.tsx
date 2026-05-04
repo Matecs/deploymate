@@ -12,20 +12,21 @@ const t = {
   "nav.bookCall": { en: "Contact Me", hu: "Lépjünk kapcsolatba" },
 
   // Hero
-  "hero.title": { en: "Release & Compliance Operations Architect", hu: "Release & Compliance Operations Architect" },
+  "hero.title": {
+    en: "Stop losing weekends to rollbacks and audit panic.",
+    hu: "Ne menjenek el a hétvégéid rollback-ekre és audit pánikra.",
+  },
   "hero.stats": {
-    en: "109 releases/year · 1 rollback · 12+ cloud migrations with 0 downtime",
-    hu: "109 release/év · 1 rollback · 12+ cloud migráció downtime nélkül",
+    en: "1 rollback per 109 releases (0.9% failure rate — industry avg ~15%) · 12+ cloud migrations with 0 downtime",
+    hu: "1 rollback / 109 release (0,9% — iparági átlag ~15%) · 12+ cloud migráció 0 downtime-mal",
   },
   "hero.desc": {
-    en: "18 years of experience building stable, audit-ready release pipelines",
-    hu: "18 év tapasztalat stabil, audit-ready release folyamatok építésében",
+    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. 75% fewer rollbacks in 2 weeks. 18 years of experience.",
+    hu: "Káoszos SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. 75%-kal kevesebb rollback 2 hét alatt. 18 év tapasztalat.",
   },
-  "hero.pricing": {
-    en: "Project: €4,500 | Monthly retainer: €5,000/mo",
-    hu: "Projekt: 1,8M Ft | Havi retainer: 2M Ft/hó",
-  },
-  "hero.cta": { en: "Contact Me", hu: "Lépjünk kapcsolatba" },
+  "hero.pricing": { en: "", hu: "" },
+  "hero.cta": { en: "Book a free 15-min Release Audit call", hu: "Foglalj egy ingyenes 15 perces Release Audit hívást" },
+  "hero.ctaSecondary": { en: "See the 2-week audit", hu: "Nézd meg a 2 hetes auditot" },
 
   // Pain Points
   "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
@@ -34,8 +35,8 @@ const t = {
     hu: "Ez fáj a 20–150 fős SaaS cégeknél",
   },
   "pain.item1": {
-    en: "Weekly 1–2 rollbacks with overnight firefighting",
-    hu: "Heti rollback-ek éjszakai tűzoltással",
+    en: "Your on-call engineer just texted at 2 AM. Again. 1–2 rollbacks every week.",
+    hu: "Az on-call mérnököd hajnali 2-kor írt. Megint. Heti 1–2 rollback.",
   },
   "pain.item2": {
     en: "Panic evidence gathering before SOC2/ISO audits",
