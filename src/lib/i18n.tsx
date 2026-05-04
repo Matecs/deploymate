@@ -40,7 +40,7 @@ const t = {
   },
   "pain.item2": {
     en: "Panic evidence gathering before SOC2/ISO audits",
-    hu: "SOC2/ISO audit előtt pánik evidence gyűjtéssel",
+    hu: "SOC2/ISO audit előtti pánikszerű bizonyítékgyűjtés",
   },
   "pain.item3": {
     en: "Outdated CI/CD (Jenkins → GitHub Actions needed)",
