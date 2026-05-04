@@ -159,7 +159,7 @@ describe("F – Function: what the product does", () => {
     document.body.appendChild(el);
 
     const buttons = screen.getAllByRole("button");
-    const ctaBtn = buttons.find((b) => b.textContent?.includes("Contact Me"));
+    const ctaBtn = buttons.find((b) => b.textContent?.includes("Release Audit call"));
     fireEvent.click(ctaBtn!);
 
     expect(mockScroll).toHaveBeenCalledWith({ behavior: "smooth" });
