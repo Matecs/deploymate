@@ -177,6 +177,40 @@ const t = {
   // Sticky CTA
   "sticky.text": { en: "Ready to stabilize your releases?", hu: "Stabilizáld a release folyamataidat!" },
 
+  // FAQ
+  "faq.tag": { en: "FAQ", hu: "GYIK" },
+  "faq.title": { en: "Frequently Asked Questions", hu: "Gyakori kérdések" },
+  "faq.q1": { en: "What if we use GitLab or Bitbucket, not Jenkins?", hu: "Mi van, ha GitLab vagy Bitbucket van nálunk, nem Jenkins?" },
+  "faq.a1": {
+    en: "No problem. The audit methodology is platform-agnostic — I've worked with GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity and Buildkite. Deliverables are tailored to your stack.",
+    hu: "Semmi gond. Az audit módszertan platform-független — dolgoztam GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity és Buildkite stackekkel. A deliverable-ek a ti stackatekre szabottak.",
+  },
+  "faq.q2": { en: "Do you work async across time zones?", hu: "Async működsz időzónákon át?" },
+  "faq.a2": {
+    en: "Yes. I'm based in CET but work async-first with EU and US East Coast teams. Weekly sync call + Slack/Linear for ongoing communication.",
+    hu: "Igen. CET zónában vagyok, de async-first módon dolgozom EU és US East Coast csapatokkal. Heti sync hívás + Slack/Linear a folyamatos kommunikációra.",
+  },
+  "faq.q3": { en: "What access do you need to start?", hu: "Milyen hozzáférés kell az induláshoz?" },
+  "faq.a3": {
+    en: "Read access to your CI/CD (GitHub/GitLab), observability (Datadog/Grafana/etc.), and a 30-min onboarding call with your tech lead. No prod write access needed for the audit.",
+    hu: "Read access a CI/CD-hez (GitHub/GitLab), observabilityhez (Datadog/Grafana/stb.), és egy 30 perces onboarding hívás a tech leaddel. Az audithoz nem kell prod write access.",
+  },
+  "faq.q4": { en: "Can you sign an NDA / DPA?", hu: "Aláírsz NDA-t / DPA-t?" },
+  "faq.a4": {
+    en: "Absolutely. NDA on day one, DPA aligned to GDPR. I have templates ready, or I sign yours.",
+    hu: "Természetesen. NDA az első napon, GDPR-kompatibilis DPA. Vannak sablonjaim, vagy a tiéteket írom alá.",
+  },
+  "faq.q5": { en: "What's the guarantee?", hu: "Mi a garancia?" },
+  "faq.a5": {
+    en: "If after Week 1 of the project you don't see clear value, you pay nothing. No questions asked.",
+    hu: "Ha a projekt 1. hete után nem látsz tiszta értéket, nem fizetsz. Kérdés nélkül.",
+  },
+  "faq.q6": { en: "How fast can we start?", hu: "Milyen gyorsan tudunk indulni?" },
+  "faq.a6": {
+    en: "Typically within 1–2 weeks of the intro call, depending on capacity. Audit projects run in 2 calendar weeks.",
+    hu: "Az ismerkedő hívás után jellemzően 1–2 héten belül, a kapacitástól függően. Az audit projektek 2 naptári hét alatt futnak.",
+  },
+
   // Credibility badges
   "cred.badges": { en: "Helping teams prepare for", hu: "Felkészítés az alábbiakra" },
 
