@@ -83,7 +83,7 @@ const t = {
   },
   "packages.p1.desc": {
     en: "Release Audit — Pipeline review, rollback reduction plan, audit playbook.",
-    hu: "Release Audit — Pipeline átvilágítás, rollback csökkentés terv, audit playbook.",
+    hu: "Release Audit — Pipeline átvilágítás, rollback csökkentési terv, audit playbook.",
   },
   "packages.p1.deliverables": {
     en: "Pipeline Audit Report (15–20 page PDF)|SOC2 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap",
