@@ -120,7 +120,7 @@ const t = {
   "packages.deliverablesTitle": { en: "What you'll get", hu: "Amit kapsz" },
   "packages.guarantee": {
     en: "Risk-free: if after Week 1 you don't see clear value, you pay nothing.",
-    hu: "Kockázatmentes: ha az 1. hét után nem látsz tiszta értéket, nem fizetsz.",
+    hu: "Kockázatmentes: ha az 1. hét után nem látsz a munkámban értéket, nem fizetsz.",
   },
 
   // How it works
