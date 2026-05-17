@@ -1,4 +1,4 @@
-import { ClipboardCheck, RefreshCw, Crown, CheckCircle2, ShieldCheck } from "lucide-react";
+import { ClipboardCheck, RefreshCw, Layers, CheckCircle2, ShieldCheck } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
@@ -27,7 +27,7 @@ const PackagesSection = () => {
       deliverables: [] as string[],
     },
     {
-      icon: Crown,
+      icon: Layers,
       title: t("packages.p3.title"),
       forWhom: t("packages.p3.forWhom"),
       description: t("packages.p3.desc"),
