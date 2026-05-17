@@ -61,7 +61,7 @@ const t = {
 
   "packages.p2.title": { en: "Pipeline Architecture & Strategy", hu: "Pipeline Architecture & Strategy" },
   "packages.p2.price": { en: "€6,000/mo | 10 hrs/week", hu: "€6,000/hó | 10 óra/hét" },
-  "packages.p2.forWhom": { en: "You have the plan, need ongoing technical execution.", hu: "Van terv, folyamatos technikai végrehajtás kell." },
+  "packages.p2.forWhom": { en: "You have the plan, need ongoing technical execution.", hu: "Van terv, folyamatos technikai végrehajtásra van szükség." },
   "packages.p2.desc": { en: "Monthly pipeline review, CI/CD strategy, compliance coaching, async Slack support.", hu: "Havi pipeline review, CI/CD stratégia, compliance coaching, async Slack támogatás." },
   "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
 
