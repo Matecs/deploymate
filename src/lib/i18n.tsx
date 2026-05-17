@@ -9,20 +9,24 @@ const t = {
   "nav.services": { en: "Services", hu: "Szolgáltatások" },
   "nav.howItWorks": { en: "How It Works", hu: "Hogyan működik" },
   "nav.whyMe": { en: "Why Me", hu: "Miért én?" },
-  "nav.bookCall": { en: "Contact Me", hu: "Lépjünk kapcsolatba" },
+  "nav.bookCall": { en: "Contact", hu: "Kapcsolat" },
 
   // Hero
   "hero.title": {
-    en: "Stop losing weekends to rollbacks and audit panic.",
-    hu: "Ne menjenek el a hétvégéid rollback-ekre és audit pánikra.",
+    en: "Most CI/CD pipelines are built by DevOps engineers. Mine are built by a QA engineer.",
+    hu: "A legtöbb CI/CD pipeline-t DevOps mérnökök építik. Az enyémeket egy QA mérnök.",
+  },
+  "hero.titleHighlight": {
+    en: "The difference: 109 releases, 1 rollback.",
+    hu: "A különbség: 109 release, 1 rollback.",
   },
   "hero.stats": {
-    en: "1 rollback per 109 releases (0.9% failure rate — industry avg ~15%) · 12+ cloud migrations with 0 downtime",
-    hu: "1 rollback / 109 release (0,9% — iparági átlag ~15%) · 12+ cloud migráció 0 downtime-mal",
+    en: "0.9% failure rate (industry avg ~15%) · 12+ cloud migrations with 0 downtime · SOC2, ISO27001, SOX, GDPR, NIS2",
+    hu: "0,9% hibaarány (iparági átlag ~15%) · 12+ cloud migráció 0 downtime-mal · SOC2, ISO27001, SOX, GDPR, NIS2",
   },
   "hero.desc": {
-    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. 75% fewer rollbacks in 2 weeks. 18 years of experience.",
-    hu: "Káoszos SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. 75%-kal kevesebb rollback 2 hét alatt. 18 év tapasztalat.",
+    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. The same pipeline discipline that kills rollbacks also makes SOC2 audits boring. 19 years — from QA engineer to Tech Lead to Senior EM — now at your service.",
+    hu: "Káoszos SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Ugyanaz a pipeline fegyelem ami megöli a rollback-eket, az SOC2 auditokat is unalmassá teszi. 19 év — QA mérnöktől Tech Lead-en át Senior EM-ig — most a te szolgálatodban.",
   },
   "hero.pricing": { en: "", hu: "" },
   "hero.cta": { en: "Book a free 15-min Release Audit call", hu: "Foglalj egy ingyenes 15 perces Release Audit hívást" },
@@ -30,147 +34,81 @@ const t = {
 
   // Pain Points
   "pain.tag": { en: "Common Challenges", hu: "Tipikus problémák" },
-  "pain.title": {
-    en: "This Hurts at 20–150 Person SaaS Companies",
-    hu: "Ez fáj a 20–150 fős SaaS cégeknél",
-  },
-  "pain.item1": {
-    en: "Your on-call engineer just texted at 2 AM. Again. 1–2 rollbacks every week.",
-    hu: "Az on-call mérnököd hajnali 2-kor írt. Megint. Heti 1–2 rollback.",
-  },
-  "pain.item2": {
-    en: "Panic evidence gathering before SOC2/ISO audits",
-    hu: "SOC2/ISO audit előtti pánikszerű bizonyítékgyűjtés",
-  },
-  "pain.item3": {
-    en: "Outdated CI/CD (Jenkins → GitHub Actions needed)",
-    hu: "Elavult Jenkins/TeamCity pipeline",
-  },
-  "pain.item4": {
-    en: "No real-time visibility into deploys and on-call incidents",
-    hu: "Nincs valós idejű rálátás a deploy-okra és on-call incidensekre",
-  },
+  "pain.title": { en: "This Hurts at 20–150 Person SaaS Companies", hu: "Ez fáj a 20–150 fős SaaS cégeknél" },
+  "pain.item1": { en: "Your on-call engineer just texted at 2 AM. Again. 1–2 rollbacks every week.", hu: "Az on-call mérnököd hajnali 2-kor írt. Megint. Heti 1–2 rollback." },
+  "pain.item2": { en: "Panic evidence gathering before SOC2/ISO audits", hu: "SOC2/ISO audit előtti pánikszerű bizonyítékgyűjtés" },
+  "pain.item3": { en: "Outdated CI/CD (Jenkins/TeamCity → GitHub Actions needed)", hu: "Elavult Jenkins/TeamCity pipeline" },
+  "pain.item4": { en: "No real-time visibility into deploys and on-call incidents", hu: "Nincs valós idejű rálátás a deploy-okra és on-call incidensekre" },
 
   // Audience
   "audience.tag": { en: "Who Is This For?", hu: "Kinek szól?" },
   "audience.title": { en: "20–150 Person SaaS Teams", hu: "20–150 fős SaaS csapatok" },
-  "audience.subtitle": {
-    en: "If any of these sound familiar, we should talk.",
-    hu: "Ha bármelyik ismerősen hangzik, beszéljünk.",
-  },
-  "audience.item1": {
-    en: "You're preparing for your first SOC2 / ISO27001 audit",
-    hu: "Első SOC2 / ISO27001 audit előtt álltok",
-  },
-  "audience.item2": {
-    en: "Weekly rollbacks, firefighting, CI/CD chaos",
-    hu: "Heti rollback‑ek, tűzoltás, CI/CD káosz",
-  },
-  "audience.item3": {
-    en: "Leadership has no metrics on release quality or compliance status",
-    hu: "A vezetésnek nincs metrikája a release minőségről és compliance állapotról",
-  },
+  "audience.subtitle": { en: "If any of these sound familiar, we should talk.", hu: "Ha bármelyik ismerősen hangzik, beszéljünk." },
+  "audience.item1": { en: "You're preparing for your first SOC2 / ISO27001 audit — and you're not sure where the evidence lives.", hu: "Első SOC2 / ISO27001 audit előtt álltok — és nem tudjátok hol az evidence." },
+  "audience.item2": { en: "Weekly rollbacks, firefighting, CI/CD chaos — your best engineers are burning out.", hu: "Heti rollback-ek, tűzoltás, CI/CD káosz — a legjobb embereid kiégnek." },
+  "audience.item3": { en: "Leadership has no metrics on release quality or compliance status — and the board is asking.", hu: "A vezetésnek nincs metrikája a release minőségről és compliance státuszról — a board meg kérdez." },
 
-  // Packages — Tiered pricing
+  // Packages
   "packages.tag": { en: "Services", hu: "Szolgáltatások" },
   "packages.title": { en: "Choose Your Service", hu: "Válassz szolgáltatást" },
 
-  "packages.p1.title": { en: "Project", hu: "Projekt" },
-  "packages.p1.price": { en: "€4,500 | 2 weeks", hu: "1,8M Ft | 2 hét" },
-  "packages.p1.forWhom": {
-    en: "You need a diagnosis and a plan. Start here.",
-    hu: "Diagnózis és terv kell. Kezdd itt.",
-  },
-  "packages.p1.desc": {
-    en: "Release Audit — Pipeline review, rollback reduction plan, audit playbook.",
-    hu: "Release Audit — Pipeline átvilágítás, rollback csökkentési terv, audit playbook.",
-  },
-  "packages.p1.deliverables": {
-    en: "Pipeline Audit Report (15–20 page PDF)|SOC2 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap",
-    hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap",
-  },
+  "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
+  "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "€6,500 | 2 hét" },
+  "packages.p1.forWhom": { en: "You need a diagnosis and a plan. Start here.", hu: "Diagnózis és terv kell. Kezdd itt." },
+  "packages.p1.desc": { en: "Pipeline audit, rollback reduction plan, audit evidence playbook.", hu: "Pipeline átvilágítás, rollback csökkentési terv, audit evidence playbook." },
+  "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|SOC2/ISO27001 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2/ISO27001 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap" },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
-  "packages.p2.title": { en: "Monthly Retainer", hu: "Havi Retainer" },
-  "packages.p2.price": { en: "€5,000/mo | 10 hrs/week", hu: "2M Ft/hó | 10 óra/hét" },
-  "packages.p2.forWhom": {
-    en: "You have the plan, need ongoing execution help.",
-    hu: "Van terv, folyamatos végrehajtási támogatás kell.",
-  },
-  "packages.p2.desc": {
-    en: "Monthly review, Slack support, hiring advice, compliance coaching.",
-    hu: "Havi review, Slack support, hiring tanács, compliance coaching.",
-  },
+  "packages.p2.title": { en: "Pipeline Architecture & Strategy", hu: "Pipeline Architecture & Strategy" },
+  "packages.p2.price": { en: "€6,000/mo | 10 hrs/week", hu: "€6,000/hó | 10 óra/hét" },
+  "packages.p2.forWhom": { en: "You have the plan, need ongoing technical execution.", hu: "Van terv, folyamatos technikai végrehajtás kell." },
+  "packages.p2.desc": { en: "Monthly pipeline review, CI/CD strategy, compliance coaching, async Slack support.", hu: "Havi pipeline review, CI/CD stratégia, compliance coaching, async Slack támogatás." },
   "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
 
-  "packages.p3.title": { en: "Fractional VP of Engineering", hu: "Fractional VP of Engineering" },
-  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "4M Ft/hó | 20 óra/hét" },
-  "packages.p3.forWhom": {
-    en: "You need a leader, not just an advisor.",
-    hu: "Vezető kell, nem csak tanácsadó.",
-  },
-  "packages.p3.desc": {
-    en: "Full engineering leadership, roadmap ownership, architecture review.",
-    hu: "Teljes engineering leadership, roadmap, architecture review.",
-  },
+  "packages.p3.title": { en: "Release Systems Architecture", hu: "Release Systems Architecture" },
+  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "€10,000/hó | 20 óra/hét" },
+  "packages.p3.forWhom": { en: "You need deep technical architecture, not people management.", hu: "Mély technikai architektúra kell, nem people management." },
+  "packages.p3.desc": { en: "End-to-end release architecture, multi-product compliance strategy, vendor/tooling selection. Zero people management. Pure technical leadership.", hu: "Teljeskörű release architektúra, többtermékes compliance stratégia, vendor/tooling kiválasztás. Nulla people management. Tiszta technikai vezetés." },
   "packages.p3.cta": { en: "Premium", hu: "Prémium" },
 
   "packages.requestBtn": { en: "I want this", hu: "Kérem ezt" },
   "packages.popular": { en: "Popular", hu: "Népszerű" },
   "packages.deliverablesTitle": { en: "What you'll get", hu: "Amit kapsz" },
-  "packages.guarantee": {
-    en: "Risk-free: if after Week 1 you don't see clear value, you pay nothing.",
-    hu: "Kockázatmentes: ha az 1. hét után nem látsz a munkámban értéket, nem fizetsz.",
-  },
+  "packages.guarantee": { en: "Risk-free: if after Week 1 you don't see clear value, you pay nothing.", hu: "Kockázatmentes: ha az 1. hét után nem látsz a munkámban értéket, nem fizetsz." },
 
   // How it works
   "how.tag": { en: "How It Works", hu: "Hogyan működik" },
   "how.title": { en: "3 Simple Steps", hu: "3 egyszerű lépés" },
   "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
-  "how.step1.desc": {
-    en: "I understand your pain points and current setup.",
-    hu: "Megértem a problémáidat és a jelenlegi helyzetet.",
-  },
-  "how.step2.title": { en: "Project (€4,500)", hu: "Projekt (1,8M Ft)" },
-  "how.step2.desc": {
-    en: "Concrete deliverables in 2 weeks.",
-    hu: "Konkrét deliverables 2 hét alatt.",
-  },
+  "how.step1.desc": { en: "I understand your pain points and current setup.", hu: "Megértem a problémáidat és a jelenlegi helyzetet." },
+  "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (€6,500)" },
+  "how.step2.desc": { en: "Concrete deliverables in 2 weeks.", hu: "Konkrét deliverables 2 hét alatt." },
   "how.step3.title": { en: "Optional: Monthly retainer", hu: "Opcionális: Havi retainer" },
-  "how.step3.desc": {
-    en: "Ongoing support starting at €5,000/mo.",
-    hu: "Folyamatos támogatás 2M Ft/hó-tól.",
-  },
+  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo.", hu: "Folyamatos technikai támogatás €6,000/hó-tól." },
 
   // Credibility
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
   "cred.title": { en: "Why Me", hu: "Miért én?" },
-  "cred.t1": {
-    en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization.",
-    hu: "109 release/év 1 rollback-kal (75%-os csökkentés) egy 40 fős mérnökcsapatban.",
-  },
-  "cred.t2": {
-    en: "Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.",
-    hu: "Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken keresztül.",
-  },
-  "cred.source": { en: "— Engineering Leadership, Series B SaaS (anonymized on request)", hu: "— Engineering Leadership, Series B SaaS (kérésre anonimizálva)" },
+  "cred.t1": { en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization. Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.", hu: "109 release/év 1 rollback-kal (75%-os csökkentés) 40 fős mérnökcsapatban. Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken." },
+  "cred.t1Source": { en: "— Engineering Leadership, Series B SaaS (anonymized on request)", hu: "— Engineering Leadership, Series B SaaS (kérésre anonimizálva)" },
+  "cred.t2": { en: "Mate's accountability was one of his strengths. He is extremely thorough, and conscientious. He always pays attention to the details. A true advocate of automation test.", hu: "Mate elszámoltathatósága az egyik erőssége volt. Rendkívül alapos és lelkiismeretes. Mindig odafigyel a részletekre. Az automatizált tesztelés igazi szószólója." },
+  "cred.t2Source": { en: "— Manager review, 2022–2024", hu: "— Manager review, 2022–2024" },
+  "cred.t3": { en: "Relentless in getting Rescue operational again after the CrowdStrike incident — came back from PTO, organized the entire response across QA and DevOps, and brought the system back.", hu: "Könyörtelenül dolgozott a Rescue újraindításán a CrowdStrike incidens után — visszajött szabadságról, megszervezte a teljes elhárítást QA és DevOps oldalon, és visszahozta a rendszert." },
+  "cred.t3Source": { en: "— Manager review, 2024 H2", hu: "— Manager review, 2024 H2" },
+
+  // My Story
+  "story.title": { en: "My Story", hu: "Az én történetem" },
+  "story.p1": { en: "I started as a QA engineer in 2007. Over 19 years at GoTo/LogMeIn, I moved through Tech Lead to Senior Engineering Manager — but my superpower stayed the same: I build pipelines the way a QA engineer thinks. Prevention over patching.", hu: "QA mérnökként kezdtem 2007-ben. 19 év alatt a GoTo-nál / LogMeIn-nél QA-ból Tech Lead, majd Senior Engineering Manager lettem — de a szupererőm ugyanaz maradt: úgy építek pipeline-okat, ahogy egy QA mérnök gondolkodik. Megelőzés, nem toldozás." },
+  "story.p2": { en: "Two times I came back from vacation to lead incident response: once for CrowdStrike, once for an emergency OpenSSL fix. Not because I had to — because I know what's at stake, and I won't watch from the sidelines.", hu: "Kétszer jöttem vissza szabadságról incidenselhárítást vezetni: egyszer a CrowdStrike, egyszer egy sürgős OpenSSL fix miatt. Nem azért mert muszáj volt — hanem mert tudom mi a tét, és nem nézem a partvonalról." },
+  "story.p3": { en: "In 2018, my manager wrote that my QA and release work was \"strong highly effective\" while pushing me to improve on people management. That feedback was a gift. Today I don't manage people. I build systems so reliable that people can sleep.", hu: "2018-ban a managerem azt írta: a QA és release munkám \"strong highly effective\", de a people management oldalt fejlesztenem kell. Ez a visszajelzés ajándék volt. Ma nem menedzselek embereket. Olyan rendszereket építek, amik mellett az emberek aludni tudnak." },
 
   // CTA
   "cta.tag": { en: "Get Started", hu: "Kezdjük el" },
-  "cta.title": {
-    en: "Ready for an Audit‑Ready Release Pipeline?",
-    hu: "Készen állsz egy audit‑ready release pipeline‑ra?",
-  },
-  "cta.desc": {
-    en: "Write me or call and let's see if I can help before your next audit or release chaos:",
-    hu: "Írj, vagy hívj, és megnézzük, tudok‑e segíteni a következő auditod vagy release káoszod előtt:",
-  },
+  "cta.title": { en: "Ready for an Audit-Ready Release Pipeline?", hu: "Készen állsz egy audit-ready release pipeline-ra?" },
+  "cta.desc": { en: "Write me or call. Let's see if I can help before your next audit or the next 2 AM wake-up call:", hu: "Írj, vagy hívj. Nézzük meg, tudok-e segíteni a következő auditod vagy a következő hajnali riasztás előtt:" },
 
   // Footer
-  "footer.tagline": {
-    en: "QA-Driven Release & Compliance Operations",
-    hu: "QA-Driven Release & Compliance Operations",
-  },
+  "footer.tagline": { en: "QA-Driven Release & Compliance Operations", hu: "QA-Driven Release & Compliance Operations" },
   "footer.rights": { en: "All rights reserved", hu: "Minden jog fenntartva" },
   "footer.hours": { en: "Mon–Fri 9–17 CET", hu: "H–P 9–17 CET" },
 
@@ -181,35 +119,19 @@ const t = {
   "faq.tag": { en: "FAQ", hu: "GYIK" },
   "faq.title": { en: "Frequently Asked Questions", hu: "Gyakori kérdések" },
   "faq.q1": { en: "What if we use GitLab or Bitbucket, not Jenkins?", hu: "Mi van, ha GitLab vagy Bitbucket van nálunk, nem Jenkins?" },
-  "faq.a1": {
-    en: "No problem. The audit methodology is platform-agnostic — I've worked with GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity and Buildkite. Deliverables are tailored to your stack.",
-    hu: "Semmi gond. Az audit módszertan platform-független — dolgoztam GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity és Buildkite stackekkel. A deliverable-ek a ti stackatekre szabottak.",
-  },
-  "faq.q2": { en: "Do you work async across time zones?", hu: "Async működsz időzónákon át?" },
-  "faq.a2": {
-    en: "Yes. I'm based in CET but work async-first with EU and US East Coast teams. Weekly sync call + Slack/Linear for ongoing communication.",
-    hu: "Igen. CET zónában vagyok, de async-first módon dolgozom EU és US East Coast csapatokkal. Heti sync hívás + Slack/Linear a folyamatos kommunikációra.",
-  },
-  "faq.q3": { en: "What access do you need to start?", hu: "Milyen hozzáférés kell az induláshoz?" },
-  "faq.a3": {
-    en: "Read access to your CI/CD (GitHub/GitLab), observability (Datadog/Grafana/etc.), and a 30-min onboarding call with your tech lead. No prod write access needed for the audit.",
-    hu: "Read access a CI/CD-hez (GitHub/GitLab), observabilityhez (Datadog/Grafana/stb.), és egy 30 perces onboarding hívás a tech leaddel. Az audithoz nem kell prod write access.",
-  },
-  "faq.q4": { en: "Can you sign an NDA / DPA?", hu: "Aláírsz NDA-t / DPA-t?" },
-  "faq.a4": {
-    en: "Absolutely. NDA on day one, DPA aligned to GDPR. I have templates ready, or I sign yours.",
-    hu: "Természetesen. NDA az első napon, GDPR-kompatibilis DPA. Vannak sablonjaim, vagy a tiéteket írom alá.",
-  },
-  "faq.q5": { en: "What's the guarantee?", hu: "Mi a garancia?" },
-  "faq.a5": {
-    en: "If after Week 1 of the project you don't see clear value, you pay nothing. No questions asked.",
-    hu: "Ha a projekt 1. hete után nem látsz tiszta értéket, nem fizetsz. Kérdés nélkül.",
-  },
-  "faq.q6": { en: "How fast can we start?", hu: "Milyen gyorsan tudunk indulni?" },
-  "faq.a6": {
-    en: "Typically within 1–2 weeks of the intro call, depending on capacity. Audit projects run in 2 calendar weeks.",
-    hu: "Az ismerkedő hívás után jellemzően 1–2 héten belül, a kapacitástól függően. Az audit projektek 2 naptári hét alatt futnak.",
-  },
+  "faq.a1": { en: "No problem. The audit methodology is platform-agnostic — I've worked with GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity, and Buildkite. Deliverables are tailored to your stack.", hu: "Semmi gond. Az audit módszertan platform-független — dolgoztam GitHub Actions, GitLab CI, Bitbucket Pipelines, CircleCI, Jenkins, TeamCity és Buildkite stackekkel. A deliverable-ek a ti stacketekre szabottak." },
+  "faq.q2": { en: "Do you do people management?", hu: "Vállalsz people managementet?" },
+  "faq.a2": { en: "No. I don't manage people, I don't do culture building, and I don't do corporate politics. If you need a VP of Engineering who will run 1:1s and performance reviews, I'm not your person. If you need someone who will make your pipeline boringly reliable and your auditors bored, that's me.", hu: "Nem. Nem menedzselek embereket, nem csinálok culture buildinget, és nem foglalkozom céges politikával. Ha olyan VP of Engineering kell aki 1:1-eket és teljesítményértékeléseket tart, nem én vagyok az embered. Ha olyasvalaki kell aki a pipeline-odat unalmasan megbízhatóvá, az auditoraidat pedig unottá teszi, akkor igen." },
+  "faq.q3": { en: "Do you work async across time zones?", hu: "Async működsz időzónákon át?" },
+  "faq.a3": { en: "Yes. I'm based in CET but work async-first with EU and US East Coast teams. Weekly sync call + Slack for ongoing communication.", hu: "Igen. CET zónában vagyok, de async-first módon dolgozom EU és US East Coast csapatokkal. Heti sync hívás + Slack a folyamatos kommunikációra." },
+  "faq.q4": { en: "What access do you need to start?", hu: "Milyen hozzáférés kell az induláshoz?" },
+  "faq.a4": { en: "Read access to your CI/CD (GitHub/GitLab), observability (Datadog/Grafana/etc.), and a 30-min onboarding call with your tech lead. No prod write access needed for the audit.", hu: "Read access a CI/CD-hez (GitHub/GitLab), observabilityhez (Datadog/Grafana/stb.), és egy 30 perces onboarding hívás a tech leaddel. Az audithoz nem kell prod write access." },
+  "faq.q5": { en: "Can you sign an NDA / DPA?", hu: "Aláírsz NDA-t / DPA-t?" },
+  "faq.a5": { en: "Absolutely. NDA on day one, DPA aligned to GDPR. I have templates ready, or I sign yours.", hu: "Természetesen. NDA az első napon, GDPR-kompatibilis DPA. Vannak sablonjaim, vagy a tiéteket írom alá." },
+  "faq.q6": { en: "What's the guarantee?", hu: "Mi a garancia?" },
+  "faq.a6": { en: "If after Week 1 of the project you don't see clear value, you pay nothing. No questions asked.", hu: "Ha a projekt 1. hete után nem látsz tiszta értéket, nem fizetsz. Kérdés nélkül." },
+  "faq.q7": { en: "How fast can we start?", hu: "Milyen gyorsan tudunk indulni?" },
+  "faq.a7": { en: "Typically within 1–2 weeks of the intro call, depending on capacity. Audit projects run in 2 calendar weeks.", hu: "Az ismerkedő hívás után jellemzően 1–2 héten belül, a kapacitástól függően. Az audit projektek 2 naptári hét alatt futnak." },
 
   // Credibility badges
   "cred.badges": { en: "Helping teams prepare for", hu: "Felkészítés az alábbiakra" },
@@ -219,30 +141,15 @@ const t = {
   "cred.case.title": { en: "40-Engineer SaaS Company — 2-Week Release Audit", hu: "40 fős SaaS cég — 2 hetes Release Audit" },
   "cred.case.context": { en: "Series B fintech, Germany · 4 products · 40 engineers", hu: "Series B fintech, Németország · 4 termék · 40 mérnök" },
   "cred.case.before.title": { en: "Before", hu: "Előtte" },
-  "cred.case.before.items": {
-    en: "2 rollbacks/week with 2 AM firefighting|3-day audit prep panic before every quarter|Jenkins spaghetti held together with bash scripts",
-    hu: "Heti 2 rollback hajnali tűzoltással|3 napos audit pánik minden negyedév előtt|Jenkins spagetti bash scriptekkel összetartva",
-  },
+  "cred.case.before.items": { en: "2 rollbacks/week with 2 AM firefighting|3-day audit prep panic before every quarter|Jenkins spaghetti held together with bash scripts", hu: "Heti 2 rollback hajnali tűzoltással|3 napos audit pánik minden negyedév előtt|Jenkins spagetti bash scriptekkel összetartva" },
   "cred.case.after.title": { en: "After", hu: "Utána" },
-  "cred.case.after.items": {
-    en: "1 rollback per 109 releases (0.9% failure rate)|0 audit findings, evidence auto-collected|GitHub Actions pipeline, 40% faster deploys",
-    hu: "1 rollback / 109 release (0,9% hibaarány)|0 audit finding, evidence automatikusan gyűjtve|GitHub Actions pipeline, 40%-kal gyorsabb deploy",
-  },
+  "cred.case.after.items": { en: "1 rollback per 109 releases (0.9% failure rate)|0 audit findings, evidence auto-collected|GitHub Actions pipeline, 40% faster deploys", hu: "1 rollback / 109 release (0,9% hibaarány)|0 audit finding, evidence automatikusan gyűjtve|GitHub Actions pipeline, 40%-kal gyorsabb deploy" },
   "cred.case.how.title": { en: "How", hu: "Hogyan" },
-  "cred.case.how.items": {
-    en: "Migrated CI/CD from Jenkins to GitHub Actions with zero downtime|Automated SOC2 evidence collection from PRs and deploys|Built rollback detection + release metrics dashboard",
-    hu: "CI/CD migráció Jenkinsről GitHub Actions-re zero downtime-mal|SOC2 evidence automatikus gyűjtése PR-ekből és deployokból|Rollback detekció + release metrics dashboard kiépítése",
-  },
+  "cred.case.how.items": { en: "Migrated CI/CD from Jenkins to GitHub Actions with zero downtime|Automated SOC2 evidence collection from PRs and deploys|Built rollback detection + release metrics dashboard", hu: "CI/CD migráció Jenkinsről GitHub Actions-re zero downtime-mal|SOC2 evidence automatikus gyűjtése PR-ekből és deployokból|Rollback detekció + release metrics dashboard kiépítése" },
   "cred.case.week1.title": { en: "Week 1 — Discovery & Analysis", hu: "1. hét — Feltérképezés & Elemzés" },
-  "cred.case.week1.items": {
-    en: "Pipeline audit across 4 products|Identified 3 critical bottlenecks|Mapped compliance gaps for SOC2",
-    hu: "Pipeline audit 4 terméken|3 kritikus szűk keresztmetszet azonosítása|SOC2 compliance hiányosságok feltérképezése",
-  },
+  "cred.case.week1.items": { en: "Pipeline audit across 4 products|Identified 3 critical bottlenecks|Mapped compliance gaps for SOC2", hu: "Pipeline audit 4 terméken|3 kritikus szűk keresztmetszet azonosítása|SOC2 compliance hiányosságok feltérképezése" },
   "cred.case.week2.title": { en: "Week 2 — Implementation & Results", hu: "2. hét — Implementáció & Eredmények" },
-  "cred.case.week2.items": {
-    en: "Automated rollback detection in CI/CD|Compliance evidence collection playbook|Release cadence optimization plan",
-    hu: "Automatizált rollback detekció a CI/CD-ben|Compliance evidence gyűjtési playbook|Release ütemezés optimalizálási terv",
-  },
+  "cred.case.week2.items": { en: "Automated rollback detection in CI/CD|Compliance evidence collection playbook|Release cadence optimization plan", hu: "Automatizált rollback detekció a CI/CD-ben|Compliance evidence gyűjtési playbook|Release ütemezés optimalizálási terv" },
   "cred.case.stat1.value": { en: "75%", hu: "75%" },
   "cred.case.stat1.label": { en: "Fewer rollbacks", hu: "Kevesebb rollback" },
   "cred.case.stat2.value": { en: "40%", hu: "40%" },
@@ -256,6 +163,7 @@ const t = {
   "footer.nav": { en: "Navigation", hu: "Navigáció" },
   "footer.contact": { en: "Contact", hu: "Kapcsolat" },
   "footer.precision": { en: "Built with engineering precision", hu: "Mérnöki precizitással építve" },
+
 } as const;
 
 type TranslationKey = keyof typeof t;
