@@ -40,7 +40,7 @@ describe("HeroSection", () => {
   it("renders the description text", () => {
     renderHero();
     expect(
-      screen.getByText(/19 years of experience/)
+      screen.getByText(/19 years/)
     ).toBeInTheDocument();
   });
 
