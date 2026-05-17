@@ -1,4 +1,4 @@
-# Contributing to Release Clarity
+# Contributing to DeployMate
 
 Thank you for taking the time to contribute! This document covers everything you need to know to make changes confidently.
 

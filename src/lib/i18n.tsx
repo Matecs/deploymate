@@ -168,8 +168,8 @@ const t = {
 
   // Footer
   "footer.tagline": {
-    en: "Release & Compliance Operations Architect",
-    hu: "Release & Compliance Operations Architect",
+    en: "QA-Driven Release & Compliance Operations",
+    hu: "QA-Driven Release & Compliance Operations",
   },
   "footer.rights": { en: "All rights reserved", hu: "Minden jog fenntartva" },
   "footer.hours": { en: "Mon–Fri 9–17 CET", hu: "H–P 9–17 CET" },

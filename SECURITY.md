@@ -2,11 +2,11 @@
 
 ## Supported Versions
 
-Release Clarity is a continuously deployed static single-page application. There are no versioned releases — the live site at **[datamate.hu](https://datamate.hu)** always reflects the latest commit on the `main` branch, and only that deployment receives security fixes.
+DeployMate is a continuously deployed static single-page application. There are no versioned releases — the live site at **[deploymate.hu](https://deploymate.hu)** always reflects the latest commit on the `main` branch, and only that deployment receives security fixes.
 
 | Deployment | Supported |
 | ---------- | --------- |
-| Current `main` (live at datamate.hu) | :white_check_mark: |
+| Current `main` (live at deploymate.hu) | :white_check_mark: |
 | Any previous snapshot / fork | :x: |
 
 ## Scope
@@ -38,7 +38,7 @@ The following are **out of scope** for this project:
 
 Please **do not** open a public GitHub issue for security vulnerabilities.
 
-Use GitHub's built-in **[private vulnerability reporting](https://github.com/Matecs/release-clarity/security/advisories/new)** to submit a report confidentially. Alternatively, you can reach the maintainer by email at the address listed on [datamate.hu](https://datamate.hu).
+Use GitHub's built-in **[private vulnerability reporting](https://github.com/Matecs/release-clarity/security/advisories/new)** to submit a report confidentially. Alternatively, you can reach the maintainer by email at the address listed on [deploymate.hu](https://deploymate.hu).
 
 When reporting, please include:
 

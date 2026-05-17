@@ -1,6 +1,6 @@
 # Testing Guide
 
-Release Clarity uses **Vitest** as the test runner together with **@testing-library/react** for component tests. This document covers the test setup, patterns, and conventions used in the project.
+DeployMate uses **Vitest** as the test runner together with **@testing-library/react** for component tests. This document covers the test setup, patterns, and conventions used in the project.
 
 ---
 
@@ -142,7 +142,7 @@ Prefer queries in this order (most to least accessible):
 expect(screen.getByRole("button", { name: /book a call/i })).toBeInTheDocument();
 
 // ✅ Text queries for non-interactive content
-expect(screen.getByText("Release & Compliance Operations Architect")).toBeInTheDocument();
+expect(screen.getByText("QA-Driven Release & Compliance Operations")).toBeInTheDocument();
 
 // ✅ getAllBy* when duplicates exist (e.g. desktop + mobile nav)
 expect(screen.getAllByText("Services").length).toBeGreaterThan(0);
