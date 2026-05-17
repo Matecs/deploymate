@@ -177,7 +177,7 @@ const CredibilitySection = () => {
         >
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-4">{t("cred.badges")}</p>
           <div className="flex items-center justify-center gap-6 flex-wrap">
-            {["SOC2", "ISO 27001", "SOX", "GDPR"].map((badge) => (
+            {["SOC2", "ISO 27001", "SOX", "GDPR", "NIS2"].map((badge) => (
               <div
                 key={badge}
                 className="px-4 py-2 rounded-md border border-border bg-muted/30 text-muted-foreground text-xs font-semibold tracking-wider"
