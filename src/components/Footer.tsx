@@ -32,7 +32,7 @@ const Footer = () => {
             <p className="text-foreground font-semibold text-sm mb-1">{t("footer.contact")}</p>
             <a href="mailto:mate@deploymate.hu" className="text-muted-foreground text-sm hover:text-foreground transition-colors">mate@deploymate.hu</a>
             <a href="tel:+36204349647" className="text-muted-foreground text-sm hover:text-foreground transition-colors">+36 20 434 9647</a>
-            <a href="https://deploymate.hu" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-foreground transition-colors">DeployMate.hu</a>
+            <p className="text-muted-foreground text-sm">{t("footer.hours")}</p>
           </div>
         </div>
 
