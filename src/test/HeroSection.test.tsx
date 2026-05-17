@@ -21,19 +21,26 @@ describe("HeroSection", () => {
   it("renders the hero title", () => {
     renderHero();
     expect(
-      screen.getByText(/Stop losing weekends to rollbacks/)
+      screen.getByText(/Most CI\/CD pipelines are built by DevOps engineers/)
+    ).toBeInTheDocument();
+  });
+
+  it("renders the title highlight in accent color", () => {
+    renderHero();
+    expect(
+      screen.getByText(/The difference: 109 releases, 1 rollback/)
     ).toBeInTheDocument();
   });
 
   it("renders the stats line", () => {
     renderHero();
-    expect(screen.getByText(/1 rollback per 109 releases/)).toBeInTheDocument();
+    expect(screen.getByText(/0\.9% failure rate/)).toBeInTheDocument();
   });
 
   it("renders the description text", () => {
     renderHero();
     expect(
-      screen.getByText(/18 years of experience/)
+      screen.getByText(/19 years/)
     ).toBeInTheDocument();
   });
 

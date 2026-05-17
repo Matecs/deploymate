@@ -59,7 +59,9 @@ const HeroSection = () => {
 
       <div className="relative container text-center max-w-3xl mx-auto px-6 py-24">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
-          {t("hero.title")}
+          <span>{t("hero.title")}</span>
+          <br />
+          <span className="text-accent">{t("hero.titleHighlight")}</span>
         </h1>
         <p className="text-primary-foreground/80 text-base md:text-lg font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {t("hero.stats")}
