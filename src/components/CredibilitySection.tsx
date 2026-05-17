@@ -68,7 +68,7 @@ const CredibilitySection = () => {
               {[
                 { year: "2007", text: t("story.p1") },
                 { year: "2024", text: t("story.p2") },
-                { year: t("story.today") === "story.today" ? "Today" : t("story.today"), text: t("story.p3") },
+                { year: "Today", text: t("story.p3") },
               ].map((item, i) => (
                 <motion.div
                   key={i}
