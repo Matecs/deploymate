@@ -47,6 +47,58 @@ const CredibilitySection = () => {
           ))}
         </div>
 
+        {/* My Story timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
+            {t("story.title")}
+          </h3>
+          <div className="relative">
+            {/* Connector line — vertical on mobile, horizontal on desktop */}
+            <div
+              aria-hidden="true"
+              className="absolute bg-accent/20 left-4 top-0 bottom-0 w-px md:left-0 md:right-0 md:top-5 md:bottom-auto md:h-px md:w-full"
+            />
+            <div className="grid gap-6 md:grid-cols-3 md:gap-6">
+              {[
+                { year: "2007", text: t("story.p1") },
+                { year: "2024", text: t("story.p2") },
+                { year: t("story.today") === "story.today" ? "Today" : t("story.today"), text: t("story.p3") },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.15 }}
+                  className="relative pl-12 md:pl-0 md:pt-14"
+                >
+                  {/* Year badge / connector dot */}
+                  <div className="absolute left-0 top-0 md:left-1/2 md:-translate-x-1/2 md:top-0 flex md:flex-col items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xs font-bold ring-4 ring-background">
+                      {i + 1}
+                    </div>
+                  </div>
+                  <div
+                    className="bg-card rounded-xl border border-border p-5"
+                    style={{ boxShadow: "var(--card-shadow)" }}
+                  >
+                    <p className="text-accent text-xs font-bold uppercase tracking-widest mb-2">
+                      {item.year}
+                    </p>
+                    <p className="text-foreground/80 text-sm leading-relaxed">{item.text}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Case Study */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
