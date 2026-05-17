@@ -26,7 +26,7 @@ const t = {
   },
   "hero.desc": {
     en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. The same pipeline discipline that kills rollbacks also makes SOC2 audits boring. 19 years — from QA engineer to Tech Lead to Senior EM — now at your service.",
-    hu: "Káoszos SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Ugyanaz a pipeline fegyelem ami megöli a rollback-eket, az SOC2 auditokat is unalmassá teszi. 19 év — QA mérnöktől Tech Lead-en át Senior EM-ig — most a te szolgálatodban.",
+    hu: "Kaotikus SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Ugyanaz a pipeline fegyelem ami megöli a rollback-eket, az SOC2 auditokat is unalmassá teszi. 19 év — QA mérnöktől Tech Lead-en át Senior EM-ig — most a te szolgálatodban.",
   },
   "hero.pricing": { en: "", hu: "" },
   "hero.cta": { en: "Book a free 15-min Release Audit call", hu: "Foglalj egy ingyenes 15 perces Release Audit hívást" },
@@ -46,7 +46,7 @@ const t = {
   "audience.subtitle": { en: "If any of these sound familiar, we should talk.", hu: "Ha bármelyik ismerősen hangzik, beszéljünk." },
   "audience.item1": { en: "You're preparing for your first SOC2 / ISO27001 audit — and you're not sure where the evidence lives.", hu: "Első SOC2 / ISO27001 audit előtt álltok — és nem tudjátok hol az evidence." },
   "audience.item2": { en: "Weekly rollbacks, firefighting, CI/CD chaos — your best engineers are burning out.", hu: "Heti rollback-ek, tűzoltás, CI/CD káosz — a legjobb embereid kiégnek." },
-  "audience.item3": { en: "Leadership has no metrics on release quality or compliance status — and the board is asking.", hu: "A vezetésnek nincs metrikája a release minőségről és compliance státuszról — a board meg kérdez." },
+  "audience.item3": { en: "Leadership has no metrics on release quality or compliance status — and the board is asking.", hu: "A vezetésnek nincs metrikája a release minőségről és compliance státuszról — a board is kérdezősködik." },
 
   // Packages
   "packages.tag": { en: "Services", hu: "Szolgáltatások" },
@@ -91,9 +91,9 @@ const t = {
   "cred.title": { en: "Why Me", hu: "Miért én?" },
   "cred.t1": { en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization. Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.", hu: "109 release/év 1 rollback-kal (75%-os csökkentés) 40 fős mérnökcsapatban. Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken." },
   "cred.t1Source": { en: "— Engineering Leadership, Series B SaaS (anonymized on request)", hu: "— Engineering Leadership, Series B SaaS (kérésre anonimizálva)" },
-  "cred.t2": { en: "Mate's accountability was one of his strengths. He is extremely thorough, and conscientious. He always pays attention to the details. A true advocate of automation test.", hu: "Mate elszámoltathatósága az egyik erőssége volt. Rendkívül alapos és lelkiismeretes. Mindig odafigyel a részletekre. Az automatizált tesztelés igazi szószólója." },
+  "cred.t2": { en: "Mate's accountability was one of his strengths. He is extremely thorough, and conscientious. He always pays attention to the details. A true advocate of automation test.", hu: "Mate felelősségvállalása volt az egyik erőssége. Rendkívül alapos és lelkiismeretes. Mindig odafigyel a részletekre. Az automatizált tesztelés igazi szószólója." },
   "cred.t2Source": { en: "— Manager review, 2022–2024", hu: "— Manager review, 2022–2024" },
-  "cred.t3": { en: "Relentless in getting Rescue operational again after the CrowdStrike incident — came back from PTO, organized the entire response across QA and DevOps, and brought the system back.", hu: "Könyörtelenül dolgozott a Rescue újraindításán a CrowdStrike incidens után — visszajött szabadságról, megszervezte a teljes elhárítást QA és DevOps oldalon, és visszahozta a rendszert." },
+  "cred.t3": { en: "Relentless in getting Rescue operational again after the CrowdStrike incident — came back from PTO, organized the entire response across QA and DevOps, and brought the system back.", hu: "Fáradhatatlanul dolgozott a Rescue újraindításán a CrowdStrike incidens után — visszajött szabadságról, megszervezte a teljes elhárítást QA és DevOps oldalon, és visszahozta a rendszert." },
   "cred.t3Source": { en: "— Manager review, 2024 H2", hu: "— Manager review, 2024 H2" },
 
   // My Story
