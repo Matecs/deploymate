@@ -16,11 +16,11 @@ const CTASection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="mailto:mate@datamate.hu"
+            href="mailto:mate@deploymate.hu"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity shadow-lg"
           >
             <Mail className="w-5 h-5" />
-            mate@datamate.hu
+            mate@deploymate.hu
           </a>
           <a
             href="tel:+36204349647"

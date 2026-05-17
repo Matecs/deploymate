@@ -1,8 +1,8 @@
-# Release Clarity
+# DeployMate
 
-A bilingual (English / Hungarian) professional services landing page for a **Release & Compliance Operations Architect**. The site presents three consulting packages aimed at 20–150 person SaaS teams that are preparing for SOC2/ISO27001 audits or struggling with unstable release pipelines.
+A bilingual (English / Hungarian) professional services landing page for a **QA-Driven Release & Compliance Operations**. The site presents three consulting packages aimed at 20–150 person SaaS teams that are preparing for SOC2/ISO27001 audits or struggling with unstable release pipelines.
 
-**Live site:** [datamate.hu](https://datamate.hu)
+**Live site:** [deploymate.hu](https://deploymate.hu)
 
 ---
 

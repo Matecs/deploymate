@@ -35,8 +35,8 @@ describe("CTASection", () => {
 
   it("renders the email contact link", () => {
     renderCTA();
-    const link = screen.getByRole("link", { name: /mate@datamate.hu/ });
-    expect(link).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    const link = screen.getByRole("link", { name: /mate@deploymate.hu/ });
+    expect(link).toHaveAttribute("href", "mailto:mate@deploymate.hu");
   });
 
   it("renders the phone contact link", () => {

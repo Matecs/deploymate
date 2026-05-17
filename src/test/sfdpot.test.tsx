@@ -86,11 +86,11 @@ describe("S – Structure: what the product is made of", () => {
     expect(items).toHaveLength(3);
   });
 
-  it("renders the DataMate logo in both header and footer", () => {
+  it("renders the DeployMate logo in both header and footer", () => {
     renderPage();
     // Header uses full descriptive alt text, footer uses short alt text
-    expect(screen.getByAltText("DataMate — Release & Compliance Operations Architect")).toBeInTheDocument();
-    expect(screen.getByAltText("DataMate logo")).toBeInTheDocument();
+    expect(screen.getByAltText("DeployMate — QA-Driven Release & Compliance Operations")).toBeInTheDocument();
+    expect(screen.getByAltText("DeployMate logo")).toBeInTheDocument();
   });
 });
 
@@ -168,9 +168,9 @@ describe("F – Function: what the product does", () => {
 
   it("CTA section has email and phone contact links", () => {
     renderPage();
-    const emailLinks = screen.getAllByRole("link", { name: /mate@datamate.hu/ });
+    const emailLinks = screen.getAllByRole("link", { name: /mate@deploymate.hu/ });
     expect(emailLinks.length).toBeGreaterThanOrEqual(1);
-    expect(emailLinks[0]).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    expect(emailLinks[0]).toHaveAttribute("href", "mailto:mate@deploymate.hu");
     const phoneLinks = screen.getAllByRole("link", { name: /36 20 434 9647/ });
     expect(phoneLinks.length).toBeGreaterThanOrEqual(1);
     expect(phoneLinks[0]).toHaveAttribute("href", "tel:+36204349647");
@@ -232,8 +232,8 @@ describe("D – Data: what the product processes", () => {
 
   it("renders the contact email as a mailto link in footer", () => {
     renderWithProviders(<Footer />);
-    const emailLink = screen.getByRole("link", { name: "mate@datamate.hu" });
-    expect(emailLink).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    const emailLink = screen.getByRole("link", { name: "mate@deploymate.hu" });
+    expect(emailLink).toHaveAttribute("href", "mailto:mate@deploymate.hu");
   });
 
   it("renders the phone number as a tel link in footer", () => {
@@ -280,7 +280,7 @@ describe("P – Platform: what the product depends on", () => {
 
   it("logo images have descriptive alt text for accessibility", () => {
     renderPage();
-    const logos = screen.getAllByAltText("DataMate logo");
+    const logos = screen.getAllByAltText("DeployMate logo");
     expect(logos.length).toBeGreaterThan(0);
   });
 });
@@ -295,16 +295,16 @@ describe("O – Operations: how the product is used", () => {
 
   it("CTA section contains email and phone contact info", () => {
     renderPage();
-    const emailLinks = screen.getAllByRole("link", { name: /mate@datamate.hu/ });
+    const emailLinks = screen.getAllByRole("link", { name: /mate@deploymate.hu/ });
     expect(emailLinks.length).toBeGreaterThanOrEqual(1);
     const phoneLinks = screen.getAllByRole("link", { name: /36 20 434 9647/ });
     expect(phoneLinks.length).toBeGreaterThanOrEqual(1);
   });
 
-  it("DataMate website link navigates to https://datamate.hu", () => {
+  it("DeployMate website link navigates to https://deploymate.hu", () => {
     renderWithProviders(<Footer />);
-    const siteLink = screen.getByText("DataMate.hu");
-    expect(siteLink.closest("a")).toHaveAttribute("href", "https://datamate.hu");
+    const siteLink = screen.getByText("DeployMate.hu");
+    expect(siteLink.closest("a")).toHaveAttribute("href", "https://deploymate.hu");
   });
 
   it("'Contact Me' nav button calls scrollIntoView on #cta", () => {
@@ -352,7 +352,7 @@ describe("T – Time: how the product handles time", () => {
   it("copyright year is dynamically generated, not a hardcoded past value", () => {
     renderWithProviders(<Footer />);
     const year = new Date().getFullYear();
-    // Footer renders "© {year} DataMate" — no "Copyright" prefix
+    // Footer renders "© {year} DeployMate" — no "Copyright" prefix
     expect(
       screen.getByText(new RegExp(String(year)))
     ).toBeInTheDocument();

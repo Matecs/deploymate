@@ -14,29 +14,29 @@ const renderFooter = () =>
   );
 
 describe("Footer", () => {
-  it("renders the DataMate logo", () => {
+  it("renders the DeployMate logo", () => {
     renderFooter();
-    expect(screen.getByAltText("DataMate logo")).toBeInTheDocument();
+    expect(screen.getByAltText("DeployMate logo")).toBeInTheDocument();
   });
 
   it("renders the tagline text", () => {
     renderFooter();
     expect(
-      screen.getByText("Release & Compliance Operations Architect")
+      screen.getByText("QA-Driven Release & Compliance Operations")
     ).toBeInTheDocument();
   });
 
-  it("renders the DataMate website link", () => {
+  it("renders the DeployMate website link", () => {
     renderFooter();
-    const link = screen.getByText("DataMate.hu");
+    const link = screen.getByText("DeployMate.hu");
     expect(link).toBeInTheDocument();
-    expect(link.closest("a")).toHaveAttribute("href", "https://datamate.hu");
+    expect(link.closest("a")).toHaveAttribute("href", "https://deploymate.hu");
   });
 
   it("renders the email address as a mailto link", () => {
     renderFooter();
-    const link = screen.getByRole("link", { name: "mate@datamate.hu" });
-    expect(link).toHaveAttribute("href", "mailto:mate@datamate.hu");
+    const link = screen.getByRole("link", { name: "mate@deploymate.hu" });
+    expect(link).toHaveAttribute("href", "mailto:mate@deploymate.hu");
   });
 
   it("renders the phone number as a tel link", () => {

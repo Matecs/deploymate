@@ -17,7 +17,7 @@ Failure to complete steps 4–6 violates the project's PR guidelines and will re
 
 ## Project Overview
 
-Release Clarity is a React single-page application that helps users understand and manage release notes. It is built with Vite, TypeScript, Tailwind CSS, and shadcn-ui (Radix UI primitives), and supports English and Hungarian through a custom i18n layer.
+DeployMate is a React single-page application that helps users understand and manage release notes. It is built with Vite, TypeScript, Tailwind CSS, and shadcn-ui (Radix UI primitives), and supports English and Hungarian through a custom i18n layer.
 
 ## Tech Stack
 
