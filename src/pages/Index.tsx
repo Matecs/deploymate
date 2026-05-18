@@ -23,7 +23,7 @@ const PageContent = () => {
   }, [lang]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <Helmet>
         <html lang={lang} />
         <link rel="canonical" href="https://deploymate.hu/" />

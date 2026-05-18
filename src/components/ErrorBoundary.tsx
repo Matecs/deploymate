@@ -25,7 +25,7 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center bg-background px-6">
+        <div className="min-h-dvh flex items-center justify-center bg-background px-6">
           <div className="text-center max-w-md">
             <h1 className="text-2xl font-bold text-foreground mb-3">Something went wrong</h1>
             <p className="text-muted-foreground mb-6">An unexpected error occurred. Please reload the page.</p>
