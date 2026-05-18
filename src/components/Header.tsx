@@ -3,7 +3,7 @@ import { useLang } from "@/lib/i18n";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
-import datamateLogo from "@/assets/datamate-logo.svg";
+import deploymateLogo from "@/assets/deploymate-logo.svg";
 
 const FlagHU = () => (
   <svg width="20" height="14" viewBox="0 0 20 14" className="inline-block rounded-sm">
@@ -40,7 +40,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2">
-          <img src={datamateLogo} alt="DeployMate — QA-Driven Release & Compliance Operations" className="h-12 w-auto" />
+          <img src={deploymateLogo} alt="DeployMate — QA-Driven Release & Compliance Operations" className="h-12 w-auto" />
         </div>
         <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <button onClick={() => scrollTo("pain-points")} className="hover:text-foreground transition-colors">{t("nav.painPoints")}</button>
