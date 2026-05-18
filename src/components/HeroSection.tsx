@@ -13,7 +13,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" aria-label="Hero" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section id="hero" aria-label="Hero" className="relative min-h-dvh flex items-center justify-center pt-16 overflow-hidden">
       <picture className="absolute inset-0 w-full h-full">
         <source media="(min-width: 768px)" srcSet={heroBgDesktopWebp} type="image/webp" />
         <source srcSet={heroBgMobileWebp} type="image/webp" />
