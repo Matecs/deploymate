@@ -33,11 +33,10 @@ Browser
 
 `src/main.tsx` is the single entry point. It imports the global CSS (`index.css`) and mounts `<App />` into the `#root` div defined in `index.html`.
 
-`src/App.tsx` wraps the entire tree with three providers and sets up routing:
+`src/App.tsx` wraps the entire tree with global wrappers/providers and sets up routing:
 
 | Provider | Package | Purpose |
 |---|---|---|
-| `QueryClientProvider` | `@tanstack/react-query` | Server-state / async data management |
 | `TooltipProvider` | `@radix-ui/react-tooltip` | Provides tooltip context for the whole tree |
 | `BrowserRouter` | `react-router-dom` | Client-side routing |
 
@@ -119,7 +118,7 @@ The project has minimal client state:
 | Mobile menu open/closed | `Header` component | Local `useState` |
 | Toast notifications | `App.tsx` (global) | shadcn-ui `useToast` hook |
 
-There is no server-side data fetching in the current codebase. `TanStack React Query` is set up in `App.tsx` and is ready to use if data-fetching features are added in the future.
+There is no server-side data fetching in the current codebase.
 
 ---
 

@@ -320,15 +320,15 @@ with sync_playwright() as p:
 print("Console errors:", js_errors or "none")
 ```
 
-### 4 — Known sandbox network limitation
+### 4 — Console error expectation
 
-Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, so a `net::ERR_NAME_NOT_RESOLVED` error will always appear in the console output for that resource. This is **expected** and does not indicate a CSP problem — the font loads correctly in production.
+The app should render with **no console errors** during visual testing.
 
 ### 5 — What to look for
 
 | Check | Pass criteria |
 |---|---|
-| No unexpected JS errors | Only the known Google Fonts DNS error above |
+| No unexpected JS errors | Console output contains no errors |
 | Hero section renders | Logo, headline, stats, CTA button visible |
 | All page sections render | Pain-points, Audience, Packages, How It Works, Credibility, CTA all show content |
 | Build succeeds | `npm run build` exits with code 0 and no warnings |
@@ -336,13 +336,15 @@ Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, s
 ### 6 — CSP notes (learned from security audit)
 
 - `frame-ancestors` is **silently ignored** by all browsers when delivered via `<meta http-equiv="Content-Security-Policy">`. It only works as an HTTP response header. Remove it from the meta tag to avoid the browser warning.
-- The existing `@import url('https://fonts.googleapis.com/...')` in `src/index.css` requires `https://fonts.googleapis.com` in `style-src` and `https://fonts.gstatic.com` in `font-src`. Without these the font stylesheet is blocked at runtime even though the import looks correct at build time.
+- If external font imports are reintroduced later, ensure CSP allows the font stylesheet/asset origins; otherwise the browser blocks them at runtime.
 
 ### 7 — Learnings from the "Remove unnecessary functions and files" PR
 
 - **`node_modules/.bin/vite --host 0.0.0.0 --port 8080 &`** must be run as a detached background process (`detach: true` in the bash tool), otherwise the Vite server exits when the shell session ends and Playwright gets `ERR_CONNECTION_REFUSED`.
 - After removing `QueryClientProvider` from `App.tsx`, the site still renders correctly and the `@tanstack/react-query` package is still in `package.json` — that is fine; a future `npm prune` can remove it if desired.
 - The `useBookingRateLimit.test.tsx` file in `docs/testing.md § File Structure` listing was stale after the hook was deleted — always update the file-listing table when test files are removed.
+- The previous React warning for `fetchPriority` on the hero image is resolved by removing the unsupported prop.
+- The previous sandbox Google Fonts DNS error is resolved by removing the external Google Fonts `@import`.
 
 ---
 
