@@ -23,8 +23,8 @@ Thank you for taking the time to contribute! This document covers everything you
 - **npm** (bundled with Node.js)
 
 ```sh
-git clone https://github.com/Matecs/release-clarity.git
-cd release-clarity
+git clone https://github.com/Matecs/deploymate.git
+cd deploymate
 npm install
 ```
 

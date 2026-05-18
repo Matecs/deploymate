@@ -38,7 +38,7 @@ The following are **out of scope** for this project:
 
 Please **do not** open a public GitHub issue for security vulnerabilities.
 
-Use GitHub's built-in **[private vulnerability reporting](https://github.com/Matecs/release-clarity/security/advisories/new)** to submit a report confidentially. Alternatively, you can reach the maintainer by email at the address listed on [deploymate.hu](https://deploymate.hu).
+Use GitHub's built-in **[private vulnerability reporting](https://github.com/Matecs/deploymate/security/advisories/new)** to submit a report confidentially. Alternatively, you can reach the maintainer by email at the address listed on [deploymate.hu](https://deploymate.hu).
 
 When reporting, please include:
 
