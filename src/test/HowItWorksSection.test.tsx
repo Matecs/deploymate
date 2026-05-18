@@ -32,8 +32,8 @@ describe("HowItWorksSection", () => {
   it("renders all three step titles", () => {
     renderSection();
     expect(screen.getByText("15-min call")).toBeInTheDocument();
-    expect(screen.getByText(/Project/)).toBeInTheDocument();
-    expect(screen.getByText(/Monthly retainer/)).toBeInTheDocument();
+    expect(screen.getByText(/Release Audit/)).toBeInTheDocument();
+    expect(screen.getByText(/Optional: Monthly retainer/)).toBeInTheDocument();
   });
 
   it("renders the step number badges", () => {

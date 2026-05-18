@@ -37,13 +37,13 @@ describe("AudienceSection", () => {
       screen.getByText(/preparing for your first SOC2/)
     ).toBeInTheDocument();
     expect(screen.getByText(/Weekly rollbacks/)).toBeInTheDocument();
-    expect(screen.getByText(/CTO lacks visibility/)).toBeInTheDocument();
+    expect(screen.getByText(/Leadership has no metrics on release quality or compliance status/)).toBeInTheDocument();
   });
 
   it("renders exactly three item cards", () => {
     renderAudience();
     // Each item is in a card with a border; count by the unique texts
-    const items = screen.getAllByText(/SOC2|rollbacks|CTO/);
+    const items = screen.getAllByText(/SOC2|rollbacks|Leadership/);
     expect(items).toHaveLength(3);
   });
 });

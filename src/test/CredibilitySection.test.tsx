@@ -32,11 +32,15 @@ describe("CredibilitySection", () => {
     expect(
       screen.getByText(/Seamless quarterly compliance/)
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Mate's accountability was one of his strengths/)
+    ).toBeInTheDocument();
   });
 
   it("renders the testimonial source attribution", () => {
     renderCredibility();
-    const sources = screen.getAllByText(/Engineering Leadership/);
-    expect(sources.length).toBeGreaterThanOrEqual(2);
+    expect(
+      screen.getByText(/Engineering Leadership, Series B SaaS/)
+    ).toBeInTheDocument();
   });
 });

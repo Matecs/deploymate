@@ -26,23 +26,23 @@ describe("PackagesSection", () => {
 
   it("renders all three package titles", () => {
     renderPackages();
-    expect(screen.getByText("Project")).toBeInTheDocument();
-    expect(screen.getByText("Monthly Retainer")).toBeInTheDocument();
-    expect(screen.getByText("Fractional VP of Engineering")).toBeInTheDocument();
+    expect(screen.getByText("Release Audit")).toBeInTheDocument();
+    expect(screen.getByText("Pipeline Architecture & Strategy")).toBeInTheDocument();
+    expect(screen.getByText("Release Systems Architecture")).toBeInTheDocument();
   });
 
   it("renders all three package prices", () => {
     renderPackages();
-    expect(screen.getByText("€4,500 | 2 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€5,000/mo | 10 hrs/week")).toBeInTheDocument();
+    expect(screen.getByText("€6,500 | 2 weeks")).toBeInTheDocument();
+    expect(screen.getByText("€6,000/mo | 10 hrs/week")).toBeInTheDocument();
     expect(screen.getByText("€10,000/mo | 20 hrs/week")).toBeInTheDocument();
   });
 
   it("renders all three package descriptions", () => {
     renderPackages();
-    expect(screen.getByText(/Release Audit — Pipeline review/)).toBeInTheDocument();
-    expect(screen.getByText(/Monthly review, Slack support/)).toBeInTheDocument();
-    expect(screen.getByText(/Full engineering leadership/)).toBeInTheDocument();
+    expect(screen.getByText(/Pipeline audit, rollback reduction plan/)).toBeInTheDocument();
+    expect(screen.getByText(/Monthly pipeline review, CI\/CD strategy/)).toBeInTheDocument();
+    expect(screen.getByText(/End-to-end release architecture/)).toBeInTheDocument();
   });
 
   it("renders three CTA buttons that scroll to #cta", () => {

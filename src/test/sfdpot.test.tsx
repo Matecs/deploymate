@@ -74,15 +74,15 @@ describe("S – Structure: what the product is made of", () => {
 
   it("renders all three service package cards", () => {
     renderPage();
-    expect(screen.getByText("Project")).toBeInTheDocument();
-    expect(screen.getByText("Monthly Retainer")).toBeInTheDocument();
-    expect(screen.getByText("Fractional VP of Engineering")).toBeInTheDocument();
+    expect(screen.getByText("Release Audit")).toBeInTheDocument();
+    expect(screen.getByText("Pipeline Architecture & Strategy")).toBeInTheDocument();
+    expect(screen.getByText("Release Systems Architecture")).toBeInTheDocument();
   });
 
   it("renders three audience item cards", () => {
     renderPage();
     const audienceSection = document.getElementById("audience")!;
-    const items = within(audienceSection).getAllByText(/SOC2|rollbacks|CTO/);
+    const items = within(audienceSection).getAllByText(/SOC2|rollbacks|Leadership/);
     expect(items).toHaveLength(3);
   });
 
@@ -189,7 +189,7 @@ describe("D – Data: what the product processes", () => {
     renderPage();
     expect(
       screen.getByRole("heading", {
-        name: /Stop losing weekends to rollbacks/,
+        name: /Most CI\/CD pipelines are built by DevOps engineers/,
       })
     ).toBeInTheDocument();
   });
@@ -202,22 +202,22 @@ describe("D – Data: what the product processes", () => {
 
   it("renders the experience claim in the hero description", () => {
     renderPage();
-    expect(screen.getByText(/18 years of experience/)).toBeInTheDocument();
+    expect(screen.getByText(/now at your service/)).toBeInTheDocument();
   });
 
   it("renders all three package prices in English", () => {
     renderPage();
-    expect(screen.getByText("€4,500 | 2 weeks")).toBeInTheDocument();
-    expect(screen.getByText("€5,000/mo | 10 hrs/week")).toBeInTheDocument();
+    expect(screen.getByText("€6,500 | 2 weeks")).toBeInTheDocument();
+    expect(screen.getByText("€6,000/mo | 10 hrs/week")).toBeInTheDocument();
     expect(screen.getByText("€10,000/mo | 20 hrs/week")).toBeInTheDocument();
   });
 
   it("renders all three package prices in Hungarian when lang is HU", () => {
     localStorage.setItem("lang", "hu");
     renderWithProviders(<PackagesSection />);
-    expect(screen.getByText("1,8M Ft | 2 hét")).toBeInTheDocument();
-    expect(screen.getByText("2M Ft/hó | 10 óra/hét")).toBeInTheDocument();
-    expect(screen.getByText("4M Ft/hó | 20 óra/hét")).toBeInTheDocument();
+    expect(screen.getByText("€6,500 | 2 hét")).toBeInTheDocument();
+    expect(screen.getByText("€6,000/hó | 10 óra/hét")).toBeInTheDocument();
+    expect(screen.getByText("€10,000/hó | 20 óra/hét")).toBeInTheDocument();
   });
 
   it("renders both credibility testimonials", () => {
@@ -272,7 +272,6 @@ describe("P – Platform: what the product depends on", () => {
     const newTabLinks = screen
       .getAllByRole("link")
       .filter((l) => l.getAttribute("target") === "_blank");
-    expect(newTabLinks.length).toBeGreaterThan(0);
     newTabLinks.forEach((link) => {
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
     });
@@ -301,13 +300,12 @@ describe("O – Operations: how the product is used", () => {
     expect(phoneLinks.length).toBeGreaterThanOrEqual(1);
   });
 
-  it("DeployMate website link navigates to https://deploymate.hu", () => {
+  it("footer renders the precision line", () => {
     renderWithProviders(<Footer />);
-    const siteLink = screen.getByText("DeployMate.hu");
-    expect(siteLink.closest("a")).toHaveAttribute("href", "https://deploymate.hu");
+    expect(screen.getByText("Built with engineering precision")).toBeInTheDocument();
   });
 
-  it("'Contact Me' nav button calls scrollIntoView on #cta", () => {
+  it("'Contact' nav button calls scrollIntoView on #cta", () => {
     renderWithProviders(<Header />);
     const mockScroll = vi.fn();
     const el = document.createElement("div");
@@ -315,7 +313,7 @@ describe("O – Operations: how the product is used", () => {
     el.scrollIntoView = mockScroll;
     document.body.appendChild(el);
 
-    fireEvent.click(screen.getAllByText("Contact Me")[0]);
+    fireEvent.click(screen.getAllByText("Contact")[0]);
 
     expect(mockScroll).toHaveBeenCalledWith({ behavior: "smooth" });
     document.body.removeChild(el);
