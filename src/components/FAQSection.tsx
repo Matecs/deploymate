@@ -21,7 +21,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" aria-label="Frequently Asked Questions" className="py-16 md:py-20">
+    <section id="faq" aria-label="Frequently Asked Questions" className="py-16 md:py-20 scroll-mt-24">
       <div className="container max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <motion.p
