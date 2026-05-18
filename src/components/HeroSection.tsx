@@ -18,7 +18,7 @@ const HeroSection = () => {
         <source media="(min-width: 768px)" srcSet={heroBgDesktopWebp} type="image/webp" />
         <source srcSet={heroBgMobileWebp} type="image/webp" />
         <source media="(min-width: 768px)" srcSet={heroBgDesktop} type="image/jpeg" />
-        <img src={heroBgMobile} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroBgMobile} alt="" role="presentation" className="absolute inset-0 w-full h-full object-cover" />
       </picture>
 
       {/* Subtle grid overlay */}
