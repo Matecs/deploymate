@@ -343,6 +343,7 @@ Google Fonts (`https://fonts.googleapis.com`) is unreachable from the sandbox, s
 - **`node_modules/.bin/vite --host 0.0.0.0 --port 8080 &`** must be run as a detached background process (`detach: true` in the bash tool), otherwise the Vite server exits when the shell session ends and Playwright gets `ERR_CONNECTION_REFUSED`.
 - After removing `QueryClientProvider` from `App.tsx`, the site still renders correctly and the `@tanstack/react-query` package is still in `package.json` — that is fine; a future `npm prune` can remove it if desired.
 - The `useBookingRateLimit.test.tsx` file in `docs/testing.md § File Structure` listing was stale after the hook was deleted — always update the file-listing table when test files are removed.
+- Current visual runs also log a React warning in the browser console for `fetchPriority` on an `img` element in `HeroSection`; this is a real warning (not the expected Google Fonts DNS error) and should be treated as a follow-up cleanup item.
 
 ---
 
