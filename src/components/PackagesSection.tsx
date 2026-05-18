@@ -39,7 +39,7 @@ const PackagesSection = () => {
   ];
 
   return (
-    <section id="packages" aria-label="Service packages" className="py-16 md:py-24 bg-muted/50">
+    <section id="packages" aria-label="Service packages" className="py-16 md:py-24 bg-muted/50 scroll-mt-24">
       <div className="container max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="text-accent font-medium text-sm tracking-widest uppercase mb-4">{t("packages.tag")}</motion.p>
