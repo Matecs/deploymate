@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" fill="none" role="img" aria-label="DeployMate">
+  <!-- Icon: precision crosshair + checkmark -->
+  <g transform="translate(10 10)" stroke="#0A1F44" stroke-linecap="square">
+    <!-- Outer circle, single thin stroke -->
+    <circle cx="50" cy="50" r="46" stroke-width="2"/>
+    <!-- Crosshair hairlines (stop short of center where check begins) -->
+    <line x1="50" y1="0"  x2="50" y2="28" stroke-width="1.25"/>
+    <line x1="50" y1="72" x2="50" y2="100" stroke-width="1.25"/>
+    <line x1="0"  y1="50" x2="28" y2="50" stroke-width="1.25"/>
+    <line x1="72" y1="50" x2="100" y2="50" stroke-width="1.25"/>
+    <!-- Tick marks on circle -->
+    <line x1="50" y1="4"  x2="50" y2="12"  stroke-width="2"/>
+    <line x1="50" y1="88" x2="50" y2="96"  stroke-width="2"/>
+    <line x1="4"  y1="50" x2="12" y2="50"  stroke-width="2"/>
+    <line x1="88" y1="50" x2="96" y2="50"  stroke-width="2"/>
+    <!-- Checkmark: bold, confident, base sits on crosshair intersection -->
+    <polyline points="30,50 46,66 72,34" stroke-width="6" stroke-linejoin="miter" stroke-linecap="square"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(140 78)" fill="#0A1F44" font-family="'JetBrains Mono','SF Mono',ui-monospace,Menlo,Consolas,monospace" letter-spacing="1.5">
+    <text font-size="44" font-weight="700">Deploy<tspan font-weight="400">Mate</tspan></text>
+  </g>
+</svg>
