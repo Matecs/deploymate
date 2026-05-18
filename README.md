@@ -52,7 +52,7 @@ A bilingual (English / Hungarian) professional services landing page for a **QA-
 ## Project Structure
 
 ```
-release-clarity/
+deploymate/
 ├── public/                  # Static assets served as-is
 ├── src/
 │   ├── assets/              # Images and other imported assets
@@ -107,8 +107,8 @@ For the testing guide see [docs/testing.md](docs/testing.md).
 
 ```sh
 # 1. Clone the repository
-git clone https://github.com/Matecs/release-clarity.git
-cd release-clarity
+git clone https://github.com/Matecs/deploymate.git
+cd deploymate
 
 # 2. Install dependencies
 npm install
