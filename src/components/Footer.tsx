@@ -1,5 +1,5 @@
 import { useLang } from "@/lib/i18n";
-import deploymateLogo from "@/assets/deploymate-logo.png";
+import Logo from "@/components/Logo";
 
 const Footer = () => {
   const { t } = useLang();
