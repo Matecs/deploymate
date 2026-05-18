@@ -26,11 +26,9 @@ describe("Footer", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders the DeployMate website link", () => {
+  it("renders the footer precision text", () => {
     renderFooter();
-    const link = screen.getByText("DeployMate.hu");
-    expect(link).toBeInTheDocument();
-    expect(link.closest("a")).toHaveAttribute("href", "https://deploymate.hu");
+    expect(screen.getByText("Built with engineering precision")).toBeInTheDocument();
   });
 
   it("renders the email address as a mailto link", () => {

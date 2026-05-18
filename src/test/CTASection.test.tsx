@@ -22,7 +22,7 @@ describe("CTASection", () => {
   it("renders the section title", () => {
     renderCTA();
     expect(
-      screen.getByText(/Ready for an Audit‑Ready Release Pipeline/)
+      screen.getByText(/Ready for an Audit-Ready Release Pipeline/)
     ).toBeInTheDocument();
   });
 

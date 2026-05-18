@@ -23,14 +23,14 @@ describe("StickyCTA", () => {
   it("is hidden before the user scrolls past the hero section", () => {
     renderStickyCTA();
     // scrollY = 0, innerHeight = 800 → threshold is 640; 0 < 640 so CTA is hidden
-    expect(screen.queryByRole("button", { name: /Contact Me/i })).toBeNull();
+    expect(screen.queryByRole("button", { name: /Contact/i })).toBeNull();
   });
 
   it("becomes visible after scrolling past 80% of the viewport height", () => {
     renderStickyCTA();
     Object.defineProperty(window, "scrollY", { value: 700, configurable: true });
     fireEvent.scroll(window);
-    expect(screen.getByRole("button", { name: /Contact Me/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Contact/i })).toBeInTheDocument();
   });
 
   it("calls scrollIntoView on #cta when the button is clicked", () => {
@@ -45,7 +45,7 @@ describe("StickyCTA", () => {
     cta.scrollIntoView = mockScrollIntoView;
     document.body.appendChild(cta);
 
-    const btn = screen.getByRole("button", { name: /Contact Me/i });
+    const btn = screen.getByRole("button", { name: /Contact/i });
     fireEvent.click(btn);
     expect(mockScrollIntoView).toHaveBeenCalledWith({ behavior: "smooth" });
 

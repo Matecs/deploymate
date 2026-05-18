@@ -345,6 +345,7 @@ The app should render with **no console errors** during visual testing.
 - The `useBookingRateLimit.test.tsx` file in `docs/testing.md § File Structure` listing was stale after the hook was deleted — always update the file-listing table when test files are removed.
 - The previous React warning for `fetchPriority` on the hero image is resolved by removing the unsupported prop.
 - The previous sandbox Google Fonts DNS error is resolved by removing the external Google Fonts `@import`.
+- Marketing-copy-heavy tests drift quickly; when content changes in `src/lib/i18n.tsx`, update related assertions before treating the change as a UI regression.
 
 ---
 
