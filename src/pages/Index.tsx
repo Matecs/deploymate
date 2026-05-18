@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { LangProvider, useLang } from "@/lib/i18n";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -23,6 +24,12 @@ const PageContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <html lang={lang} />
+        <link rel="canonical" href="https://deploymate.hu/" />
+        <meta property="og:url" content="https://deploymate.hu/" />
+        <meta property="og:locale" content={lang === "hu" ? "hu_HU" : "en_US"} />
+      </Helmet>
       <Header />
       <ScrollProgress />
       <main>
