@@ -26,4 +26,4 @@ Booking links are present in these sections:
 
 ## Tracking Note
 
-If source-level attribution is needed later (for example UTM-based tracking or click throttling), it should be reintroduced explicitly and documented together with the implementation.
+If you need source-level attribution later (for example UTM-based tracking or click throttling), reintroduce it explicitly and document it together with the implementation.

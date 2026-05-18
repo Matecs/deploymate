@@ -328,7 +328,7 @@ The app should render with **no console errors** during visual testing.
 
 | Check | Pass criteria |
 |---|---|
-| No unexpected JS errors | Console output has no errors |
+| No unexpected JS errors | Console output contains no errors |
 | Hero section renders | Logo, headline, stats, CTA button visible |
 | All page sections render | Pain-points, Audience, Packages, How It Works, Credibility, CTA all show content |
 | Build succeeds | `npm run build` exits with code 0 and no warnings |
