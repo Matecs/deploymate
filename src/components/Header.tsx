@@ -3,7 +3,7 @@ import { useLang } from "@/lib/i18n";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
-import datamateLogo from "@/assets/datamate-logo.svg";
+import deploymateLogo from "@/assets/deploymate-logo.svg";
 
 const FlagHU = () => (
   <svg width="20" height="14" viewBox="0 0 20 14" className="inline-block rounded-sm">
