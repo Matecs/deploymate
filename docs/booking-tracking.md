@@ -1,10 +1,10 @@
-# Booking Link Behaviour
+# Booking Link Behavior
 
 This document explains how booking links currently work on the site.
 
 ---
 
-## Current Behaviour
+## Current Behavior
 
 Every booking button on the site is a direct `<a>` link to the Google Calendar appointment scheduling URL.
 
