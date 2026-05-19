@@ -167,6 +167,10 @@ const t = {
   // Theme
   "theme.switchToLight": { en: "Switch to light mode", hu: "Váltás világos módra" },
   "theme.switchToDark": { en: "Switch to dark mode", hu: "Váltás sötét módra" },
+  "theme.switchToSystem": { en: "Switch to system mode", hu: "Váltás rendszer módra" },
+  "theme.system": { en: "System", hu: "Rendszer" },
+  "theme.light": { en: "Light", hu: "Világos" },
+  "theme.dark": { en: "Dark", hu: "Sötét" },
 
 } as const;
 
