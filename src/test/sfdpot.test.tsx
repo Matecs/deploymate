@@ -12,6 +12,7 @@
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { MemoryRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 import Index from "@/pages/Index";
 import Header from "@/components/Header";
@@ -19,18 +20,25 @@ import HeroSection from "@/components/HeroSection";
 import PackagesSection from "@/components/PackagesSection";
 import Footer from "@/components/Footer";
 import { LangProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
 
 const renderPage = () =>
   render(
     <MemoryRouter>
-      <Index />
+      <HelmetProvider>
+        <ThemeProvider>
+          <Index />
+        </ThemeProvider>
+      </HelmetProvider>
     </MemoryRouter>
   );
 
 const renderWithProviders = (ui: React.ReactElement) =>
   render(
     <MemoryRouter>
-      <LangProvider>{ui}</LangProvider>
+      <ThemeProvider>
+        <LangProvider>{ui}</LangProvider>
+      </ThemeProvider>
     </MemoryRouter>
   );
 
