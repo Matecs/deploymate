@@ -111,12 +111,12 @@ const Header = () => {
                 <button
                   onClick={toggleTheme}
                   className="p-2 rounded-md border border-border text-foreground hover:bg-muted transition-colors"
-                  aria-label={resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}
+                  aria-label={themeLabel}
                 >
-                  {resolvedTheme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {themeIcon}
                 </button>
               </TooltipTrigger>
-              <TooltipContent>{resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}</TooltipContent>
+              <TooltipContent>{themeLabel}</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <Sheet open={open} onOpenChange={setOpen}>
