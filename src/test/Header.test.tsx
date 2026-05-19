@@ -3,13 +3,16 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import Header from "@/components/Header";
 import { LangProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
 
 const renderHeader = () =>
   render(
     <MemoryRouter>
-      <LangProvider>
-        <Header />
-      </LangProvider>
+      <ThemeProvider>
+        <LangProvider>
+          <Header />
+        </LangProvider>
+      </ThemeProvider>
     </MemoryRouter>
   );
 

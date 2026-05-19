@@ -164,6 +164,10 @@ const t = {
   "footer.contact": { en: "Contact", hu: "Kapcsolat" },
   "footer.precision": { en: "Built with engineering precision", hu: "Mérnöki precizitással építve" },
 
+  // Theme
+  "theme.switchToLight": { en: "Switch to light mode", hu: "Váltás világos módra" },
+  "theme.switchToDark": { en: "Switch to dark mode", hu: "Váltás sötét módra" },
+
 } as const;
 
 type TranslationKey = keyof typeof t;

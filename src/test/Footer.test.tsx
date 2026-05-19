@@ -3,13 +3,16 @@ import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { LangProvider } from "@/lib/i18n";
+import { ThemeProvider } from "@/lib/theme";
 
 const renderFooter = () =>
   render(
     <MemoryRouter>
-      <LangProvider>
-        <Footer />
-      </LangProvider>
+      <ThemeProvider>
+        <LangProvider>
+          <Footer />
+        </LangProvider>
+      </ThemeProvider>
     </MemoryRouter>
   );
 
