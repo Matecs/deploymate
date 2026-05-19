@@ -38,11 +38,25 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     update();
 
+    const cleanups: Array<() => void> = [];
+
     if (theme === "system") {
       const handler = () => update();
       media.addEventListener("change", handler);
-      return () => media.removeEventListener("change", handler);
+      cleanups.push(() => media.removeEventListener("change", handler));
     }
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== "theme") return;
+      const next = e.newValue;
+      if (next === "light" || next === "dark" || next === "system") {
+        setThemeState(next);
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    cleanups.push(() => window.removeEventListener("storage", onStorage));
+
+    return () => cleanups.forEach((fn) => fn());
   }, [theme]);
 
   return (
