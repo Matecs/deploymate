@@ -1,4 +1,4 @@
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon, Monitor } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 import { useState } from "react";
