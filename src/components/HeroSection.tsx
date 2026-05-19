@@ -58,15 +58,15 @@ const HeroSection = () => {
       </svg>
 
       <div className="relative container text-center max-w-3xl mx-auto px-6 py-24">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight animate-fade-in-up">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
           <span>{t("hero.title")}</span>
           <br />
           <span className="text-accent">{t("hero.titleHighlight")}</span>
         </h1>
-        <p className="text-primary-foreground/80 text-base md:text-lg font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <p className="text-white/80 text-base md:text-lg font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {t("hero.stats")}
         </p>
-        <p className="text-primary-foreground/90 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {t("hero.desc")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
@@ -79,7 +79,7 @@ const HeroSection = () => {
           </button>
           <button
             onClick={() => scrollTo("packages")}
-            className="inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-primary-foreground/10 transition-colors"
+            className="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-white/10 transition-colors"
           >
             {t("hero.ctaSecondary")}
           </button>
@@ -87,7 +87,7 @@ const HeroSection = () => {
         <button
           onClick={() => scrollTo("pain-points")}
           aria-label={lang === "en" ? "Scroll to challenges" : "Tovább a kihívásokhoz"}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary-foreground/30 hover:text-primary-foreground/60 transition-colors animate-bounce"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 hover:text-white/60 transition-colors animate-bounce"
         >
           <ChevronDown className="w-6 h-6" />
         </button>
