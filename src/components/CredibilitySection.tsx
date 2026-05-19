@@ -1,4 +1,4 @@
-import { Quote, CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock, AlertTriangle, Wrench } from "lucide-react";
+import { CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock, AlertTriangle, Wrench } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
@@ -39,10 +39,9 @@ const CredibilitySection = () => {
         {/* Testimonials */}
         <div className="space-y-8">
           {testimonials.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.15 }} className="bg-card rounded-xl border border-border p-8 relative" style={{ boxShadow: "var(--card-shadow)" }}>
-              <Quote className="w-6 h-6 text-accent/20 absolute top-6 right-6" />
-              <p className="text-foreground/80 text-base leading-relaxed italic">"{item.text}"</p>
-              <p className="text-muted-foreground text-sm mt-4">{item.source}</p>
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.15 }} className="bg-card rounded-xl border border-border border-l-4 border-l-accent p-8 relative" style={{ boxShadow: "var(--card-shadow)" }}>
+              <p className="text-foreground/80 text-base leading-relaxed italic">{item.text}</p>
+              <p className="text-muted-foreground text-sm mt-4">— {item.source}</p>
             </motion.div>
           ))}
         </div>
