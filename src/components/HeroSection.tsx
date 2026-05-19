@@ -66,7 +66,7 @@ const HeroSection = () => {
         <p className="text-primary-foreground/80 text-base md:text-lg font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {t("hero.stats")}
         </p>
-        <p className="text-primary-foreground/60 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <p className="text-primary-foreground/90 text-base md:text-lg max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           {t("hero.desc")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
