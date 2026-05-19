@@ -1,4 +1,4 @@
-import { Quote, CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock, AlertTriangle, Wrench } from "lucide-react";
+import { CheckCircle2, TrendingDown, Zap, ShieldCheck, Clock, AlertTriangle, Wrench } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
