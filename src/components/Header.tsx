@@ -31,11 +31,14 @@ const FlagGB = () => (
 const Header = () => {
   const { lang, setLang, t } = useLang();
   const [open, setOpen] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system");
   };
+
+  const themeIcon = theme === "system" ? <Monitor className="w-4 h-4" /> : theme === "light" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />;
+  const themeLabel = theme === "system" ? t("theme.switchToLight") : theme === "light" ? t("theme.switchToDark") : t("theme.switchToSystem");
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
