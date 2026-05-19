@@ -1,4 +1,4 @@
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu, Sun, Moon, Monitor } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { useTheme } from "@/lib/theme";
 import { useState } from "react";
@@ -31,11 +31,14 @@ const FlagGB = () => (
 const Header = () => {
   const { lang, setLang, t } = useLang();
   const [open, setOpen] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system");
   };
+
+  const themeIcon = theme === "system" ? <Monitor className="w-4 h-4" /> : theme === "light" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />;
+  const themeLabel = theme === "system" ? t("theme.switchToLight") : theme === "light" ? t("theme.switchToDark") : t("theme.switchToSystem");
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -74,12 +77,12 @@ const Header = () => {
                 <button
                   onClick={toggleTheme}
                   className="p-2 rounded-md border border-border text-foreground hover:bg-muted transition-colors"
-                  aria-label={resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}
+                  aria-label={themeLabel}
                 >
-                  {resolvedTheme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {themeIcon}
                 </button>
               </TooltipTrigger>
-              <TooltipContent>{resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}</TooltipContent>
+              <TooltipContent>{themeLabel}</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <button onClick={() => scrollTo("cta")} className="hover:text-foreground transition-colors bg-accent text-accent-foreground px-4 py-2 rounded-md font-medium">
@@ -108,12 +111,12 @@ const Header = () => {
                 <button
                   onClick={toggleTheme}
                   className="p-2 rounded-md border border-border text-foreground hover:bg-muted transition-colors"
-                  aria-label={resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}
+                  aria-label={themeLabel}
                 >
-                  {resolvedTheme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  {themeIcon}
                 </button>
               </TooltipTrigger>
-              <TooltipContent>{resolvedTheme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark")}</TooltipContent>
+              <TooltipContent>{themeLabel}</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           <Sheet open={open} onOpenChange={setOpen}>
