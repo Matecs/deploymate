@@ -9,7 +9,7 @@ interface LogoProps {
  * horizontal line, followed by a monospace wordmark. Uses semantic
  * theme tokens so it adapts to both light and dark mode automatically.
  */
-const Logo = ({ alt = "DeployMate", className = "h-7 w-auto" }: LogoProps) => {
+const Logo = ({ alt = "DeployMate", className = "h-7 w-auto", loading: _loading }: LogoProps) => {
   return (
     <svg
       role="img"
