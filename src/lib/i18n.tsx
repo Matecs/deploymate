@@ -38,7 +38,7 @@ const t = {
   "pain.item1": { en: "Your on-call engineer just texted at 2 AM. Again. 1–2 rollbacks every week.", hu: "Az on-call mérnököd hajnali 2-kor írt. Megint. Heti 1–2 rollback." },
   "pain.item2": { en: "Panic evidence gathering before SOC2/ISO audits", hu: "SOC2/ISO audit előtti pánikszerű bizonyítékgyűjtés" },
   "pain.item3": { en: "Outdated CI/CD (Jenkins/TeamCity → GitHub Actions needed)", hu: "Elavult Jenkins/TeamCity pipeline" },
-  "pain.item4": { en: "No real-time visibility into deploys and on-call incidents", hu: "Nincs valós idejű rálátás a deploy-okra és on-call incidensekre" },
+  "pain.item4": { en: "Leadership is flying blind: no metrics on release quality or compliance readiness.", hu: "A vezetés vakon repül: nincsenek metrikák a release minőségről vagy a compliance készültségről." },
 
   // Audience
   "audience.tag": { en: "Who Is This For?", hu: "Kinek szól?" },
@@ -59,7 +59,7 @@ const t = {
   "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|SOC2/ISO27001 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2/ISO27001 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap" },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
-  "packages.p2.title": { en: "Pipeline Architecture & Strategy", hu: "Pipeline Architecture & Strategy" },
+  "packages.p2.title": { en: "Pipeline Strategy & Sustained Compliance", hu: "Pipeline Strategy & Sustained Compliance" },
   "packages.p2.price": { en: "€6,000/mo | 10 hrs/week", hu: "€6,000/hó | 10 óra/hét" },
   "packages.p2.forWhom": { en: "You have the plan, need ongoing technical execution.", hu: "Van terv, folyamatos technikai végrehajtásra van szükség." },
   "packages.p2.desc": { en: "Monthly pipeline review, CI/CD strategy, compliance coaching, async Slack support.", hu: "Havi pipeline review, CI/CD stratégia, compliance coaching, async Slack támogatás." },
@@ -83,13 +83,13 @@ const t = {
   "how.step1.desc": { en: "I understand your pain points and current setup.", hu: "Megértem a problémáidat és a jelenlegi helyzetet." },
   "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (€6,500)" },
   "how.step2.desc": { en: "Concrete deliverables in 2 weeks.", hu: "Konkrét deliverables 2 hét alatt." },
-  "how.step3.title": { en: "Optional: Monthly retainer", hu: "Opcionális: Havi retainer" },
-  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo.", hu: "Folyamatos technikai támogatás €6,000/hó-tól." },
+  "how.step3.title": { en: "Scale & Sustain", hu: "Skálázás és fenntartás" },
+  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás €6,000/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
 
   // Credibility
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
   "cred.title": { en: "Why Me", hu: "Miért én?" },
-  "cred.t1": { en: "Led 109 releases/year with 1 rollback (75% reduction) across 40-engineer organization. Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.", hu: "109 release/év 1 rollback-kal (75%-os csökkentés) 40 fős mérnökcsapatban. Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken." },
+  "cred.t1": { en: "Led 109 releases/year with 1 rollback (75% reduction) across a 40-engineer organization. 12+ zero-downtime platform migrations (AWS, Azure, OCI) — the QA-first approach in production. Seamless quarterly compliance — ISO27001, SOC2, SOX across 4 products.", hu: "109 release/év 1 rollback-kal (75%-os csökkentés) 40 fős mérnökcsapatban. 12+ zero-downtime platform migráció (AWS, Azure, OCI) — a QA-first megközelítés élesben. Zökkenőmentes negyedéves compliance — ISO27001, SOC2, SOX 4 terméken." },
   "cred.t1Source": { en: "— Engineering Leadership, Series B SaaS (anonymized on request)", hu: "— Engineering Leadership, Series B SaaS (kérésre anonimizálva)" },
   "cred.t2": { en: "Mate's accountability was one of his strengths. He is extremely thorough, and conscientious. He always pays attention to the details. A true advocate of automation test.", hu: "Mate felelősségvállalása volt az egyik erőssége. Rendkívül alapos és lelkiismeretes. Mindig odafigyel a részletekre. Az automatizált tesztelés igazi szószólója." },
   "cred.t2Source": { en: "— Manager review, 2022–2024", hu: "— Manager review, 2022–2024" },
