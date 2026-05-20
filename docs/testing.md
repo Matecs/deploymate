@@ -346,6 +346,7 @@ The app should render with **no console errors** during visual testing.
 - The previous React warning for `fetchPriority` on the hero image is resolved by removing the unsupported prop.
 - The previous sandbox Google Fonts DNS error is resolved by removing the external Google Fonts `@import`.
 - Marketing-copy-heavy tests drift quickly; when content changes in `src/lib/i18n.tsx`, update related assertions before treating the change as a UI regression.
+- `Logo` renders both light/dark image variants with the same alt text; tests should use `getAllByAltText(...)` instead of `getByAltText(...)` to avoid false failures.
 
 ---
 

@@ -19,7 +19,7 @@ const renderFooter = () =>
 describe("Footer", () => {
   it("renders the DeployMate logo", () => {
     renderFooter();
-    expect(screen.getByAltText("DeployMate logo")).toBeInTheDocument();
+    expect(screen.getAllByAltText("DeployMate logo").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders the tagline text", () => {

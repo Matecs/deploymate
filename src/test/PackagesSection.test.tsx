@@ -27,7 +27,7 @@ describe("PackagesSection", () => {
   it("renders all three package titles", () => {
     renderPackages();
     expect(screen.getByText("Release Audit")).toBeInTheDocument();
-    expect(screen.getByText("Pipeline Architecture & Strategy")).toBeInTheDocument();
+    expect(screen.getByText("Pipeline Strategy & Sustained Compliance")).toBeInTheDocument();
     expect(screen.getByText("Release Systems Architecture")).toBeInTheDocument();
   });
 
@@ -49,5 +49,12 @@ describe("PackagesSection", () => {
     renderPackages();
     const buttons = screen.getAllByRole("button");
     expect(buttons.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it("renders deliverables and guarantee content", () => {
+    renderPackages();
+    expect(screen.getByText("What you'll get")).toBeInTheDocument();
+    expect(screen.getByText(/Pipeline Audit Report/)).toBeInTheDocument();
+    expect(screen.getByText(/Risk-free: if after Week 1/)).toBeInTheDocument();
   });
 });

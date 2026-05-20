@@ -39,12 +39,12 @@ describe("PainPointsSection", () => {
     expect(screen.getByText(/on-call engineer just texted at 2 AM/)).toBeInTheDocument();
     expect(screen.getByText(/Panic evidence gathering/)).toBeInTheDocument();
     expect(screen.getByText(/Outdated CI\/CD/)).toBeInTheDocument();
-    expect(screen.getByText(/No real-time visibility into deploys and on-call incidents/)).toBeInTheDocument();
+    expect(screen.getByText(/Leadership is flying blind/)).toBeInTheDocument();
   });
 
   it("renders exactly four item cards", () => {
     renderPainPoints();
-    const items = screen.getAllByText(/on-call|evidence|CI\/CD|real-time visibility/);
+    const items = screen.getAllByText(/on-call|evidence|CI\/CD|Leadership is flying blind/);
     expect(items).toHaveLength(4);
   });
 });

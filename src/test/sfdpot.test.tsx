@@ -83,7 +83,7 @@ describe("S – Structure: what the product is made of", () => {
   it("renders all three service package cards", () => {
     renderPage();
     expect(screen.getByText("Release Audit")).toBeInTheDocument();
-    expect(screen.getByText("Pipeline Architecture & Strategy")).toBeInTheDocument();
+    expect(screen.getByText("Pipeline Strategy & Sustained Compliance")).toBeInTheDocument();
     expect(screen.getByText("Release Systems Architecture")).toBeInTheDocument();
   });
 
@@ -96,9 +96,10 @@ describe("S – Structure: what the product is made of", () => {
 
   it("renders the DeployMate logo in both header and footer", () => {
     renderPage();
-    // Header uses full descriptive alt text, footer uses short alt text
-    expect(screen.getByAltText("DeployMate — QA-Driven Release & Compliance Operations")).toBeInTheDocument();
-    expect(screen.getByAltText("DeployMate logo")).toBeInTheDocument();
+    expect(
+      screen.getAllByAltText("DeployMate — QA-Driven Release & Compliance Operations").length
+    ).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByAltText("DeployMate logo").length).toBeGreaterThanOrEqual(1);
   });
 });
 
