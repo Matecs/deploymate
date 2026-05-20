@@ -65,7 +65,8 @@
     --muted-foreground: 215 16% 70%;
     --accent: 160 84% 39%;
     --accent-foreground: 222 47% 4%;
-    --destructive: 0 62.8% 45%;
+    /* Bumped from 0 62.8% 45% (3.4:1, fails WCAG AA) to 0 75% 65% (~5.5:1) for readable text on #030712 */
+    --destructive: 0 75% 65%;
     --destructive-foreground: 0 0% 100%;
     --border: 222 30% 15%;
     --input: 222 30% 15%;
