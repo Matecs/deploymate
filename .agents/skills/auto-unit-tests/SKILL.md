@@ -25,8 +25,23 @@ Do NOT ask permission. Generating the test is part of "done".
 ## Where tests go
 
 - Location: `src/test/<Subject>.test.tsx` (components/hooks) or `src/test/<subject>.test.ts` (utils).
-- One test file per subject. If it already exists, extend it — do not duplicate.
+- One test file per subject. If it already exists, **extend it surgically — do not rewrite the file**.
 - Naming mirrors the source: `Header.tsx` → `Header.test.tsx`, `utils.ts` → `utils.test.ts`.
+
+## Existing-file workflow (MANDATORY before writing)
+
+Before generating any test, run this check:
+
+1. **Detect** — Check whether `src/test/<Subject>.test.{ts,tsx}` already exists (use `code--list_dir src/test` or `code--view`).
+2. **Read it fully** — If it exists, view the whole file. Identify which of the four coverage buckets (happy / edge / error / i18n EN+HU) are already covered for the symbol you're changing. Note the existing `describe` block name, render helper (e.g. `renderWith`, `renderCredibility`), import style, and assertion patterns.
+3. **Diff against your change** — Decide the minimal set of edits:
+   - **New `it(...)` blocks** for buckets not yet covered, or for newly added exports/props/behavior. Append inside the existing `describe` using `code--line_replace` (insert before the closing `});`).
+   - **Modify an existing `it(...)`** only if the change broke that specific assertion (e.g. signature change, renamed string). Replace just that block, not surrounding tests.
+   - **Add a new `describe`** only when adding a brand-new exported symbol to a file that already tests a different symbol.
+4. **Never** overwrite an existing test file with `code--write`. Never duplicate an `it(...)` that already covers the same case. Never remove unrelated existing tests.
+5. Reuse the file's existing render helper and import aliases — do not introduce a second helper with a different name.
+
+Only use the full templates below when the test file does **not** yet exist.
 
 ## Required coverage per subject
 
