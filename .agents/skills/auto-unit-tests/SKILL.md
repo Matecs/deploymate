@@ -43,6 +43,83 @@ Before generating any test, run this check:
 
 Only use the full templates below when the test file does **not** yet exist.
 
+## Async, timers, retries, Suspense — determinism rules
+
+Flaky tests are forbidden. Whenever the subject does anything asynchronous, follow these rules — no `setTimeout`-based waits, no bare `await sleep(...)`, no real network.
+
+### Decide which async tool to use
+
+| Subject behavior | Use |
+| --- | --- |
+| `setTimeout`, `setInterval`, debouncing, throttling, polling, exponential backoff | `vi.useFakeTimers()` + `vi.advanceTimersByTimeAsync(ms)` |
+| `await fetch(...)`, promises resolving on their own microtask | `await waitFor(() => expect(...).toBe(...))` from `@testing-library/react` |
+| Element appears later (effect, lazy data) | `await screen.findByText(...)` (never `getByText` + sleep) |
+| Element disappears later | `await waitForElementToBeRemoved(() => screen.queryByText(...))` |
+| `React.lazy` / `<Suspense fallback>` | Wrap render in `<Suspense fallback={<div>loading</div>}>`, then `await screen.findByText(/real content/)` — assert the fallback first, then the resolved content |
+| Retries with backoff (e.g. fetch retry, react-query) | Fake timers + mocked fetch returning queued responses (`vi.fn().mockResolvedValueOnce(...).mockResolvedValueOnce(...)`); advance timers between retries; assert call count |
+| `requestAnimationFrame` / framer-motion timing | `vi.useFakeTimers({ toFake: ['requestAnimationFrame', 'cancelAnimationFrame', 'setTimeout'] })` and advance; otherwise prefer assertions on final state, not animation midpoints |
+
+### Mandatory hygiene in every async test
+
+```ts
+beforeEach(() => {
+  vi.useFakeTimers();
+});
+afterEach(() => {
+  vi.runOnlyPendingTimers();
+  vi.useRealTimers();
+  vi.restoreAllMocks();
+});
+```
+
+- All state-changing calls that flush effects must be inside `await act(async () => { ... })` or use `await user.click(...)` from `@testing-library/user-event` (`userEvent.setup({ advanceTimers: vi.advanceTimersByTime })` when fake timers are on).
+- Network calls MUST be mocked (`vi.spyOn(globalThis, 'fetch')` or `vi.mock('@/lib/api', ...)`) and return promises — never hit a real endpoint.
+- Never use `await new Promise(r => setTimeout(r, N))` to wait. Use `vi.advanceTimersByTimeAsync(N)` (fake timers) or `waitFor` (real timers).
+- `waitFor` callbacks must contain only assertions, no side effects. Default timeout is fine; only bump it with a comment explaining why.
+- Set the random seed for any `Math.random`-dependent code: `vi.spyOn(Math, 'random').mockReturnValue(0.42)`.
+- Freeze `Date.now`: `vi.setSystemTime(new Date('2026-01-01T00:00:00Z'))`.
+- For react-query, create a fresh `QueryClient` per test with `retry: false` and `gcTime: 0` to avoid cross-test bleed.
+
+### Retry / backoff snippet
+
+```ts
+it("retries failed fetch 3 times with backoff", async () => {
+  const fetchMock = vi.spyOn(globalThis, "fetch")
+    .mockRejectedValueOnce(new Error("net"))
+    .mockRejectedValueOnce(new Error("net"))
+    .mockResolvedValueOnce(new Response('{"ok":true}'));
+
+  const promise = loadData(); // function under test
+  await vi.advanceTimersByTimeAsync(1000); // 1st backoff
+  await vi.advanceTimersByTimeAsync(2000); // 2nd backoff
+  await expect(promise).resolves.toEqual({ ok: true });
+  expect(fetchMock).toHaveBeenCalledTimes(3);
+});
+```
+
+### Suspense snippet
+
+```tsx
+it("shows fallback then resolved content", async () => {
+  render(
+    <Suspense fallback={<span>loading…</span>}>
+      <LazySubject />
+    </Suspense>
+  );
+  expect(screen.getByText("loading…")).toBeInTheDocument();
+  expect(await screen.findByRole("heading")).toBeInTheDocument();
+});
+```
+
+### Anti-patterns (reject if you see them in the diff)
+
+- `setTimeout(done, N)` style waits.
+- `await sleep(...)`, `await new Promise(r => setTimeout(r, N))`.
+- `screen.getByText(...)` immediately after a state change without `act`/`waitFor`/`findBy`.
+- Real `fetch` calls, real WebSocket, real `localStorage` shared across tests (clear in `beforeEach`).
+- Snapshot tests over async UI without a stable wait.
+- Disabling a flaky test with `it.skip` instead of fixing it.
+
 ## Required coverage per subject
 
 Every generated test file must cover all four buckets that apply:
