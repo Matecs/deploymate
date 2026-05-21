@@ -138,3 +138,17 @@ describe("doThing", () => {
 ## What "done" means
 
 A code change is not complete until its test file exists in `src/test/` and covers happy path + edges + error + (if applicable) EN/HU i18n. If you cannot meaningfully test something (e.g. trivial re-export), add a one-line comment in the test file explaining why and a single smoke assertion.
+
+## Coverage threshold (80%)
+
+`vitest.config.ts` enforces a minimum of **80%** on lines, functions, branches, and statements via the v8 coverage provider. Run `npm run test:coverage` to check.
+
+When you've finished editing a subject and writing its per-symbol tests, you MUST verify coverage is not regressed below threshold:
+
+1. Run `npm run test:coverage` (the harness allows this; do NOT run plain `npm test` yourself).
+2. If the run fails on thresholds OR any individual metric for the touched files is `< 80%`, **generate additional tests until it passes**. Target the uncovered lines/branches reported in the text summary — don't add filler tests elsewhere.
+3. Prefer covering real branches: missing prop variants, conditional render paths (`x && <Y/>`), `switch`/ternary arms, early returns, catch blocks, default param values, both sides of `||`/`??`.
+4. Re-run `npm run test:coverage` after each batch of added tests. Loop until all four metrics are ≥ 80% AND the touched files individually meet the threshold.
+5. If coverage cannot reach 80% for a file because of genuinely untestable code (e.g. third-party adapter glue, dev-only error boundaries), add the file path to the `coverage.exclude` array in `vitest.config.ts` with a comment explaining why — do not lower the global threshold.
+
+The skill is not "done" while `npm run test:coverage` is red.
