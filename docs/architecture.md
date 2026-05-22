@@ -22,9 +22,10 @@ This document describes the component hierarchy, data flow, and key design decis
 ```
 Browser
   └── main.tsx          ← mounts <App /> into #root
-        └── App.tsx     ← global providers + router
-              ├── /     → pages/Index.tsx  (landing page)
-              └── *     → pages/NotFound.tsx
+        └── App.tsx     ← ErrorBoundary + global providers + router
+              ├── /              → pages/Index.tsx        (landing page)
+              ├── /brand-preview → pages/BrandPreview.tsx (internal preview)
+              └── *              → pages/NotFound.tsx
 ```
 
 ---
@@ -51,15 +52,20 @@ The main page (`src/pages/Index.tsx`) wraps all sections inside `<LangProvider>`
 ```
 Index.tsx
    └── LangProvider        ← i18n context (language state + translations)
-         ├── Header
-         ├── HeroSection
-         ├── PainPointsSection
-         ├── AudienceSection
-         ├── PackagesSection
-         ├── HowItWorksSection
-         ├── CredibilitySection
-         ├── CTASection
-         └── Footer
+         └── PageContent
+              ├── Header
+              ├── ScrollProgress
+              ├── HeroSection
+              ├── SectionDivider
+              ├── PainPointsSection
+              ├── AudienceSection
+              ├── PackagesSection
+              ├── HowItWorksSection
+              ├── CredibilitySection
+              ├── FAQSection
+              ├── CTASection
+              ├── StickyCTA
+              └── Footer
 ```
 
 Each section component is a **pure presentational component** — it calls `useLang()` to get translated strings and renders them, but owns no other state.
@@ -91,14 +97,28 @@ Each section component is a **pure presentational component** — it calls `useL
 - Three service package cards rendered from a local `packages` array.
 - Each card links to the Google Calendar booking URL.
 
-### `HowItWorksSection`
+### `HowItWorksSection` (`id="how-it-works"`)
 - Three-step visual guide explaining the engagement process.
+
+### `FAQSection` (`id="faq"`)
+- Accordion-based frequently asked questions section.
+- Uses shadcn-ui `Accordion` primitives and translated Q/A content.
 
 ### `CredibilitySection` (`id="credibility"`)
 - Testimonial cards rendered from a local `testimonials` array.
 
 ### `CTASection` (`id="cta"`)
 - Final booking CTA with a direct link to the Google Calendar page.
+
+### `StickyCTA`
+- Bottom-fixed CTA that appears after scrolling past the hero section.
+- Uses Framer Motion enter/exit animations.
+
+### `ScrollProgress`
+- Thin fixed progress indicator under the header showing page scroll progress.
+
+### `SectionDivider`
+- Decorative wave/angle separators between major sections.
 
 ### `Footer`
 - Displays the DeployMate logo, contact details (website, email, phone), and copyright.
@@ -116,6 +136,7 @@ The project has minimal client state:
 |---|---|---|
 | Current language | `LangProvider` in `src/lib/i18n.tsx` | React `useState` + `localStorage` persistence |
 | Mobile menu open/closed | `Header` component | Local `useState` |
+| Theme selection | `ThemeProvider` in `src/lib/theme.tsx` | React state + `localStorage` + `prefers-color-scheme` |
 | Toast notifications | `App.tsx` (global) | shadcn-ui `useToast` hook |
 
 There is no server-side data fetching in the current codebase.
@@ -129,6 +150,7 @@ Routing is handled by **React Router DOM v6** in `App.tsx`:
 | Path | Component | Description |
 |---|---|---|
 | `/` | `Index` | Landing page |
+| `/brand-preview` | `BrandPreview` | Internal visual/brand preview |
 | `*` | `NotFound` | 404 catch-all |
 
 All new routes should be added **above** the `*` catch-all route in `App.tsx`.

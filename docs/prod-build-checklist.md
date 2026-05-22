@@ -55,7 +55,7 @@
 
 - [ ] All navigation links scroll to correct sections
 - [ ] CTA buttons work (Calendly / contact form)
-- [ ] Booking rate limiter (`use-booking-rate-limit.ts`) tested
+- [ ] Sticky CTA appears/disappears correctly based on scroll position
 - [ ] Error Boundary shows fallback UI on crash (not white screen)
 - [ ] 404 page renders for unknown routes
 - [ ] Mobile hamburger menu opens/closes correctly
