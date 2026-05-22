@@ -23,7 +23,7 @@ A bilingual (English / Hungarian) professional services landing page for a **QA-
 ## Features
 
 - **Single-page layout** with smooth-scroll navigation (Hero → Audience → Services → Track Record → CTA → Footer)
-- **Three service packages** with pricing displayed in both EUR and HUF
+- **Three service packages** with pricing displayed in EUR
 - **Bilingual UI** — English and Hungarian, switchable at runtime with preference persisted to `localStorage`
 - **Responsive design** — mobile navigation via a slide-out sheet, desktop navigation bar
 - **Book-a-call CTA** linked directly to a Google Calendar scheduling page
