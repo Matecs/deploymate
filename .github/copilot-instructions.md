@@ -8,10 +8,11 @@
 2. **Run the full test suite** — `npm test` must pass.
 3. **Run the production build** — `npm run build` must exit with code 0.
 4. **Visual browser test** — start the dev server (`node_modules/.bin/vite --host 0.0.0.0 --port 8080` as a detached background process), run the Playwright screenshot script documented in `docs/testing.md § Visual / Browser Testing`, confirm every section (hero, pain-points, audience, packages, how-it-works, credibility, cta) renders with no unexpected console errors, and share the screenshots in the PR.
-5. **Update affected docs** — update any `docs/` pages, `README.md`, or `CONTRIBUTING.md` that describe the behavior you changed.
-6. **Update learnings** — append new gotchas or correct stale entries in the `docs/testing.md § Visual / Browser Testing` learnings section.
+5. **Review Markdown after code changes** — review affected `.md` files and fix stale/invalid content, including `docs/`, `README.md`, and `CONTRIBUTING.md`.
+6. **Update affected docs** — update any `docs/` pages, `README.md`, or `CONTRIBUTING.md` that describe the behavior you changed.
+7. **Update learnings** — append new gotchas or correct stale entries in the `docs/testing.md § Visual / Browser Testing` learnings section.
 
-Failure to complete steps 4–6 violates the project's PR guidelines and will require a follow-up session.
+Failure to complete steps 4–7 violates the project's PR guidelines and will require a follow-up session.
 
 ---
 

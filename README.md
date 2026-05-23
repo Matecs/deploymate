@@ -37,7 +37,7 @@ A bilingual (English / Hungarian) professional services landing page for a **QA-
 |---|---|
 | Language | TypeScript 5 |
 | Framework | React 18 |
-| Build tool | Vite 5 |
+| Build tool | Vite 6 |
 | Styling | Tailwind CSS 3, PostCSS |
 | UI primitives | shadcn-ui (Radix UI) |
 | Icons | Lucide React |
@@ -57,27 +57,39 @@ deploymate/
 ├── src/
 │   ├── assets/              # Images and other imported assets
 │   ├── components/          # Page section components
-│   │   ├── Header.tsx       # Fixed navigation bar with language switcher
-│   │   ├── HeroSection.tsx  # Full-viewport hero with stats and CTA
-│   │   ├── AudienceSection.tsx  # "Who is this for?" pain-point cards
-│   │   ├── PackagesSection.tsx  # Three service package cards
-│   │   ├── CredibilitySection.tsx  # Testimonials / track record
-│   │   ├── CTASection.tsx   # Final call-to-action block
-│   │   ├── Footer.tsx       # Contact details and copyright
-│   │   ├── NavLink.tsx      # Reusable navigation link
+│   │   ├── Header.tsx       # Fixed navigation + language/theme controls
+│   │   ├── HeroSection.tsx
+│   │   ├── PainPointsSection.tsx
+│   │   ├── AudienceSection.tsx
+│   │   ├── PackagesSection.tsx
+│   │   ├── HowItWorksSection.tsx
+│   │   ├── CredibilitySection.tsx
+│   │   ├── FAQSection.tsx
+│   │   ├── CTASection.tsx
+│   │   ├── StickyCTA.tsx
+│   │   ├── ScrollProgress.tsx
+│   │   ├── SectionDivider.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Logo.tsx
+│   │   ├── NavLink.tsx
 │   │   └── ui/              # shadcn-ui generated primitives
 │   ├── hooks/               # Custom React hooks
 │   │   ├── use-mobile.tsx   # Detects mobile viewport
 │   │   └── use-toast.ts     # Toast notification helpers
 │   ├── lib/
 │   │   ├── i18n.tsx         # Translation dictionary + LangContext provider
+│   │   ├── theme.tsx        # Theme provider and theme hook
 │   │   └── utils.ts         # Utility helpers (cn, etc.)
 │   ├── pages/
 │   │   ├── Index.tsx        # Main page — composes all sections
+│   │   ├── BrandPreview.tsx # Internal brand/asset preview route
 │   │   └── NotFound.tsx     # 404 page
 │   ├── test/
 │   │   ├── setup.ts         # Vitest global setup (jest-dom)
-│   │   └── example.test.ts  # Baseline test
+│   │   ├── Header.test.tsx
+│   │   ├── HeroSection.test.tsx
+│   │   ├── ...              # Section/component/hook/unit tests
+│   │   └── sfdpot.test.tsx  # Site-wide structure/content heuristic tests
 │   ├── App.tsx              # Root component, routing, global providers
 │   ├── main.tsx             # Application entry point
 │   └── index.css            # Global CSS and Tailwind directives
@@ -169,6 +181,8 @@ npm run test:watch
 ```
 
 > **Run `npm test` after every code change** to catch regressions before proceeding further.
+
+> **Documentation rule:** after code changes, review all affected `.md` files (`docs/`, `README.md`, `CONTRIBUTING.md`, PR template references) and fix stale or invalid content before opening/updating the PR.
 
 For patterns, mocking, and conventions see [docs/testing.md](docs/testing.md).
 

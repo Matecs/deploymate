@@ -59,10 +59,17 @@ src/test/
   HeroSection.test.tsx       # Tests for src/components/HeroSection.tsx
   AudienceSection.test.tsx   # Tests for src/components/AudienceSection.tsx
   PackagesSection.test.tsx   # Tests for src/components/PackagesSection.tsx
+  HowItWorksSection.test.tsx
   CredibilitySection.test.tsx
+  PainPointsSection.test.tsx
   CTASection.test.tsx
   Footer.test.tsx
   NavLink.test.tsx
+  ScrollProgress.test.tsx
+  SectionDivider.test.tsx
+  StickyCTA.test.tsx
+  useIsMobile.test.tsx
+  utils.test.ts
   sfdpot.test.tsx            # SFDPOT heuristic integration tests
 ```
 
@@ -249,6 +256,8 @@ npm test
 
 If any tests fail, fix the failures **before** proceeding with further changes. This keeps regressions from accumulating and makes debugging easier.
 
+After code changes, also review all affected Markdown docs and correct stale/invalid content before finalizing the PR (`docs/`, `README.md`, `CONTRIBUTING.md`, and other referenced `.md` files as needed).
+
 ---
 
 ## Visual / Browser Testing
@@ -348,6 +357,7 @@ The app should render with **no console errors** during visual testing.
 - Marketing-copy-heavy tests drift quickly; when content changes in `src/lib/i18n.tsx`, update related assertions before treating the change as a UI regression.
 - `Logo` renders both light/dark image variants with the same alt text; tests should use `getAllByAltText(...)` instead of `getByAltText(...)` to avoid false failures.
 - Security remediation via `npm audit fix` can change only `package-lock.json` by updating transitive packages (for example `postcss`, `ws`, `brace-expansion`, `nanoid`); always re-run `npm audit`, `npm test`, and the full PR checklist afterward.
+- Docs can drift as quickly as code: whenever sections/routes/components/tests change, review affected `.md` files in the same PR and fix stale lists/examples immediately.
 
 ---
 
@@ -360,7 +370,7 @@ The app should render with **no console errors** during visual testing.
 - [ ] npm test                — all tests green
 - [ ] npm run build           — exits with code 0, no warnings
 - [ ] Browser test            — screenshots captured for hero, pain-points, audience, packages, how-it-works, credibility, cta; no unexpected console errors
-- [ ] Docs updated            — affected docs/, README.md, CONTRIBUTING.md updated
+- [ ] Docs updated            — affected Markdown files reviewed and stale/invalid content fixed (including docs/, README.md, CONTRIBUTING.md)
 - [ ] Learnings updated       — new gotchas appended / stale entries corrected in § Visual / Browser Testing
 ```
 
