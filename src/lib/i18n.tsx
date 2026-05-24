@@ -25,8 +25,8 @@ const t = {
     hu: "0,9% hibaarány (iparági átlag ~15%) · 12+ cloud migráció 0 downtime-mal · SOC2, ISO27001, SOX, GDPR, NIS2",
   },
   "hero.desc": {
-    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. The same pipeline discipline that kills rollbacks also makes SOC2 audits boring. 19 years — from QA engineer to Tech Lead to Senior EM — now at your service.",
-    hu: "Kaotikus SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Ugyanaz a pipeline fegyelem ami megöli a rollback-eket, az SOC2 auditokat is unalmassá teszi. 19 év — QA mérnöktől Tech Lead-en át Senior EM-ig — most a te szolgálatodban.",
+    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. Get a 2-week technical audit and a prioritized roadmap for your 20–150 person engineering team.",
+    hu: "Kaotikus SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Kapsz egy 2 hetes technikai auditot és egy priorizált roadmap-et a 20–150 fős mérnökcsapatodnak.",
   },
   "hero.pricing": { en: "", hu: "" },
   "hero.cta": { en: "Book a free 15-min Release Audit call", hu: "Foglalj egy ingyenes 15 perces Release Audit hívást" },
