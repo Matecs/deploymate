@@ -77,10 +77,10 @@ const PackagesSection = () => {
               {pkg.deliverables.length > 0 && (
                 <div className="text-left mb-6 flex-1">
                   <p className="text-foreground text-xs font-semibold uppercase tracking-wider mb-3">{t("packages.deliverablesTitle")}</p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 bg-muted/30 rounded-lg border border-border/60 p-4">
                     {pkg.deliverables.map((d, j) => (
-                      <li key={j} className="flex items-start gap-2 text-foreground/80 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                      <li key={j} className="flex items-start gap-3 text-foreground/85 text-sm leading-snug">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
                         <span>{d}</span>
                       </li>
                     ))}
