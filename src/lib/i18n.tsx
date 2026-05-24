@@ -53,7 +53,7 @@ const t = {
   "packages.title": { en: "Choose Your Service", hu: "Válassz szolgáltatást" },
 
   "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
-  "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "€6,500 | 2 hét" },
+  "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "6 500 € | 2 hét" },
   "packages.p1.forWhom": { en: "You need a diagnosis and a plan. Start here.", hu: "Diagnózis és terv kell. Kezdd itt." },
   "packages.p1.desc": { en: "Pipeline audit, rollback reduction plan, audit evidence playbook.", hu: "Pipeline átvilágítás, rollback csökkentési terv, audit evidence playbook." },
   "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|SOC2/ISO27001 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2/ISO27001 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap" },
