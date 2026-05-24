@@ -66,7 +66,7 @@ const t = {
   "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
 
   "packages.p3.title": { en: "Release Systems Architecture", hu: "Release Systems Architecture" },
-  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "€10,000/hó | 20 óra/hét" },
+  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "10 000 €/hó | 20 óra/hét" },
   "packages.p3.forWhom": { en: "You need deep technical architecture, not people management.", hu: "Mély technikai architektúra kell, nem people management." },
   "packages.p3.desc": { en: "End-to-end release architecture, multi-product compliance strategy, vendor/tooling selection. Zero people management. Pure technical leadership.", hu: "Teljeskörű release architektúra, többtermékes compliance stratégia, vendor/tooling kiválasztás. Nulla people management. Tiszta technikai vezetés." },
   "packages.p3.cta": { en: "Premium", hu: "Prémium" },
