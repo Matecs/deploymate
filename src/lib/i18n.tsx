@@ -53,20 +53,20 @@ const t = {
   "packages.title": { en: "Choose Your Service", hu: "Válassz szolgáltatást" },
 
   "packages.p1.title": { en: "Release Audit", hu: "Release Audit" },
-  "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "€6,500 | 2 hét" },
+  "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "6 500 € | 2 hét" },
   "packages.p1.forWhom": { en: "You need a diagnosis and a plan. Start here.", hu: "Diagnózis és terv kell. Kezdd itt." },
   "packages.p1.desc": { en: "Pipeline audit, rollback reduction plan, audit evidence playbook.", hu: "Pipeline átvilágítás, rollback csökkentési terv, audit evidence playbook." },
   "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|SOC2/ISO27001 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2/ISO27001 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap" },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
   "packages.p2.title": { en: "Pipeline Strategy & Sustained Compliance", hu: "Pipeline Strategy & Sustained Compliance" },
-  "packages.p2.price": { en: "€6,000/mo | 10 hrs/week", hu: "€6,000/hó | 10 óra/hét" },
+  "packages.p2.price": { en: "€6,000/mo | 10 hrs/week", hu: "6 000 €/hó | 10 óra/hét" },
   "packages.p2.forWhom": { en: "You have the plan, need ongoing technical execution.", hu: "Van terv, folyamatos technikai végrehajtásra van szükség." },
   "packages.p2.desc": { en: "Monthly pipeline review, CI/CD strategy, compliance coaching, async Slack support.", hu: "Havi pipeline review, CI/CD stratégia, compliance coaching, async Slack támogatás." },
   "packages.p2.cta": { en: "Level up", hu: "Szintet lépek" },
 
   "packages.p3.title": { en: "Release Systems Architecture", hu: "Release Systems Architecture" },
-  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "€10,000/hó | 20 óra/hét" },
+  "packages.p3.price": { en: "€10,000/mo | 20 hrs/week", hu: "10 000 €/hó | 20 óra/hét" },
   "packages.p3.forWhom": { en: "You need deep technical architecture, not people management.", hu: "Mély technikai architektúra kell, nem people management." },
   "packages.p3.desc": { en: "End-to-end release architecture, multi-product compliance strategy, vendor/tooling selection. Zero people management. Pure technical leadership.", hu: "Teljeskörű release architektúra, többtermékes compliance stratégia, vendor/tooling kiválasztás. Nulla people management. Tiszta technikai vezetés." },
   "packages.p3.cta": { en: "Premium", hu: "Prémium" },
@@ -81,10 +81,10 @@ const t = {
   "how.title": { en: "3 Simple Steps", hu: "3 egyszerű lépés" },
   "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
   "how.step1.desc": { en: "I understand your pain points and current setup.", hu: "Megértem a problémáidat és a jelenlegi helyzetet." },
-  "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (€6,500)" },
+  "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (6 500 €)" },
   "how.step2.desc": { en: "Concrete deliverables in 2 weeks.", hu: "Konkrét deliverables 2 hét alatt." },
   "how.step3.title": { en: "Scale & Sustain", hu: "Skálázás és fenntartás" },
-  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás €6,000/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
+  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás 6 000 €/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
 
   // Credibility
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
