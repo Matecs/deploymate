@@ -81,10 +81,10 @@ const t = {
   "how.title": { en: "3 Simple Steps", hu: "3 egyszerű lépés" },
   "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
   "how.step1.desc": { en: "I understand your pain points and current setup.", hu: "Megértem a problémáidat és a jelenlegi helyzetet." },
-  "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (€6,500)" },
+  "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (6 500 €)" },
   "how.step2.desc": { en: "Concrete deliverables in 2 weeks.", hu: "Konkrét deliverables 2 hét alatt." },
   "how.step3.title": { en: "Scale & Sustain", hu: "Skálázás és fenntartás" },
-  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás €6,000/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
+  "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás 6 000 €/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
 
   // Credibility
   "cred.tag": { en: "Track Record", hu: "Eredmények" },
