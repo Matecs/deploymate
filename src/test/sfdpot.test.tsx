@@ -224,9 +224,9 @@ describe("D – Data: what the product processes", () => {
   it("renders all three package prices in Hungarian when lang is HU", () => {
     localStorage.setItem("lang", "hu");
     renderWithProviders(<PackagesSection />);
-    expect(screen.getByText("€6,500 | 2 hét")).toBeInTheDocument();
-    expect(screen.getByText("€6,000/hó | 10 óra/hét")).toBeInTheDocument();
-    expect(screen.getByText("€10,000/hó | 20 óra/hét")).toBeInTheDocument();
+    expect(screen.getByText("6 500 € | 2 hét")).toBeInTheDocument();
+    expect(screen.getByText("6 000 €/hó | 10 óra/hét")).toBeInTheDocument();
+    expect(screen.getByText("10 000 €/hó | 20 óra/hét")).toBeInTheDocument();
   });
 
   it("renders both credibility testimonials", () => {
