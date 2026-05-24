@@ -211,7 +211,7 @@ describe("D – Data: what the product processes", () => {
 
   it("renders the experience claim in the hero description", () => {
     renderPage();
-    expect(screen.getByText(/now at your service/)).toBeInTheDocument();
+    expect(screen.getByText(/prioritized roadmap/)).toBeInTheDocument();
   });
 
   it("renders all three package prices in English", () => {

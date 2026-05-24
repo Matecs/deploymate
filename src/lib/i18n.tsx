@@ -25,8 +25,8 @@ const t = {
     hu: "0,9% hibaarány (iparági átlag ~15%) · 12+ cloud migráció 0 downtime-mal · SOC2, ISO27001, SOX, GDPR, NIS2",
   },
   "hero.desc": {
-    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. The same pipeline discipline that kills rollbacks also makes SOC2 audits boring. 19 years — from QA engineer to Tech Lead to Senior EM — now at your service.",
-    hu: "Kaotikus SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Ugyanaz a pipeline fegyelem ami megöli a rollback-eket, az SOC2 auditokat is unalmassá teszi. 19 év — QA mérnöktől Tech Lead-en át Senior EM-ig — most a te szolgálatodban.",
+    en: "I turn chaotic SaaS release pipelines into audit-ready, boringly reliable machines. Get a 2-week technical audit and a prioritized roadmap for your 20–150 person engineering team.",
+    hu: "Kaotikus SaaS release pipeline-okat alakítok audit-ready, unalmasan megbízható gépekké. Kapsz egy 2 hetes technikai auditot és egy priorizált roadmap-et a 20–150 fős mérnökcsapatodnak.",
   },
   "hero.pricing": { en: "", hu: "" },
   "hero.cta": { en: "Book a free 15-min Release Audit call", hu: "Foglalj egy ingyenes 15 perces Release Audit hívást" },
@@ -56,7 +56,7 @@ const t = {
   "packages.p1.price": { en: "€6,500 | 2 weeks", hu: "6 500 € | 2 hét" },
   "packages.p1.forWhom": { en: "You need a diagnosis and a plan. Start here.", hu: "Diagnózis és terv kell. Kezdd itt." },
   "packages.p1.desc": { en: "Pipeline audit, rollback reduction plan, audit evidence playbook.", hu: "Pipeline átvilágítás, rollback csökkentési terv, audit evidence playbook." },
-  "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|SOC2/ISO27001 evidence collection playbook|Working GitHub Actions migration PR|Release metrics dashboard template|90-day prioritized roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|SOC2/ISO27001 evidence gyűjtési playbook|Működő GitHub Actions migrációs PR|Release metrics dashboard sablon|90 napos priorizált roadmap" },
+  "packages.p1.deliverables": { en: "Pipeline Audit Report (15–20 page PDF)|Custom Testing Knowledge Base for developers|Optimized GitHub Copilot Instructions|SOC2/ISO27001 evidence collection playbook|90-day prioritized implementation roadmap", hu: "Pipeline Audit Report (15–20 oldalas PDF)|Egyedi Testing Knowledge Base a fejlesztőknek|Optimalizált GitHub Copilot Instructions|SOC2/ISO27001 evidence gyűjtési playbook|90 napos priorizált implementációs roadmap" },
   "packages.p1.cta": { en: "Start here", hu: "Kezdd itt" },
 
   "packages.p2.title": { en: "Pipeline Strategy & Sustained Compliance", hu: "Pipeline Strategy & Sustained Compliance" },
@@ -82,7 +82,7 @@ const t = {
   "how.step1.title": { en: "15-min call", hu: "15 perces hívás" },
   "how.step1.desc": { en: "I understand your pain points and current setup.", hu: "Megértem a problémáidat és a jelenlegi helyzetet." },
   "how.step2.title": { en: "Release Audit (€6,500)", hu: "Release Audit (6 500 €)" },
-  "how.step2.desc": { en: "Concrete deliverables in 2 weeks.", hu: "Konkrét deliverables 2 hét alatt." },
+  "how.step2.desc": { en: "A 2-week technical deep-dive delivering a custom knowledge base, Copilot setup, and a prioritized implementation roadmap.", hu: "Egy 2 hetes technikai mélymerülés, amely egyedi knowledge base-t, Copilot beállítást és priorizált implementációs roadmap-et szállít." },
   "how.step3.title": { en: "Scale & Sustain", hu: "Skálázás és fenntartás" },
   "how.step3.desc": { en: "Ongoing technical support starting at €6,000/mo to scale the pipeline and sustain compliance.", hu: "Folyamatos technikai támogatás 6 000 €/hó-tól, hogy a pipeline skálázódjon és a compliance fenntartható maradjon." },
 
